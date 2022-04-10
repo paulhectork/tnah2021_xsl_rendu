@@ -6,9 +6,11 @@
             \usepackage{graphicx}
             \usepackage[french]{babel}
             \usepackage{reledmac}
+            \usepackage[switch, modulo]{lineno}
             
-            \setstanzaindents{0,1}
-            \setcounter{stanzaindentsrepetition}{1}        
+            % définition de commandes spécifiques pour l'apparat
+            \newcommandx{\variant}[2][1,usedefault]{\Afootnote[#1]{#2}}
+            \newcommandx{\explanation}[2][1,usedefault]{\Bfootnote[#1]{#2}}
             
             \Xarrangement[A]{paragraph}
             \Xparafootsep{$\parallel$~}
@@ -19,14 +21,13 @@
             
             
             
-            \firstlinenum{5}
-            \linenumincrement{5}
-            \linenummargin{right}
             
             
             
             
             \beginnumbering
+            \linenumbers
+            \pstart
             
   
   
@@ -37,133 +38,129 @@
   
     
       
-        \edtext{
-            
-          }{\Afootnote{}}Leduc de\edtext{Berry}{\Afootnote{Berri  atw}}
+        Leduc de\edtext{Berry}{\variant{Berri  atw}}
         
-        \edtext{,}{\Afootnote{  brn}}
-        madame\edtext{Jehanne}{\Afootnote{Jehenne  brn}}
-          \edtext{d’Armeignach}{\Afootnote{d’Ermignac  atwd’Armignac  brn}}
+        \edtext{,}{\variant{$\phi$ brn}}
+        madame\edtext{Jehanne}{\variant{Jehenne  brn}}
+          \edtext{d’Armeignach}{\variant{d’Ermignac  atw, d’Armignac  brn}}
         
-        \edtext{sa premiere femme trespassee}{\Afootnote{}}
-        \edtext{,}{\Afootnote{  brn}}avoit grant\edtext{ymagination}{\Afootnote{ymaginacion  atw  brn}}
-        \edtext{. Et bien le}{\Afootnote{et bien le  atw  brn}}
-        \edtext{moustra}{\Afootnote{monstra  atw  brn}}que secondement il\edtext{fust}{\Afootnote{feust  atwfut  brn}}
-        \edtext{remarié}{\Afootnote{marié  atw  brn}}. Car\edtext{tantost que}{\Afootnote{}}il\edtext{pot}{\Afootnote{peut  atw  brn}}veoir\edtext{comment il}{\Afootnote{qu’il  atw  brn}}avoit\edtext{failly}{\Afootnote{faily  atwfailli  brn}}
-        \edtext{a la fille de Castille,}{\Afootnote{  atw  brn}}il ne fut oncques\edtext{aise}{\Afootnote{avisé  atw}}ne\edtext{n’ot repos}{\Afootnote{}}
-        \edtext{. Mais}{\Afootnote{mais  brn}}
-        \edtext{}{\Afootnote{il  atw  brn}}mist\edtext{en oeuvre clers}{\Afootnote{}}et\edtext{messagiers}{\Afootnote{messaigiers  atw  brn}}pour\edtext{envoier}{\Afootnote{envoyer  atw  brn}}devers leconte\edtext{Gascoing}{\Afootnote{Gascon  atw  brn}}de\edtext{Fois}{\Afootnote{Foix  atw  brn}}
+        \edtext{sa premiere femme trespassee}{\variant{}}
+        \edtext{,}{\variant{$\phi$ brn}}avoit grant\edtext{ymagination}{\variant{ymaginacion  atw  brn}}
+        \edtext{. Et bien le}{\variant{et bien le  atw  brn}}
+        \edtext{moustra}{\variant{monstra  atw  brn}}que secondement il\edtext{fust}{\variant{feust  atw, fut  brn}}
+        \edtext{remarié}{\variant{marié  atw  brn}}. Car\edtext{tantost que}{\variant{}}il\edtext{pot}{\variant{peut  atw  brn}}veoir\edtext{comment il}{\variant{qu’il  atw  brn}}avoit\edtext{failly}{\variant{faily  atw, failli  brn}}
+        \edtext{a la fille de Castille,}{\variant{$\phi$ atw  brn}}il ne fut oncques\edtext{aise}{\variant{avisé  atw}}ne\edtext{n’ot repos}{\variant{}}
+        \edtext{. Mais}{\variant{mais  brn}}
+        mist\edtext{en oeuvre clers}{\variant{}}et\edtext{messagiers}{\variant{messaigiers  atw  brn}}pour\edtext{envoier}{\variant{envoyer  atw  brn}}devers leconte\edtext{Gascoing}{\variant{Gascon  atw  brn}}de\edtext{Fois}{\variant{Foix  atw  brn}}
         
-        \edtext{,}{\Afootnote{  brn}}
-        \edtext{quy}{\Afootnote{qui  atw  brn}}avoit en garde
-          \edtext{la fille}{\Afootnote{le filz  brn}}auconte Jehan de\edtext{Boulongne}{\Afootnote{Bouloingne  atw}}
+        \edtext{,}{\variant{$\phi$ brn}}
+        \edtext{quy}{\variant{qui  atw  brn}}avoit en garde
+          \edtext{la fille}{\variant{le filz  brn}}auconte Jehan de\edtext{Boulongne}{\variant{Bouloingne  atw}}
           
-        et avoit\edtext{ja}{\Afootnote{  atw  brn}}eue plus de\edtext{}{\Afootnote{IX  brn}}ans. Et pour tant que leduc de\edtext{Berry}{\Afootnote{Berri  atw}}
-        ne pouoit\edtext{a ce mariage parvenir}{\Afootnote{parvenir a ce mariage  atw}}fors par\edtext{les dangiers}{\Afootnote{le dangier  atw  brn}}duconte de\edtext{Fois}{\Afootnote{Foix  atw  brn}}
-        . Car au fort le ditcontene pour pere\edtext{}{\Afootnote{,  atw  brn}}ne pour mere\edtext{}{\Afootnote{,  atw  brn}}
-        \edtext{ne}{\Afootnote{  brn}}pour pape\edtext{}{\Afootnote{,  atw  brn}}ne pour amy que ladamoiselleeust\edtext{,}{\Afootnote{  brn}}il n’en\edtext{euist}{\Afootnote{eust  atw  brn}}riens fait\edtext{, se bienne lui feust}{\Afootnote{}}venu a\edtext{sa}{\Afootnote{  atw  brn}}plaisance. Il en parla auroy de France, son nepveu, et au duc de\edtext{Bourgoingne}{\Afootnote{Bourgongne  brn}}
-        , son frere\edtext{. Et leur}{\Afootnote{, et leur  atw  brn}}
-        \edtext{requist moult}{\Afootnote{pria  atw  brn}}affectueusement\edtext{que ilz}{\Afootnote{qu’ilz  atw  brn}}s’en voulsissent chargier\edtext{, avecques luy et embesoingnier}{\Afootnote{}}. Leroy de Franceen\edtext{ot}{\Afootnote{eut  atw  brn}}bon\edtext{rys,}{\Afootnote{ris  atw  brn}}pour tant que leduc de Berryestoit ja tout\edtext{anchien,}{\Afootnote{ancien  atw  brn}}et\edtext{luy}{\Afootnote{lui  atw  brn}}
-        \edtext{dist}{\Afootnote{dit  atw}}:\edtext{"Beaulx oncles}{\Afootnote{"Bel oncle  atw  brn}}, que feréz vous\edtext{de une sijenne femme}{\Afootnote{}}
+        et avoit\edtext{ja}{\variant{$\phi$ atw  brn}}eue plus deans. Et pour tant que leduc de\edtext{Berry}{\variant{Berri  atw}}
+        ne pouoit\edtext{a ce mariage parvenir}{\variant{parvenir a ce mariage  atw}}fors par\edtext{les dangiers}{\variant{le dangier  atw  brn}}duconte de\edtext{Fois}{\variant{Foix  atw  brn}}
+        . Car au fort le ditcontene pour perene pour mere
+        \edtext{ne}{\variant{$\phi$ brn}}pour papene pour amy que ladamoiselleeust\edtext{,}{\variant{$\phi$ brn}}il n’en\edtext{euist}{\variant{eust  atw  brn}}riens fait\edtext{, se bienne lui feust}{\variant{}}venu a\edtext{sa}{\variant{$\phi$ atw  brn}}plaisance. Il en parla auroy de France, son nepveu, et au duc de\edtext{Bourgoingne}{\variant{Bourgongne  brn}}
+        , son frere\edtext{. Et leur}{\variant{, et leur  atw  brn}}
+        \edtext{requist moult}{\variant{pria  atw  brn}}affectueusement\edtext{que ilz}{\variant{qu’ilz  atw  brn}}s’en voulsissent chargier\edtext{, avecques luy et embesoingnier}{\variant{}}. Leroy de Franceen\edtext{ot}{\variant{eut  atw  brn}}bon\edtext{rys,}{\variant{ris  atw  brn}}pour tant que leduc de Berryestoit ja tout\edtext{anchien,}{\variant{ancien  atw  brn}}et\edtext{luy}{\variant{lui  atw  brn}}
+        \edtext{dist}{\variant{dit  atw}}:\edtext{"Beaulx oncles}{\variant{"Bel oncle  atw  brn}}, que feréz vous\edtext{de une sijenne femme}{\variant{}}
         \edtext{?Elle
-          }{\Afootnote{qui  atw}}n'a que\edtext{douze}{\Afootnote{XII  atw  brn}}ans et vous en avéz\edtext{soixante}{\Afootnote{LX  atw  brn}}
-        \edtext{.}{\Afootnote{?  atw}}Par ma foy,\edtext{c’est}{\Afootnote{il me semble  atw}}grant\edtext{folie pour}{\Afootnote{follie de  atw}}vous de penser a telle\edtext{besoigne}{\Afootnote{chose  atw  brn}}.\edtext{Faittes}{\Afootnote{Faictes  brn}}
-        \edtext{ent}{\Afootnote{en  atw}}parler pourJehan
-        \edtext{}{\Afootnote{,  atw  brn}}beau cousin vostre filz,\edtext{quy}{\Afootnote{qui  atw  brn}}est\edtext{jenne}{\Afootnote{jeune  atw}}et a venir\edtext{. La}{\Afootnote{, la  atw}}chose est\edtext{trop}{\Afootnote{  atw  brn}}mieulx pareille a\edtext{Enluminure ou miniature, signalée mais non consultable depuis Online Froissartluy}{\Afootnote{lui  atw  brn}}que a vous." "Monseigneur,"\edtext{respondi}{\Afootnote{respondit  atw  brn}}leduc de\edtext{Berry}{\Afootnote{Berri  atw}}
-        , "on en a parlé\edtext{,}{\Afootnote{  atw  brn}}mais leconte de\edtext{Foiz}{\Afootnote{Foix  atw  brn}}
-        n’y\edtext{a voulu}{\Afootnote{}}entendre pour la cause de ce quemon filzdescend de ceulx\edtext{d’Armeignach. Et}{\Afootnote{d’Armignac et  atwde Armignac  brn}}ilz sont en guerre et en hayne et ont esté\edtext{long temps}{\Afootnote{longtemps  brn}}ensemble. Se lafilleest\edtext{jenne}{\Afootnote{jeune  atw}}, je\edtext{la espargneray}{\Afootnote{}}
-        \edtext{trois}{\Afootnote{troiz  brn}}ou quatre ans\edtext{, voire si longuement}{\Afootnote{tant  atw  brn}}qu’elle sera femme\edtext{parfaitte et}{\Afootnote{parfaicte  brn}}
-        \edtext{}{\Afootnote{  brn}}." Voire,"\edtext{}{\Afootnote{dit  atw}}leroy,\edtext{}{\Afootnote{"  atw}}
-        \edtext{mais}{\Afootnote{maiz  atw}}elle ne vous\edtext{espargnera}{\Afootnote{espareignera  atw}}pas." Et puis dist leroytout en\edtext{ryant}{\Afootnote{riant  atw  brn}}:\edtext{"Or ça,beaulx oncles}{\Afootnote{}},\edtext{puisque}{\Afootnote{puis que  atw  brn}}nous veons que\edtext{si tres}{\Afootnote{tant  atwsi  brn}}grande affection vous y avéz\edtext{}{\Afootnote{,  atw}}nous y\edtext{entendrons}{\Afootnote{entenderons  brn}}
-        \edtext{moult}{\Afootnote{  atw  brn}}voulentiers."\edtext{Depuis}{\Afootnote{Et depuis  atw}}ne demoura\edtext{gaires}{\Afootnote{guerres  atw}}de temps que leroyordonna lesire de la Riviere, messire\edtext{Burel}{\Afootnote{Brueil  atw  brn}}
-        , son souverain\edtext{chevallier}{\Afootnote{  atw  brn}}
-        \edtext{et}{\Afootnote{  brn}}maistre d’ostel et\edtext{chambellan}{\Afootnote{chambrelan  atwchambrelain  brn}}
-        \edtext{,}{\Afootnote{  atw}}pour\edtext{aler}{\Afootnote{aller  atw}}en ce voyage\edtext{. Et avecques}{\Afootnote{et avecques  atw  brn}}
-        \edtext{luy}{\Afootnote{lui  atw  brn}}leconte\edtext{d’Assy}{\Afootnote{d’Acy  atw  brn}}
-        . Et leduc de\edtext{Bourgoingne}{\Afootnote{Bourgongne  brn}}
-        y ordonna pour\edtext{luy}{\Afootnote{lui  atw  brn}}et en son noml’evesque\edtext{d’Authun}{\Afootnote{d’Autun  brn}}
-        et>messire\edtext{Guillemme}{\Afootnote{Guillaume  atwGuillame  brn}}de la Trimoulle
-        \edtext{et}{\Afootnote{. Et  atw  brn}}le>duc de Berryy ordonna\edtext{et}{\Afootnote{  atw}}en\edtext{prya}{\Afootnote{pria  atw  brn}}le conteJehan de Xancerre
-        \edtext{ung}{\Afootnote{, un  brn}}grant\edtext{, sage}{\Afootnote{saige  atw  brn}}et vaillant\edtext{chevallier}{\Afootnote{chevalier  atw}}.\edtext{
-            
-            
-          }{\Afootnote{  atw}}Ces\edtext{cinq}{\Afootnote{cincq  atw}}seigneurs pour venir\edtext{devers}{\Afootnote{vers  atw  brn}}leconte de\edtext{Fois}{\Afootnote{Foix  atw  brn}}
-        et\edtext{}{\Afootnote{pour  atw}}requerir\edtext{en}{\Afootnote{ou  atw  brn}}nom\edtext{de mariage}{\Afootnote{}}pour leduc de Berryceste\edtext{jenne}{\Afootnote{jeune  atw}}
+          }{\variant{qui  atw}}n'a que\edtext{douze}{\variant{XII  atw  brn}}ans et vous en avéz\edtext{soixante}{\variant{LX  atw  brn}}
+        \edtext{.}{\variant{$\phi$ atw}}Par ma foy,\edtext{c’est}{\variant{il me semble  atw}}grant\edtext{folie pour}{\variant{follie de  atw}}vous de penser a telle\edtext{besoigne}{\variant{chose  atw  brn}}.\edtext{Faittes}{\variant{Faictes  brn}}
+        \edtext{ent}{\variant{en  atw}}parler pourJehan
+        beau cousin vostre filz,\edtext{quy}{\variant{qui  atw  brn}}est\edtext{jenne}{\variant{jeune  atw}}et a venir\edtext{. La}{\variant{, la  atw}}chose est\edtext{trop}{\variant{$\phi$ atw  brn}}mieulx pareille a\edtext{Enluminure ou miniature, signalée mais non consultable depuis Online Froissartluy}{\variant{lui  atw  brn}}que a vous." "Monseigneur,"\edtext{respondi}{\variant{respondit  atw  brn}}leduc de\edtext{Berry}{\variant{Berri  atw}}
+        , "on en a parlé\edtext{,}{\variant{$\phi$ atw  brn}}mais leconte de\edtext{Foiz}{\variant{Foix  atw  brn}}
+        n’y\edtext{a voulu}{\variant{}}entendre pour la cause de ce quemon filzdescend de ceulx\edtext{d’Armeignach. Et}{\variant{d’Armignac et  atw, de Armignac  brn}}ilz sont en guerre et en hayne et ont esté\edtext{long temps}{\variant{longtemps  brn}}ensemble. Se lafilleest\edtext{jenne}{\variant{jeune  atw}}, je\edtext{la espargneray}{\variant{}}
+        \edtext{trois}{\variant{troiz  brn}}ou quatre ans\edtext{, voire si longuement}{\variant{tant  atw  brn}}qu’elle sera femme\edtext{parfaitte et}{\variant{parfaicte  brn}}
+        ." Voire,"leroy,
+        \edtext{mais}{\variant{maiz  atw}}elle ne vous\edtext{espargnera}{\variant{espareignera  atw}}pas." Et puis dist leroytout en\edtext{ryant}{\variant{riant  atw  brn}}:\edtext{"Or ça,beaulx oncles}{\variant{}},\edtext{puisque}{\variant{puis que  atw  brn}}nous veons que\edtext{si tres}{\variant{tant  atw, si  brn}}grande affection vous y avéznous y\edtext{entendrons}{\variant{entenderons  brn}}
+        \edtext{moult}{\variant{$\phi$ atw  brn}}voulentiers."\edtext{Depuis}{\variant{Et depuis  atw}}ne demoura\edtext{gaires}{\variant{guerres  atw}}de temps que leroyordonna lesire de la Riviere, messire\edtext{Burel}{\variant{Brueil  atw  brn}}
+        , son souverain\edtext{chevallier}{\variant{$\phi$ atw  brn}}
+        \edtext{et}{\variant{$\phi$ brn}}maistre d’ostel et\edtext{chambellan}{\variant{chambrelan  atw, chambrelain  brn}}
+        \edtext{,}{\variant{$\phi$ atw}}pour\edtext{aler}{\variant{aller  atw}}en ce voyage\edtext{. Et avecques}{\variant{et avecques  atw  brn}}
+        \edtext{luy}{\variant{lui  atw  brn}}leconte\edtext{d’Assy}{\variant{d’Acy  atw  brn}}
+        . Et leduc de\edtext{Bourgoingne}{\variant{Bourgongne  brn}}
+        y ordonna pour\edtext{luy}{\variant{lui  atw  brn}}et en son noml’evesque\edtext{d’Authun}{\variant{d’Autun  brn}}
+        et>messire\edtext{Guillemme}{\variant{Guillaume  atw, Guillame  brn}}de la Trimoulle
+        \edtext{et}{\variant{. Et  atw  brn}}le>duc de Berryy ordonna\edtext{et}{\variant{$\phi$ atw}}en\edtext{prya}{\variant{pria  atw  brn}}le conteJehan de Xancerre
+        \edtext{ung}{\variant{, un  brn}}grant\edtext{, sage}{\variant{saige  atw  brn}}et vaillant\edtext{chevallier}{\variant{chevalier  atw}}.Ces\edtext{cinq}{\variant{cincq  atw}}seigneurs pour venir\edtext{devers}{\variant{vers  atw  brn}}leconte de\edtext{Fois}{\variant{Foix  atw  brn}}
+        etrequerir\edtext{en}{\variant{ou  atw  brn}}nom\edtext{de mariage}{\variant{}}pour leduc de Berryceste\edtext{jenne}{\variant{jeune  atw}}
         dame
-        \edtext{}{\Afootnote{a mariage  atw}}
-        \edtext{,}{\Afootnote{  brn}}se partirent de leurs lieux et se devoient trouver enAvignon
-        \edtext{deléz le pape comme ils firent. Cepape Clement, quy cousin estoit duperea ladamoiselle, les retint la bien quinze jours}{\Afootnote{}}
-        \edtext{. Et environ la}{\Afootnote{, et environ la  atw  brn}}
-        \edtext{Chandelleur}{\Afootnote{Chandeller  atwChandeleur  brn}}ilz se\edtext{departirent}{\Afootnote{partirent  atw}}
-        \edtext{tous}{\Afootnote{  atw  brn}}d’Avignonet prindrent le chemin de
-          \edtext{Nismes}{\Afootnote{Nimes  atw}}
+        
+        \edtext{,}{\variant{$\phi$ brn}}se partirent de leurs lieux et se devoient trouver enAvignon
+        \edtext{deléz le pape comme ils firent. Cepape Clement, quy cousin estoit duperea ladamoiselle, les retint la bien quinze jours}{\variant{}}
+        \edtext{. Et environ la}{\variant{, et environ la  atw  brn}}
+        \edtext{Chandelleur}{\variant{Chandeller  atw, Chandeleur  brn}}ilz se\edtext{departirent}{\variant{partirent  atw}}
+        \edtext{tous}{\variant{$\phi$ atw  brn}}d’Avignonet prindrent le chemin de
+          \edtext{Nismes}{\variant{Nimes  atw}}
         et deMontpellier
-        \edtext{. Si chevauchierent}{\Afootnote{}}a petites journees et a grans\edtext{frais. Si}{\Afootnote{fraiz et  atw  brn}}passerentBesierset vindrent a
-          \edtext{Carcassonne}{\Afootnote{}}
+        \edtext{. Si chevauchierent}{\variant{}}a petites journees et a grans\edtext{frais. Si}{\variant{fraiz et  atw  brn}}passerentBesierset vindrent a
+          \edtext{Carcassonne}{\variant{}}
         
-        \edtext{. Et la}{\Afootnote{ou  atwet  brn}}
-        \edtext{}{\Afootnote{ilz  atw}}trouverent\edtext{ilz}{\Afootnote{  atw  brn}}messireLoÿs de Xancerre, mareschal de France,\edtext{quy moult grandementEnluminure ou miniature, signalée mais non consultable depuis Online Froissartles recueilly, ce fut raison.}{\Afootnote{qui les recueillit grandement  atw  brn}}
+        \edtext{. Et la}{\variant{ou  atw, et  brn}}
+        trouverent\edtext{ilz}{\variant{$\phi$ atw  brn}}messireLoÿs de Xancerre, mareschal de France,\edtext{quy moult grandementEnluminure ou miniature, signalée mais non consultable depuis Online Froissartles recueilly, ce fut raison.}{\variant{qui les recueillit grandement  atw  brn}}
         \edtext{
-            \edtext{Et}{\Afootnote{, et  brn}}parla a\edtext{eulz}{\Afootnote{eulx  brn}}assez duconte de\edtext{Fois,}{\Afootnote{Foix  brn}}
+            \edtext{Et}{\variant{, et  brn}}parla a\edtext{eulz}{\variant{eulx  brn}}assez duconte de\edtext{Fois,}{\variant{Foix  brn}}
             de son estat et de son affaire. Car il y avoit esté\edtext{deCarcassonne
-              }{\Afootnote{  brn}}n’avoit point passé deux\edtext{mois}{\Afootnote{moix  brn}}
-          }{\Afootnote{  atw}}.\edtext{Ilz}{\Afootnote{}}se\edtext{departirent}{\Afootnote{}}
-        \edtext{}{\Afootnote{de la  atw}}et vindrent\edtext{en la cité de}{\Afootnote{a  atw  brn}}
+              }{\variant{$\phi$ brn}}n’avoit point passé deux\edtext{mois}{\variant{moix  brn}}
+          }{\variant{$\phi$ atw}}.\edtext{Ilz}{\variant{}}se\edtext{departirent}{\variant{}}
+        et vindrent\edtext{en la cité de}{\variant{a  atw  brn}}
         Thoulouse
-        \edtext{,}{\Afootnote{  atw  brn}}et la s’arresterent\edtext{. Et envoierent}{\Afootnote{et envoyerent  atw  brn}}leurs\edtext{messages}{\Afootnote{messagiers  atw  brn}}
-        \edtext{}{\Afootnote{devant  atw}}
-        \edtext{devers}{\Afootnote{deverz  brn}}le\edtext{conte de Fois, quy}{\Afootnote{}}
-        \edtext{,}{\Afootnote{  brn}}
-        \edtext{quy}{\Afootnote{qui  atw  brn}}se tenoit aOrthaiz en\edtext{Berne}{\Afootnote{Bierne  atw  brn}}
-        . Si\edtext{s’entamerent}{\Afootnote{s’entammerent  atw}}les traittiéz de ce mariage, mais ilz\edtext{}{\Afootnote{y  atw  brn}}furent moult\edtext{loingtains}{\Afootnote{longuement  atw  brn}}
-        \edtext{, car}{\Afootnote{. Car  brn}}
-        \edtext{de}{\Afootnote{du  atw  brn}}commencement leconte de\edtext{Fois}{\Afootnote{Foix  atw  brn}}
-        fut\edtext{}{\Afootnote{moult  atw  brn}}froit\edtext{et dur}{\Afootnote{  atw  brn}}pour\edtext{ce}{\Afootnote{tant  brn}}que leduc de Lancastre
-        \edtext{,}{\Afootnote{  brn}}
-        \edtext{quy}{\Afootnote{qui  atw  brn}}
-        \edtext{pour ce temps se tenoit}{\Afootnote{se tenoit pour le temps a  atw  brn}}a
-          \edtext{Bourdeaulx}{\Afootnote{Bourdeaulz  atw}}
-        ou a\edtext{Liebourne, en}{\Afootnote{}}faisoit parler et\edtext{pryer}{\Afootnote{prier  atw  brn}}pour son filz\edtext{messire}{\Afootnote{  atw  brn}}
-        Henry, conte\edtext{d’Erby.}{\Afootnote{d’Erbi,  atw}}
+        \edtext{,}{\variant{$\phi$ atw  brn}}et la s’arresterent\edtext{. Et envoierent}{\variant{et envoyerent  atw  brn}}leurs\edtext{messages}{\variant{messagiers  atw  brn}}
         
-        \edtext{Si}{\Afootnote{si  atwSy  brn}}fut\edtext{telle fois}{\Afootnote{tele foiz  brn}}
-        \edtext{pour}{\Afootnote{que  brn}}le\edtext{loingtain}{\Afootnote{longtain  atw}}sejour\edtext{que l'}{\Afootnote{qu'  atw  brn}}on veoit\edtext{advenir, que on disoit que le mariage pour lequel ces seigneurs s’arresterent en la bonne cité de}{\Afootnote{a ces seigneurs faire qu’on disoit que le mariage pour lequel ilz sejournoient a  atw  brn}}
+        \edtext{devers}{\variant{deverz  brn}}le\edtext{conte de Fois, quy}{\variant{}}
+        \edtext{,}{\variant{$\phi$ brn}}
+        \edtext{quy}{\variant{qui  atw  brn}}se tenoit aOrthaiz en\edtext{Berne}{\variant{Bierne  atw  brn}}
+        . Si\edtext{s’entamerent}{\variant{s’entammerent  atw}}les traittiéz de ce mariage, mais ilzfurent moult\edtext{loingtains}{\variant{longuement  atw  brn}}
+        \edtext{, car}{\variant{. Car  brn}}
+        \edtext{de}{\variant{du  atw  brn}}commencement leconte de\edtext{Fois}{\variant{Foix  atw  brn}}
+        futfroit\edtext{et dur}{\variant{$\phi$ atw  brn}}pour\edtext{ce}{\variant{tant  brn}}que leduc de Lancastre
+        \edtext{,}{\variant{$\phi$ brn}}
+        \edtext{quy}{\variant{qui  atw  brn}}
+        \edtext{pour ce temps se tenoit}{\variant{se tenoit pour le temps a  atw  brn}}a
+          \edtext{Bourdeaulx}{\variant{Bourdeaulz  atw}}
+        ou a\edtext{Liebourne, en}{\variant{}}faisoit parler et\edtext{pryer}{\variant{prier  atw  brn}}pour son filz\edtext{messire}{\variant{$\phi$ atw  brn}}
+        Henry, conte\edtext{d’Erby.}{\variant{d’Erbi,  atw}}
+        
+        \edtext{Si}{\variant{si  atw, Sy  brn}}fut\edtext{telle fois}{\variant{tele foiz  brn}}
+        \edtext{pour}{\variant{que  brn}}le\edtext{loingtain}{\variant{longtain  atw}}sejour\edtext{que l'}{\variant{qu'  atw  brn}}on veoit\edtext{advenir, que on disoit que le mariage pour lequel ces seigneurs s’arresterent en la bonne cité de}{\variant{a ces seigneurs faire qu’on disoit que le mariage pour lequel ilz sejournoient a  atw  brn}}
         Thoulouse
-        \edtext{,}{\Afootnote{  atw  brn}}ne se feroit point\edtext{, et}{\Afootnote{. Et  atw  brn}}tout leur estat et\edtext{toutes}{\Afootnote{  atw  brn}}les ordonnances,\edtext{responses}{\Afootnote{responces  atw  brn}}et\edtext{traittiés}{\Afootnote{traittiéz  atwtraitiéz  brn}}duconte de\edtext{Fois,}{\Afootnote{Foix  atw  brn}}
-        de jour en jour\edtext{et de septmaine en septmaine,}{\Afootnote{, de sepmaine en sepmaine  atw  brn}}ilz\edtext{envoierent}{\Afootnote{envoioient  atwenvoyoient  brn}}soingneusement devers leduc de Berry
-        \edtext{,}{\Afootnote{  brn}}
-        \edtext{quy}{\Afootnote{qui  atw  brn}}se tenoit ala Nonnette en Auvergne. Et leduc
-        \edtext{, quy}{\Afootnote{qui  atw  brn}}n’avoit autre desir fors que les choses approchassent,\edtext{}{\Afootnote{souvent  atw}}
-        \edtext{escripsoit}{\Afootnote{  atwrescripvoit  brn}}devers\edtext{eulz}{\Afootnote{eulx  brn}}
-        \edtext{,}{\Afootnote{  atw  brn}}et\edtext{les raffreschissoit souvent}{\Afootnote{souvent les raffreschissoit de  atw}}
-        \edtext{nouveaulz}{\Afootnote{nouveaulx  atw  brn}}
-        \edtext{messages}{\Afootnote{messaiges  atw}}
-        \edtext{. En}{\Afootnote{en  atw  brn}}
-        \edtext{}{\Afootnote{leur  atw}}
-        \edtext{signiffiant}{\Afootnote{seigniffiant  atw}}que\edtext{par nul moyen}{\Afootnote{nullement  atw  brn}}
-        \edtext{ilz}{\Afootnote{  atw}}ne\edtext{cessassent point}{\Afootnote{cessasent  atw}}que la\edtext{}{\Afootnote{chose  atw}}ne se\edtext{fesist.}{\Afootnote{feïst.  brn}}Leconte de\edtext{Foiz}{\Afootnote{Foix  atw  brn}}
-        ,\edtext{quy}{\Afootnote{qui  atw  brn}}estoit\edtext{sage}{\Afootnote{saige  atw}}
-        \edtext{}{\Afootnote{homme  atw  brn}}et\edtext{soubtil}{\Afootnote{subtil  brn}}
-        \edtext{, et quy}{\Afootnote{et qui  atw  brn}}veoit\edtext{l’ardent}{\Afootnote{l’ardant  atw  brn}}desir duduc de Berry
-        \edtext{, traittoit sagement}{\Afootnote{traitoit saigement  atw}}et bellement et si froidement mena\edtext{}{\Afootnote{le  atw}}procés que par\edtext{l’accord}{\Afootnote{accord  atw  brn}}de tous\edtext{, et}{\Afootnote{et  atw  brn}}
-        \edtext{encoires}{\Afootnote{encores  atw}}a\edtext{grans prieres}{\Afootnote{grant priere  atw  brn}}
+        \edtext{,}{\variant{$\phi$ atw  brn}}ne se feroit point\edtext{, et}{\variant{. Et  atw  brn}}tout leur estat et\edtext{toutes}{\variant{$\phi$ atw  brn}}les ordonnances,\edtext{responses}{\variant{responces  atw  brn}}et\edtext{traittiés}{\variant{traittiéz  atw, traitiéz  brn}}duconte de\edtext{Fois,}{\variant{Foix  atw  brn}}
+        de jour en jour\edtext{et de septmaine en septmaine,}{\variant{, de sepmaine en sepmaine  atw  brn}}ilz\edtext{envoierent}{\variant{envoioient  atw, envoyoient  brn}}soingneusement devers leduc de Berry
+        \edtext{,}{\variant{$\phi$ brn}}
+        \edtext{quy}{\variant{qui  atw  brn}}se tenoit ala Nonnette en Auvergne. Et leduc
+        \edtext{, quy}{\variant{qui  atw  brn}}n’avoit autre desir fors que les choses approchassent,
+        \edtext{escripsoit}{\variant{$\phi$ atw, rescripvoit  brn}}devers\edtext{eulz}{\variant{eulx  brn}}
+        \edtext{,}{\variant{$\phi$ atw  brn}}et\edtext{les raffreschissoit souvent}{\variant{souvent les raffreschissoit de  atw}}
+        \edtext{nouveaulz}{\variant{nouveaulx  atw  brn}}
+        \edtext{messages}{\variant{messaiges  atw}}
+        \edtext{. En}{\variant{en  atw  brn}}
+        
+        \edtext{signiffiant}{\variant{seigniffiant  atw}}que\edtext{par nul moyen}{\variant{nullement  atw  brn}}
+        \edtext{ilz}{\variant{$\phi$ atw}}ne\edtext{cessassent point}{\variant{cessasent  atw}}que lane se\edtext{fesist.}{\variant{feïst.  brn}}Leconte de\edtext{Foiz}{\variant{Foix  atw  brn}}
+        ,\edtext{quy}{\variant{qui  atw  brn}}estoit\edtext{sage}{\variant{saige  atw}}
+        et\edtext{soubtil}{\variant{subtil  brn}}
+        \edtext{, et quy}{\variant{et qui  atw  brn}}veoit\edtext{l’ardent}{\variant{l’ardant  atw  brn}}desir duduc de Berry
+        \edtext{, traittoit sagement}{\variant{traitoit saigement  atw}}et bellement et si froidement menaprocés que par\edtext{l’accord}{\variant{accord  atw  brn}}de tous\edtext{, et}{\variant{et  atw  brn}}
+        \edtext{encoires}{\variant{encores  atw}}a\edtext{grans prieres}{\variant{grant priere  atw  brn}}
         il
-        \edtext{ot}{\Afootnote{eut  atweust  brn}}
-        \edtext{trente mille}{\Afootnote{XXXM  atw  brn}}frans pour les\edtext{dix}{\Afootnote{  atw  brn}}ans\edtext{queil}{\Afootnote{}}
-        \edtext{avoit}{\Afootnote{l’avoit  atw}}
-        \edtext{gardé}{\Afootnote{gardee  atw  brn}}ladamoiselle
-        \edtext{}{\Afootnote{,  atw  brn}}
-        \edtext{nourrie et tenu son estat.}{\Afootnote{nourie et tenue son estat  atw}}
-        \edtext{Encoires se plus\edtext{il}{\Afootnote{  brn}}en eust demandé\edtext{,}{\Afootnote{  brn}}plus en eust eu}{\Afootnote{et eut plus eul s’il eut demandé  atw}}
-        \edtext{. Mais}{\Afootnote{mais  atw, mais  brn}}
-        \edtext{moiennement il volt}{\Afootnote{moyennement il en voult  atw  brn}}ouvrer\edtext{sur}{\Afootnote{sus  brn}}la conclusion de ceste matiere affin\edtext{que on luy}{\Afootnote{qu’on lui  atw  brn}}en sceust gré\edtext{. Et}{\Afootnote{et  atw  brn}}
-        \edtext{aussi}{\Afootnote{  atw}}que leduc de\edtext{Berry}{\Afootnote{Berri  atw}}
-        sentist que il\edtext{faisoit}{\Afootnote{feist  atwfeïst  brn}}aucune chose pour
-          \edtext{luy}{\Afootnote{lui  atw}}
+        \edtext{ot}{\variant{eut  atw, eust  brn}}
+        \edtext{trente mille}{\variant{XXXM  atw  brn}}frans pour les\edtext{dix}{\variant{$\phi$ atw  brn}}ans\edtext{queil}{\variant{}}
+        \edtext{avoit}{\variant{l’avoit  atw}}
+        \edtext{gardé}{\variant{gardee  atw  brn}}ladamoiselle
+        
+        \edtext{nourrie et tenu son estat.}{\variant{nourie et tenue son estat  atw}}
+        \edtext{Encoires se plus\edtext{il}{\variant{$\phi$ brn}}en eust demandé\edtext{,}{\variant{$\phi$ brn}}plus en eust eu}{\variant{et eut plus eul s’il eut demandé  atw}}
+        \edtext{. Mais}{\variant{mais  atw, , mais  brn}}
+        \edtext{moiennement il volt}{\variant{moyennement il en voult  atw  brn}}ouvrer\edtext{sur}{\variant{sus  brn}}la conclusion de ceste matiere affin\edtext{que on luy}{\variant{qu’on lui  atw  brn}}en sceust gré\edtext{. Et}{\variant{et  atw  brn}}
+        \edtext{aussi}{\variant{$\phi$ atw}}que leduc de\edtext{Berry}{\variant{Berri  atw}}
+        sentist que il\edtext{faisoit}{\variant{feist  atw, feïst  brn}}aucune chose pour
+          \edtext{luy}{\variant{lui  atw}}
         .
     
   
 
+            \pend
             \endnumbering
             \end{document}
         

@@ -19,9 +19,11 @@
             \usepackage{graphicx}
             \usepackage[french]{babel}
             \usepackage{reledmac}
+            \usepackage[switch, modulo]{lineno}
             
-            \setstanzaindents{0,1}
-            \setcounter{stanzaindentsrepetition}{1}        
+            % définition de commandes spécifiques pour l'apparat
+            \newcommandx{\variant}[2][1,usedefault]{\Afootnote[#1]{#2}}
+            \newcommandx{\explanation}[2][1,usedefault]{\Bfootnote[#1]{#2}}
             
             \Xarrangement[A]{paragraph}
             \Xparafootsep{$\parallel$~}
@@ -31,29 +33,36 @@
             <!-- header -->
             <xsl:call-template name="header"/>
             
-            <!-- numérotation -->
-            \firstlinenum{5}
-            \linenumincrement{5}
-            \linenummargin{right}
+            <!-- numérotation
+                \firstlinenum{5}
+                \linenumincrement{5}
+                \linenummargin{right} -->
             <!-- \setline{<xsl:value-of select="//lg/l[1]/@n"/>} -->
             
             
             <!-- corps de texte -->
             \beginnumbering
+            \linenumbers
+            \pstart
             <xsl:call-template name="body"/>
+            \pend
             \endnumbering
             \end{document}
         </xsl:result-document>
         
     </xsl:template>
     
-    <xsl:template name="header" match="teiHeader"/>
-    
     <!-- 
-        xpath intéressante: tous les elts de ab qui ne sont
-        pas des app : //ab/*[not(descendant-or-self::app)] ;
-        pb : ne cible que les elts, pas le texte
+        documentation REDELMAC
+        https://texlive.mycozy.space/macros/latex/contrib/reledmac/reledmac.pdf
+    -->    
+    <!-- 
+        Le package fonctionne sur un système d’étage de note : 
+        \Afootnote \Bfootnote \Cfootnote 
+        qui permette de créer différents étages d’apparat. 
     -->
+    
+    <xsl:template name="header" match="teiHeader"/>
     
     <xsl:template name="body" match="body/ab">
         <!-- copier ab et le texte à la racine -->
@@ -62,25 +71,49 @@
         </xsl-copy>
     </xsl:template>
     
-    <!-- Le package fonctionne sur un système d’étage de note : 
-        \Afootnote \Bfootnote \Cfootnote 
-        qui permette de créer différents étages d’apparat. -->
-    
     <xsl:template match="body//app">
         
-        <!-- sélectionner le lem -->
-        <xsl:text>\edtext{</xsl:text>
-        <xsl:apply-templates select="lem"/>
-        <xsl:text>}{\Afootnote{</xsl:text>
+        <!-- sélectionner les lem qui contiennent du texte -->
+        <xsl:if test="lem[matches(., '(\w+|,|\.)+')]">
+            <xsl:text>\edtext{</xsl:text>
+            <xsl:apply-templates select="lem[matches(., '(\w+|,|\.)+')]"/>
+            <xsl:text>}{\variant{</xsl:text>
+            
+            <!-- sélectionner les rdg qui n'ont pas d'enfants -->
+            <xsl:for-each select="rdg[not(./*)]">
+                
+                <!-- si ils contiennent du texte, le recopier; sinon, symbole vide -->
+                <xsl:choose>
+                    <xsl:when test="./matches(., '(\w+|,|\.)+')">
+                        <xsl:value-of select="."/><xsl:text> </xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>$\phi$</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+                
+                <xsl:value-of select="./replace(@wit, '#', ' ')"/>
+                <xsl:choose>
+                    <xsl:when test="position() != last()">, </xsl:when>
+                    <xsl:otherwise/>
+                </xsl:choose>   
+                
+            </xsl:for-each>
+            
+            <xsl:text>}}</xsl:text>
+        </xsl:if>
         
-        <!-- sinon on peut essayer for-each select="not(lem)" -->
-        <xsl:for-each select="rdg[not(./*)]">
-            <xsl:value-of select="."/><xsl:text> </xsl:text>
-            <xsl:value-of select="./replace(@wit, '#', ' ')"/>
-        </xsl:for-each>
+        <!--
+        <xsl:if test="lem[./witDetail]">
+            <xsl:text>\edtext{</xsl:text>
+            <xsl:apply-templates select="lem[./witDetail]"/>
+            <xsl:text>}{\explanation{</xsl:text>
+            <xsl:value-of select="witDetail"/>
+            <xsl:text>}</xsl:text>
+        </xsl:if> -->
         
-        <xsl:text>}}</xsl:text>
     </xsl:template>
+
     
     <!-- pour le texte ne contenant pas d'éléments dans le ab
         <xsl:value-of select=".//ab/text()"/> -->

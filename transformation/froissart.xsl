@@ -28,13 +28,18 @@
             
             \begin{document}
             
+            <!-- header -->
+            <xsl:call-template name="header"/>
+            
+            <!-- numérotation -->
             \firstlinenum{5}
             \linenumincrement{5}
             \linenummargin{right}
-            \setline{<xsl:value-of select="//lg/l[1]/@n"/>}
+            <!-- \setline{<xsl:value-of select="//lg/l[1]/@n"/>} -->
             
+            
+            <!-- corps de texte -->
             \beginnumbering
-            \stanza 
             <xsl:call-template name="body"/>
             \endnumbering
             \end{document}
@@ -42,10 +47,82 @@
         
     </xsl:template>
     
+    <xsl:template name="header" match="teiHeader"/>
     
-    <xsl:template match="text//ab" name="body">
-        <xsl:copy-of select="[not(./*)]"/>
+    <!-- 
+        xpath intéressante: tous les elts de ab qui ne sont
+        pas des app : //ab/*[not(descendant-or-self::app)] ;
+        pb : ne cible que les elts, pas le texte
+    -->
+    
+    <xsl:template name="body" match="body/ab">
+        <!-- copier ab et le texte à la racine -->
+        <xsl-copy select=".">
+            <xsl:apply-templates/>
+        </xsl-copy>
     </xsl:template>
+    
+    <!-- Le package fonctionne sur un système d’étage de note : 
+        \Afootnote \Bfootnote \Cfootnote 
+        qui permette de créer différents étages d’apparat. -->
+    
+    <xsl:template match="body//app">
         
+        <!-- sélectionner le lem -->
+        <xsl:text>\edtext{</xsl:text>
+        <xsl:apply-templates select="lem"/>
+        <xsl:text>}{\Afootnote{</xsl:text>
+        
+        <!-- sinon on peut essayer for-each select="not(lem)" -->
+        <xsl:for-each select="rdg[not(./*)]">
+            <xsl:value-of select="."/><xsl:text> </xsl:text>
+            <xsl:value-of select="./replace(@wit, '#', ' ')"/>
+        </xsl:for-each>
+        
+        <xsl:text>}}</xsl:text>
+    </xsl:template>
+    
+    <!-- pour le texte ne contenant pas d'éléments dans le ab
+        <xsl:value-of select=".//ab/text()"/> -->
+    
+    <!-- pour tout ce qui est dans le ab 
+        <xsl:choose> -->
+    
+    <!-- si c'est un texte
+        <xsl:when test="./text()">
+        </xsl:when> -->
+    
+    <!-- si c'est un élément
+        <xsl:otherwise><xsl:apply-templates/></xsl:otherwise> -->
+    <!-- <xsl:choose> -->
+    
+    <!-- si l'élément est un app
+        <xsl:when test="app">
+        <xsl:choose>
+        <xsl:when test="//lem">
+        <xsl:text>\edtext{</xsl:text>
+        <xsl:copy-of select="."/><xsl:text>}\{Afootnote{</xsl:text>
+        </xsl:when>
+        <xsl:otherwise></xsl:otherwise>
+        </xsl:choose>
+        </xsl:when> -->
+    
+    <!-- si il n'est pas un app
+        <xsl:otherwise></xsl:otherwise>
+        
+        </xsl:choose>
+        </xsl:otherwise> -->
+    
+    <!--</xsl:choose>-->
+    
+    <!-- <xsl:for-each select="//text//ab/app">
+        <xsl:choose>
+        <xsl:when test="./lem">
+        <xsl:value-of select="."/>
+        </xsl:when>
+        </xsl:choose>
+        <xsl:value-of select="."/>
+        </xsl:for-each> -->
+    
     
 </xsl:stylesheet>

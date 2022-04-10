@@ -1,10 +1,11 @@
 <?xml-model href="../odd_documentation/ODD_froissart.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../odd_documentation/ODD_froissart.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <!DOCTYPE TEI SYSTEM "../odd_documentation/ODD_froissart.dtd">
+
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-  <!-- méthode de signalement des sigles etc: "SIGLE. Nom complet" (cf <orgName>) -->
+  
+  <!-- HEADER -->
   <teiHeader>
-    <!-- modèle assez complet de TEIheader, récupéré de : https://github.com/Segolene-Albouy/XML-TEI_M2TNAH/blob/main/4-Structure_document_TEI/Exercices/header_Mysteres_de_Paris.xml; tout n'a pas besoin d'être utilisé, obviously -->
     <!-- Description bibliographique du fichier numérique ainsi que de sa source (physique ou non) -->
     <fileDesc>
       <!-- Titre et responsabilités liées au document encodé -->
@@ -664,7 +665,7 @@
   </teiHeader>
   
   
-  
+  <!-- CORPS DU TEXTE -->
   <text>
     <body>
       <ab type="SHF-chapter" n="3A-306">

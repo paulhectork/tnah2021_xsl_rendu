@@ -6,6 +6,15 @@
     version="2.0">
     <xsl:output method="text" encoding="UTF-8"/>
     
+    <!-- roottext permet de ne récupérer que le texte à la racine d'un elt -->
+    <xsl:variable name="roottext">
+        <xsl:variable name="src">
+            <xsl:copy-of select="./lem/text()"/>
+        </xsl:variable>
+        <xsl:value-of select="$src"/>    
+    </xsl:variable>
+    
+    
     <xsl:template match="TEI">
         <xsl:variable name="appfile">
             <xsl:value-of select="replace(base-uri(.), '.xml', '')"/> 
@@ -23,7 +32,8 @@
             
             % définition de commandes spécifiques pour l'apparat
             \newcommandx{\variant}[2][1,usedefault]{\Afootnote[#1]{#2}}
-            \newcommandx{\explan}[2][1,usedefault]{\Bfootnote[#1]{#2}}
+            \newcommandx{\subvariant}[2][1,usedefault]{\Bfootnote[#1]{#2}}
+            \newcommandx{\explan}[2][1,usedefault]{\Cfootnote[#1]{#2}}
             
             \Xarrangement[A]{paragraph}
             \Xparafootsep{$\parallel$~}
@@ -66,29 +76,51 @@
     
     <xsl:template match="body//app">
         
-        <!-- sélectionner les lem qui contiennent du texte -->
-        <!-- ATTENTION - récupère aussi les elts contenus -->
-        <xsl:if test="lem[matches(., '(\w+|,|\.)+')]">
-            <xsl:text>\edtext{</xsl:text>
-            <xsl:apply-templates select="lem[matches(., '(\w+|,|\.)+')]"/>
-            <xsl:text>}{\variant{</xsl:text>
+        <!-- sélectionner les lem qui contiennent du texte 
+            mais qui n'ont pas d'enfants -->
+        <xsl:choose>
+            <xsl:when test="lem[matches(., '(\w+|,|\.)+')][not(./*)]">
+                <xsl:text>\edtext{</xsl:text>
+                <xsl:apply-templates select="lem[matches(., '(\w+|,|\.)+')]"/>
+                <xsl:text>}{\variant{</xsl:text>
+                <xsl:call-template name="rdgnochild"/>
+                <xsl:text>}}</xsl:text>
+            </xsl:when>
             
-            <!-- sélectionner les rdg qui n'ont pas d'enfants -->
-            <xsl:call-template name="rdgnochild"/>
+            <!-- règles pour les autres lem ... -->
             
-            <xsl:text>}}</xsl:text>
-        </xsl:if>
-        
-        <!-- règle pour les autres lem ... -->
-        
-        <!-- tentative de récupérer les witDetail et de les mettre dans un \explan
-        <xsl:if test="lem[./witDetail]">
-            <xsl:text>\edtext{</xsl:text>
-            <xsl:apply-templates select="lem[./witDetail]"/>
-            <xsl:text>}{\explan{</xsl:text>
-            <xsl:value-of select="witDetail"/>
-            <xsl:text>}</xsl:text>
-        </xsl:if> -->
+            <!-- règle pour les apparats critiques dans des lem -->
+            <xsl:when test="lem[.//app]">
+                <xsl:text>\edtext{</xsl:text>
+                <xsl:text>\edtext{</xsl:text>
+                <xsl:copy-of select="./lem[//app]/text()"/>
+                <xsl:text>}{\variant{</xsl:text>
+                <xsl:call-template name="rdgnochild"/>
+                <xsl:text>}}}{\subvariant{</xsl:text>
+                <!-- faire une règle pour choper les sous-variations dans rdg 
+                PEUT-ÊTRE UTILISER DES VARIABLES pour capturer les différentes variations ??? -->
+                <xsl:text>}}</xsl:text>    
+            </xsl:when>
+            
+            <!-- récupérer les witDetail et de les mettre dans un \explan -->
+            <!-- ETENDRE POUR CONTENIR LES AUTRES DÉTAILLS ?? -->
+            <xsl:when test="lem[witDetail]">
+                <xsl:text>\edtext{</xsl:text>
+                <xsl:text>\edtext{</xsl:text>
+                <xsl:copy-of select="./lem[witDetail]/text()"/>
+                <xsl:text>}{\variant{</xsl:text>
+                <xsl:call-template name="rdgnochild"/>
+                <xsl:text>}}}{\explan{</xsl:text>
+                <xsl:value-of select="lem/witDetail"/>
+                <xsl:text>}}</xsl:text>    
+            </xsl:when>
+            
+            <!-- 
+                structure pour les nested footnotes 
+                \edtext{\edtext{<txt>}{\variant{<txt> <wit>}}}{\explan{<txt>}}
+            -->
+            
+        </xsl:choose>
         
     </xsl:template>
     
@@ -110,7 +142,8 @@
             <xsl:choose>
                 <xsl:when test="position() != last()">, </xsl:when>
                 <xsl:otherwise/>
-            </xsl:choose>   
+            </xsl:choose>
+            
         </xsl:for-each>
         
         <!-- règles pour les autres rdg ... -->

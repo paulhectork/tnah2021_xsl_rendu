@@ -5,16 +5,8 @@
     exclude-result-prefixes="xs tei"
     version="2.0">
     <xsl:output method="text" encoding="UTF-8"/>
-    
-    <!-- roottext permet de ne récupérer que le texte à la racine d'un elt -->
-    <xsl:variable name="roottext">
-        <xsl:variable name="src">
-            <xsl:copy-of select="./lem/text()"/>
-        </xsl:variable>
-        <xsl:value-of select="$src"/>    
-    </xsl:variable>
-    
-    
+
+
     <xsl:template match="TEI">
         <xsl:variable name="appfile">
             <xsl:value-of select="replace(base-uri(.), '.xml', '')"/> 
@@ -32,8 +24,9 @@
             
             % définition de commandes spécifiques pour l'apparat
             \newcommandx{\variant}[2][1,usedefault]{\Afootnote[#1]{#2}}
-            \newcommandx{\subvariant}[2][1,usedefault]{\Bfootnote[#1]{#2}}
-            \newcommandx{\explan}[2][1,usedefault]{\Cfootnote[#1]{#2}}
+            \newcommandx{\group}[2][1,usedefault]{\Bfootnote[#1]{#2}}
+            \newcommandx{\subvariant}[2][1,usedefault]{\Cfootnote[#1]{#2}}
+            \newcommandx{\explan}[2][1,usedefault]{\Dfootnote[#1]{#2}}
             
             \Xarrangement[A]{paragraph}
             \Xparafootsep{$\parallel$~}
@@ -47,7 +40,23 @@
             \beginnumbering
             \linenumbers
             \pstart
-            <xsl:call-template name="body"/>
+            <!-- nettoyer le latex produit à grands coups de regex -->
+            <xsl:variable name="body">
+                <xsl:call-template name="body"/>
+            </xsl:variable>
+            <xsl:variable name="clean1">
+                <xsl:value-of select="replace($body, '\s{2,}', ' ')"/>
+            </xsl:variable>
+            <xsl:variable name="clean2">
+                <xsl:value-of select="replace($clean1, '\}([a-zA-Z])', '} $1')"/>
+            </xsl:variable>
+            <xsl:variable name="clean3">
+                <xsl:value-of select="replace($clean2, '(\w|[0-9])\\edtext\{([^(,\.;?!)])', '$1 \\edtext{$2')"/>
+            </xsl:variable>
+            <xsl:variable name="clean4">
+                <xsl:value-of select="replace($clean3, '(\}?) ((\\edtext\{)?(\.|,))', '$1$2')"/>
+            </xsl:variable>
+            <xsl:value-of select="$clean4"/>
             \pend
             \endnumbering
             \end{document}
@@ -59,11 +68,8 @@
         documentation REDELMAC
         https://texlive.mycozy.space/macros/latex/contrib/reledmac/reledmac.pdf
     -->    
-    <!-- 
-        Le package fonctionne sur un système d’étage de note : 
-        \Afootnote \Bfootnote \Cfootnote 
-        qui permette de créer différents étages d’apparat. 
-    -->
+    
+    <!-- IL Y A UNE ERREUR AVEC LA LIGNE 1216 DE MON ENCODAGE -->
     
     <xsl:template name="header" match="teiHeader"/>
     
@@ -74,31 +80,40 @@
         </xsl-copy>
     </xsl:template>
     
+    <!-- règles pour construire l'apparat critique --> <!-- A COMPLETER -->
     <xsl:template match="body//app">
         
         <!-- sélectionner les lem qui contiennent du texte 
-            mais qui n'ont pas d'enfants -->
+            mais qui n'ont pas d'enfants et dont le app parent ne contient pas de rdgGrp -->
         <xsl:choose>
-            <xsl:when test="lem[matches(., '(\w+|,|\.)+')][not(./*)]">
+            <xsl:when test="lem[matches(., '(\w+|,|\.)+')][not(./*)][not(parent::*/rdgGrp)]">
                 <xsl:text>\edtext{</xsl:text>
-                <xsl:apply-templates select="lem[matches(., '(\w+|,|\.)+')]"/>
+                <xsl:apply-templates select="lem"/>
                 <xsl:text>}{\variant{</xsl:text>
-                <xsl:call-template name="rdgnochild"/>
+                <xsl:call-template name="notinternal"/>
+                <xsl:text>}}</xsl:text>
+            </xsl:when>
+            
+            <!-- règle pour les lem dont qui sont dans un app avec un rdgGrp -->
+            <xsl:when test=".//rdgGrp">
+                <xsl:text>\edtext{</xsl:text>
+                <xsl:apply-templates select="lem"/>
+                <xsl:text>}{\group{</xsl:text>
+                <xsl:call-template name="grp"/>
                 <xsl:text>}}</xsl:text>
             </xsl:when>
             
             <!-- règles pour les autres lem ... -->
             
             <!-- règle pour les apparats critiques dans des lem -->
-            <xsl:when test="lem[.//app]">
+            <xsl:when test="lem[(.//app)]">
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:copy-of select="./lem[//app]/text()"/>
                 <xsl:text>}{\variant{</xsl:text>
-                <xsl:call-template name="rdgnochild"/>
+                <xsl:call-template name="notinternal"/>
                 <xsl:text>}}}{\subvariant{</xsl:text>
-                <!-- faire une règle pour choper les sous-variations dans rdg 
-                PEUT-ÊTRE UTILISER DES VARIABLES pour capturer les différentes variations ??? -->
+                <xsl:call-template name="internal"/>
                 <xsl:text>}}</xsl:text>    
             </xsl:when>
             
@@ -109,10 +124,19 @@
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:copy-of select="./lem[witDetail]/text()"/>
                 <xsl:text>}{\variant{</xsl:text>
-                <xsl:call-template name="rdgnochild"/>
+                <xsl:call-template name="notinternal"/>
                 <xsl:text>}}}{\explan{</xsl:text>
                 <xsl:value-of select="lem/witDetail"/>
                 <xsl:text>}}</xsl:text>    
+            </xsl:when>
+            
+            <!-- sélectionner les lem qui contienne un changement de paragraphe -->
+            <xsl:when test="lem//milestone">
+                <xsl:text> \pend\pstart \edtext{</xsl:text>
+                <xsl:apply-templates select="lem[matches(., '(\w+|,|\.)+')]"/>
+                <xsl:text>}{\explan{</xsl:text>
+                <xsl:text>Changement de paragraphe dans le témoin principal</xsl:text>
+                <xsl:text>}}</xsl:text>
             </xsl:when>
             
             <!-- 
@@ -124,9 +148,11 @@
         
     </xsl:template>
     
-    <xsl:template match="body//app/rdg" name="rdgnochild">
+    
+    <!-- règle pour les rdg qui ne sont pas contenus dans des app internes --> <!-- A COMPLETER -->
+    <xsl:template match="body//app[not(ancestor::app)]//rdg[not(parent::rdgGrp)]" name="notinternal">
         
-        <!-- règle pour les leçons n'ayant pas d'enfants -->
+        <!-- règle pour les leçons n'ayant pas d'enfants et n'étant pas dans un rdgGrp -->
         <xsl:for-each select="rdg[not(./*)]">
             <!-- si ils contiennent du texte, le recopier; sinon, symbole vide -->
             <xsl:choose>
@@ -140,14 +166,77 @@
             
             <xsl:value-of select="./replace(@wit, '#', ' ')"/>
             <xsl:choose>
-                <xsl:when test="position() != last()">, </xsl:when>
+                <xsl:when test="position() != last()">; </xsl:when>
                 <xsl:otherwise/>
-            </xsl:choose>
-            
+            </xsl:choose>  
         </xsl:for-each>
         
         <!-- règles pour les autres rdg ... -->
         
     </xsl:template>
+    
+    
+    <!-- règle pour les rdg dans des apparats internes --> <!-- A COMPLETER ? -->
+    <xsl:template match="body//app[ancestor::app]/rdg" name="internal">
+        
+        <!-- règle pour les leçons n'ayant pas d'enfants -->
+        <xsl:for-each select="rdg">
+            <!-- si ils contiennent du texte, le recopier; sinon, symbole vide -->
+            <xsl:choose>
+                <xsl:when test="./matches(., '(\w+|,|\.)+')">
+                    <xsl:value-of select="."/><xsl:text> </xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>$\phi$</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+            
+            <xsl:value-of select="./replace(@wit, '#', ' ')"/>
+            <xsl:choose>
+                <xsl:when test="position() != last()">; </xsl:when>
+                <xsl:otherwise/>
+            </xsl:choose>
+            
+        </xsl:for-each>
+        
+        <!-- règles pour les autres rdg ... -->    
+    </xsl:template>
+    
+    
+    <!-- règle pour les rdgGrp --> <!-- FINI -->
+    <xsl:template match="body//rdgGrp" name="grp">
+        <xsl:for-each select=".//rdg">
+            <!-- si ils contiennent du texte, le recopier; sinon, symbole vide -->
+            <xsl:choose>
+                <xsl:when test="matches(., '(\w+|,|\.)+')">
+                    <xsl:value-of select="."/><xsl:text> </xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>$\phi$</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+            
+            <xsl:value-of select="./replace(@wit, '#', ' ')"/>
+            <xsl:choose>
+                <xsl:when test="position() != last()">; </xsl:when>
+                <xsl:otherwise/>
+            </xsl:choose>
+        </xsl:for-each> 
+    </xsl:template>
+
+
+    <!-- règles pour gérer les espaces autour des placeName et persName --> <!-- FINI ? -->
+    <xsl:template match="body//placeName">
+        <xsl:text> </xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text> </xsl:text>
+    </xsl:template>
+    
+    <xsl:template match="body//persName">
+        <xsl:text> </xsl:text>
+        <xsl:apply-templates/>
+        <xsl:text> </xsl:text>
+    </xsl:template>
+    
     
 </xsl:stylesheet>

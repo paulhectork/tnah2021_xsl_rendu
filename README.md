@@ -1,9 +1,9 @@
 # ÉDITION CRITIQUE DES *CHRONIQUES* DE JEAN FROISSART EN XML-TEI
 
-
 ![Froissart bloublou](froissart.jpg)
 
-Encodage critique du chapitre **SHF 306** : *Négogiation du mariage du Duc de Berry*
+Transformation XSL vers LaTeX d'une édition critique encodée en XML-TEI du chapitre 
+**SHF 306** : *la négogiation du mariage du Duc de Berry*.
 
 ### Structure du dépôt
 - **`dossier racine`**:
@@ -16,3 +16,10 @@ Encodage critique du chapitre **SHF 306** : *Négogiation du mariage du Duc de B
 - **`collatex`** : les collations effectuées avec Collatex : script utilisé et collation produite par Collatex, utilisée comme base de la présente édition critique
 - **`odd_documentation`** : l'ODD au format `.xml` et sa transformation aux formats `.rng`, `.dtd` et `.html`.
 - **`textes`** : le contenu textuel des trois témoins, utilisés comme source pour la collation effectuée avec Collatex.
+
+## Modifications faites par rapport à l'encodage originel
+
+L'encodage a été réalisé pour l'évaluation du cours de TEI donné par S. Albouy, sans prendre en
+compte une future transformation XSL. Des modifications ont donc du être apportées pour 
+permettre la transformation : 
+- les `app` contenus dans des `rdg` ont été transformés en `rdgGrp`.

@@ -694,22 +694,17 @@
           <rdg wit="#brn">Jehenne</rdg>
         </app>
           <app corresp="#orth">
-            <lem wit="#brl">d’Armeignach</lem>
-            <rdg wit="#atw">d’Ermignac</rdg>
-            <rdg wit="#brn">d’Armignac</rdg>
+            <lem wit="#brl">d'Armeignach</lem>
+            <rdg wit="#atw">d'Ermignac</rdg>
+            <rdg wit="#brn">d'Armignac</rdg>
           </app>
         </persName>
         <app corresp="#sentence-order">
           <lem wit="#brl">sa premiere femme trespassee</lem>
-          <rdg wit="#atw #brn">trespassee
-            <app corresp="#punct">
-              <rdg wit="#atw">,</rdg>
-              <rdg wit="#brn"/>
-            </app>sa premiere<app corresp="#word-diff">
-              <rdg wit="#atw">femme</rdg>
-              <rdg wit="#brn"/>
-            </app>
-          </rdg>
+          <rdgGrp corresp="#punct #word-diff">
+            <rdg wit="#atw">trespassee, sa premiere femme</rdg>
+            <rdg wit="#brn">trespassee sa premiere</rdg>
+          </rdgGrp>
         </app>
         <app corresp="#punct">
           <lem wit="#atw #brl">,</lem>
@@ -735,17 +730,16 @@
           <rdg wit="#atw #brn">marié</rdg>
         </app>. Car<app corresp="#word-diff">
           <lem wit="#brl">tantost que</lem>
-          <rdg wit="#atw #brn">si<app corresp="#text-segmentation">
-            <rdg wit="#atw">tost</rdg>
-            <rdg wit="#brn">
-              <pb n="333 v"/>trestost</rdg>
-          </app>comme</rdg>
+          <rdgGrp corresp="#word-diff">
+            <rdg wit="#atw">tost comme</rdg>
+            <rdg wit="#brn"><pb n="333 v"/>trestost comme</rdg>
+          </rdgGrp>
         </app>il<app corresp="#orth">
           <lem wit="#brl">pot</lem>
           <rdg wit="#atw #brn">peut</rdg>
         </app>veoir<app corresp="#word-diff">
           <lem wit="#brl">comment il</lem>
-          <rdg wit="#atw #brn">qu’il</rdg>
+          <rdg wit="#atw #brn">qu'il</rdg>
         </app>avoit<app corresp="#orth">
           <lem wit="#brl">failly</lem>
           <rdg wit="#atw">faily</rdg>
@@ -758,12 +752,11 @@
           <lem wit="#brn #brl">aise</lem>
           <rdg wit="#atw">avisé</rdg>
         </app>ne<app corresp="#word-diff">
-          <lem wit="#brl">n’ot repos</lem>
-          <rdg wit="#atw #brn">
-            <app corresp="#orth">
-              <rdg wit="#atw">eut</rdg>
-              <rdg wit="#brn">eust</rdg>
-            </app>sejour</rdg>
+          <lem wit="#brl">n'ot repos</lem>
+          <rdgGrp corresp="#orth">
+            <rdg wit="#atw">eut</rdg>
+            <rdg wit="#brn">eust</rdg>
+          </rdgGrp>
         </app>
         <app corresp="#punct">
           <lem wit="#atw #brl">. Mais</lem>
@@ -774,11 +767,10 @@
           <rdg wit="#atw #brn">il</rdg>
         </app>mist<app corresp="#sentence-order">
           <lem wit="#brl">en oeuvre clers</lem>
-          <rdg wit="#atw #brn">clers en<app corresp="#orth">
-            <rdg wit="#atw">oeuvre</rdg>
-            <rdg wit="#brn">euvre</rdg>
-          </app>
-          </rdg>
+          <rdgGrp corresp="#orth">
+            <rdg wit="#atw">clers en oeuvre</rdg>
+            <rdg wit="#brn">clers en euvre</rdg>
+          </rdgGrp>
         </app>et<app corresp="#orth">
           <lem wit="#brl">messagiers</lem>
           <rdg wit="#atw #brn">messaigiers</rdg>
@@ -813,10 +805,8 @@
           <lem wit="#brl">ja</lem>
           <rdg wit="#atw #brn"/>
         </app>eue plus de<app corresp="#orth">
-          <rdgGrp corresp="#orth">
-            <lem wit="#brl">noeuf</lem>
-            <rdg wit="#atw">neuf</rdg>
-          </rdgGrp>
+          <lem wit="#brl">noeuf</lem>
+          <rdg wit="#atw">neuf</rdg>
           <rdg wit="#brn">IX</rdg>
         </app>ans. Et pour tant que le<persName ref="#djdb">duc de<app corresp="#orth">
           <lem wit="#brn #brl">Berry</lem>
@@ -848,15 +838,15 @@
         </app>ne pour amy que la<persName ref="#fjda">damoiselle</persName>eust<app corresp="#punct">
           <lem wit="#atw #brl">,</lem>
           <rdg wit="#brn"/>
-        </app>il n’en<app corresp="#orth">
+        </app>il n'en<app corresp="#orth">
           <lem wit="#brl">euist</lem>
           <rdg wit="#atw #brn">eust</rdg>
         </app>riens fait<app corresp="#punct #word-diff #text-segmentation">
           <lem wit="#brl">, se bien<pb n="371 r"/>ne lui feust</lem>
-          <rdg wit="#atw #brn">s’il ne lui<app corresp="#orth">
-            <rdg wit="#atw">fut</rdg>
-            <rdg wit="#brn">fust</rdg>
-          </app>bien</rdg>
+          <rdgGrp corresp="#orth">
+            <rdg wit="#atw">s'il ne lui fut bien</rdg>
+            <rdg wit="#brn">s'il ne lui fust bien</rdg>
+          </rdgGrp>
         </app>venu a<app corresp="#add-words">
           <lem wit="#brl">sa</lem>
           <rdg wit="#atw #brn"/>
@@ -873,13 +863,13 @@
           <rdg wit="#atw #brn">pria</rdg>
         </app>affectueusement<app corresp="#orth">
           <lem wit="#brl">que ilz</lem>
-          <rdg wit="#atw #brn">qu’ilz</rdg>
-        </app>s’en voulsissent chargier<app corresp="#sentence-order">
+          <rdg wit="#atw #brn">qu'ilz</rdg>
+        </app>s'en voulsissent chargier<app corresp="#sentence-order #orth">
           <lem wit="#brl">, avecques luy et embesoingnier</lem>
-          <rdg wit="#atw #brn">et<app corresp="#orth">
-            <rdg wit="#atw">embesoignier</rdg>
-            <rdg wit="#brn">embesongnier</rdg>
-          </app>avecques lui</rdg>
+          <rdgGrp corresp="#orth">
+            <rdg wit="#atw">et embesoignier avecques lui</rdg>
+            <rdg wit="#brn">et embesongnier avecques lui</rdg>
+          </rdgGrp>
         </app>. Le<persName ref="#rcha">roy de France</persName>en<app corresp="#orth">
           <lem wit="#brl">ot</lem>
           <rdg wit="#atw #brn">eut</rdg>
@@ -923,7 +913,7 @@
           <lem wit="#brn #brl">.</lem>
           <rdg wit="#atw">?</rdg>
         </app>Par ma foy,<app corresp="#word-diff">
-          <lem wit="#brn #brl">c’est</lem>
+          <lem wit="#brn #brl">c'est</lem>
           <rdg wit="#atw">il me semble</rdg>
         </app>grant<app corresp="#orth word-diff">
           <lem wit="#brn #brl">folie pour</lem>
@@ -971,15 +961,15 @@
           <lem wit="#brl">Foiz</lem>
           <rdg wit="#atw #brn">Foix</rdg>
         </app>
-        </persName>n’y<app corresp="#word-diff">
+        </persName>n'y<app corresp="#word-diff">
           <lem wit="#brl">a voulu</lem>
           <rdgGrp corresp="#orth">
             <rdg wit="#atw">vault</rdg>
             <rdg wit="#brn">veult</rdg>
           </rdgGrp>
         </app>entendre pour la cause de ce que<persName ref="#cjdb">mon filz</persName>descend de ceulx<app corresp="#orth #punct">
-          <lem wit="#brl">d’Armeignach. Et</lem>
-          <rdg wit="#atw">d’Armignac et</rdg>
+          <lem wit="#brl">d'Armeignach. Et</lem>
+          <rdg wit="#atw">d'Armignac et</rdg>
           <rdg wit="#brn">de Armignac</rdg>
         </app>ilz sont en guerre et en hayne et ont esté<app corresp="#orth">
           <lem wit="#atw #brl">long temps</lem>
@@ -990,8 +980,8 @@
         </app>, je<app corresp="#orth">
           <lem wit="#brl">la espargneray</lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#atw">l’espareigneray</rdg>
-            <rdg wit="#brn">l’espargneray</rdg>
+            <rdg wit="#atw">l'espareigneray</rdg>
+            <rdg wit="#brn">l'espargneray</rdg>
           </rdgGrp>
         </app>
         <app corresp="#orth">
@@ -1000,30 +990,22 @@
         </app>ou quatre ans<app corresp="#word-diff">
           <lem wit="#brl">, voire si longuement</lem>
           <rdg wit="#atw #brn">tant</rdg>
-        </app>qu’elle sera femme<app corresp="#orth #word-diff">
+        </app>qu'elle sera femme<app corresp="#orth #word-diff">
           <lem wit="#atw #brl">parfaitte et</lem>
           <rdg wit="#brn">parfaicte</rdg>
         </app>
         <app corresp="#add-words">
-          <rdgGrp corresp="#orth">
-            <lem wit="#brl">fourmee</lem>
-            <rdg wit="#atw">formee</rdg>
-          </rdgGrp>
+          <lem wit="#brl">fourmee</lem>
+          <rdg wit="#atw">formee</rdg>
           <rdg wit="#brn"/>
         </app>." Voire,"<app corresp="#word-diff">
+          <lem wit="#brl">respondy</lem>
           <rdg wit="#atw">dit</rdg>
-          <rdgGrp corresp="#orth">
-            <lem wit="#brl">respondy</lem>
-            <rdg wit="#brn">respondit</rdg>
-          </rdgGrp>
+          <rdg wit="#brn">respondit</rdg>
         </app>le<persName ref="#rcha">roy</persName>,<app corresp="#punct add-words">
+          <lem wit="#brl">"<persName ref="#djdb">beaulx oncles</persName></lem>
           <rdg wit="#atw">"</rdg>
-          <rdgGrp corresp="#orth">
-            <lem wit="#brl">"<persName ref="#djdb">beaulx oncles</persName>
-            </lem>
-            <rdg wit="#brn">"<persName ref="#djdb">bel oncle</persName>
-            </rdg>
-          </rdgGrp>
+          <rdg wit="#brn">"<persName ref="#djdb">bel oncle</persName></rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl #brn">mais</lem>
@@ -1072,7 +1054,7 @@
         <app corresp="#add-words">
           <lem wit="#atw #brl">et</lem>
           <rdg wit="#brn"/>
-        </app>maistre d’ostel et<app corresp="#orth">
+        </app>maistre d'ostel et<app corresp="#orth">
           <lem wit="#brl">chambellan</lem>
           <rdg wit="#atw">chambrelan</rdg>
           <rdg wit="#brn">chambrelain</rdg>
@@ -1091,8 +1073,8 @@
           <lem wit="#brl">luy</lem>
           <rdg wit="#atw #brn">lui</rdg>
         </app>le<persName ref="#cdas">conte<app corresp="#orth">
-          <lem wit="#brl">d’Assy</lem>
-          <rdg wit="#atw #brn">d’Acy</rdg>
+          <lem wit="#brl">d'Assy</lem>
+          <rdg wit="#atw #brn">d'Acy</rdg>
         </app>
         </persName>. Et le<persName ref="#dpdb">duc de<app corresp="#orth">
           <lem wit="#atw #brl">Bourgoingne</lem>
@@ -1101,11 +1083,11 @@
         </persName>y ordonna pour<app corresp="#orth">
           <lem wit="#brl">luy</lem>
           <rdg wit="#atw #brn">lui</rdg>
-        </app>et en son nom<persName ref="#egdv">l’evesque<app corresp="#orth">
-          <lem wit="#atw #brl">d’Authun</lem>
-          <rdg wit="#brn">d’Autun</rdg>
+        </app>et en son nom<persName ref="#egdv">l'evesque<app corresp="#orth">
+          <lem wit="#atw #brl">d'Authun</lem>
+          <rdg wit="#brn">d'Autun</rdg>
         </app>
-        </persName>et<persName ref="#mgdt">&gt;messire<app corresp="#orth">
+        </persName>et<persName ref="#mgdt">messire<app corresp="#orth">
           <lem wit="#brl">Guillemme</lem>
           <rdg wit="#atw">Guillaume</rdg>
           <rdg wit="#brn">Guillame</rdg>
@@ -1113,7 +1095,7 @@
         <app corresp="#punct">
           <lem wit="#brl">et</lem>
           <rdg wit="#atw #brn">. Et</rdg>
-        </app>le<persName ref="#djdb">&gt;duc de Berry</persName>y ordonna<app corresp="#add-words">
+        </app>le<persName ref="#djdb">duc de Berry</persName>y ordonna<app corresp="#add-words">
           <lem wit="#brn #brl">et</lem>
           <rdg wit="#atw"/>
         </app>en<app corresp="#orth">
@@ -1168,21 +1150,12 @@
           <lem wit="#atw #brl">,</lem>
           <rdg wit="#brn"/>
         </app>se partirent de leurs lieux et se devoient trouver en<placeName ref="#avg">Avignon</placeName>
-        <app corresp="#sentence-order">
+        <app corresp="#sentence-order #orth">
           <lem wit="#brl">deléz le pape comme ils firent. Ce<persName ref="#pclv">pape Clement</persName>, quy cousin estoit du<persName ref="#cjdb">pere</persName>a la<persName ref="#fjda">damoiselle</persName>, les retint la bien quinze jours</lem>
-          <rdg wit="#atw #brn">
-            <app corresp="#orth">
-              <rdg wit="#atw">ainsi</rdg>
-              <rdg wit="#brn">aussi</rdg>
-            </app>comme ilz<app corresp="#orth">
-              <rdg wit="#atw">deléz</rdg>
-              <rdg wit="#brn">delez</rdg>
-            </app>le<persName ref="#pclv">pape Clement</persName>bien XV jours, qui cousin germain estoit a la<persName ref="#fjda">damoiselle</persName>
-            <app corresp="#punct">
-              <rdg wit="#atw"/>
-              <rdg wit="#brn">,</rdg>
-            </app>
-          </rdg>
+          <rdgGrp corresp="#orth">
+            <rdg wit="#atw">ainsi comme ilz deléz le <persName ref="#pclv">pape Clement</persName>bien XV jours, qui cousin germain estoit a la<persName ref="#fjda">damoiselle</persName></rdg>
+            <rdg wit="#brn">aussi comme ilz delez le <persName ref="#pclv">pape Clement</persName>bien XV jours, qui cousin germain estoit a la<persName ref="#fjda">damoiselle</persName>,</rdg>
+          </rdgGrp>
         </app>
         <app corresp="#punct">
           <lem wit="#brl">. Et environ la</lem>
@@ -1199,7 +1172,7 @@
         <app corresp="#add-words">
           <lem wit="#brl">tous</lem>
           <rdg wit="#atw #brn"/>
-        </app>d’<placeName ref="#avg">Avignon</placeName>et prindrent le chemin de<placeName ref="#nim">
+        </app>d'<placeName ref="#avg">Avignon</placeName>et prindrent le chemin de<placeName ref="#nim">
           <app corresp="#orth">
             <lem wit="#brn #brl">Nismes</lem>
             <rdg wit="#atw">Nimes</rdg>
@@ -1251,7 +1224,7 @@
               <lem wit="#brl">de<placeName ref="#crs">Carcassonne</placeName>
               </lem>
               <rdg wit="#brn"/>
-            </app>n’avoit point passé deux<app corresp="#orth">
+            </app>n'avoit point passé deux<app corresp="#orth">
               <lem wit="#brl">mois</lem>
               <rdg wit="#brn">moix</rdg>
             </app>
@@ -1281,7 +1254,7 @@
         <app corresp="#punct">
           <lem wit="#brl">,</lem>
           <rdg wit="#atw #brn"/>
-        </app>et la s’arresterent<app corresp="#punct #orth">
+        </app>et la s'arresterent<app corresp="#punct #orth">
           <lem wit="#brl">. Et envoierent</lem>
           <rdg wit="#atw #brn">et envoyerent</rdg>
         </app>leurs<app corresp="#word-diff">
@@ -1313,8 +1286,8 @@
           <rdg wit="#atw #brn">Bierne</rdg>
         </app>
         </placeName>. Si<app corresp="#orth">
-          <lem wit="#brn #brl">s’entamerent</lem>
-          <rdg wit="#atw">s’entammerent</rdg>
+          <lem wit="#brn #brl">s'entamerent</lem>
+          <rdg wit="#atw">s'entammerent</rdg>
         </app>les traittiéz de ce mariage, mais ilz<app corresp="#add-words">
           <lem wit="#brl"/>
           <rdg wit="#atw #brn">y</rdg>
@@ -1371,8 +1344,8 @@
           <rdg wit="#atw #brn"/>
         </app>
         <persName ref="#hcde">Henry, conte<app corresp="#orth punct">
-          <lem wit="#brn #brl">d’Erby.</lem>
-          <rdg wit="#atw">d’Erbi,</rdg>
+          <lem wit="#brn #brl">d'Erby.</lem>
+          <rdg wit="#atw">d'Erbi,</rdg>
         </app>
         </persName>
         <app corresp="#punct">
@@ -1393,8 +1366,8 @@
           <lem wit="#brl">que l'</lem>
           <rdg wit="#atw #brn">qu'</rdg>
         </app>on veoit<app corresp="#sentence-order">
-          <lem wit="#brl">advenir, que on disoit que le mariage pour lequel ces seigneurs s’arresterent en la bonne cité de</lem>
-          <rdg wit="#atw #brn">a ces seigneurs faire qu’on disoit que le mariage pour lequel ilz sejournoient a</rdg>
+          <lem wit="#brl">advenir, que on disoit que le mariage pour lequel ces seigneurs s'arresterent en la bonne cité de</lem>
+          <rdg wit="#atw #brn">a ces seigneurs faire qu'on disoit que le mariage pour lequel ilz sejournoient a</rdg>
         </app>
         <placeName ref="#tls">Thoulouse</placeName>
         <app corresp="#punct">
@@ -1436,7 +1409,7 @@
         <app corresp="#punct #orth">
           <lem wit="#brl">, quy</lem>
           <rdg wit="#atw #brn">qui</rdg>
-        </app>n’avoit autre desir fors que les choses approchassent,<app corresp="#add-words">
+        </app>n'avoit autre desir fors que les choses approchassent,<app corresp="#add-words">
           <lem wit="#brl #brn"/>
           <rdg wit="#atw">souvent</rdg>
         </app>
@@ -1468,11 +1441,9 @@
           <rdg wit="#atw #brn">en</rdg>
         </app>
         <app corresp="#word-diff">
+          <lem wit="#brl">eulz</lem>
           <rdg wit="#atw">leur</rdg>
-          <rdgGrp corresp="#orth">
-            <lem wit="#brl">eulz</lem>
-            <rdg wit="#brn">eulx</rdg>
-          </rdgGrp>
+          <rdg wit="#brn">eulx</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl #brn">signiffiant</lem>
@@ -1488,11 +1459,9 @@
           <lem wit="#brn #brl">cessassent point</lem>
           <rdg wit="#atw">cessasent</rdg>
         </app>que la<app corresp="#word-diff">
+          <lem wit="#brl">besoingne</lem>
           <rdg wit="#atw">chose</rdg>
-          <rdgGrp corresp="#orth">
-            <lem wit="#brl">besoingne</lem>
-            <rdg wit="#brn">besongne</rdg>
-          </rdgGrp>
+          <rdg wit="#brn">besongne</rdg>          
         </app>ne se<app corresp="#orth #text-segmentation">
           <lem wit="#brl">fesist.</lem>
           <rdg wit="#atw">feist.<milestone unit="tei:p"/>
@@ -1521,20 +1490,18 @@
           <lem wit="#brl">, et quy</lem>
           <rdg wit="#atw #brn">et qui</rdg>
         </app>veoit<app corresp="#orth">
-          <lem wit="#brl">l’ardent</lem>
-          <rdg wit="#atw #brn">l’ardant</rdg>
+          <lem wit="#brl">l'ardent</lem>
+          <rdg wit="#atw #brn">l'ardant</rdg>
         </app>desir du<persName ref="#djdb">duc de Berry</persName>
         <app corresp="#punct #orth">
           <lem wit="#brn #brl">, traittoit sagement</lem>
           <rdg wit="#atw">traitoit saigement</rdg>
         </app>et bellement et si froidement mena<app corresp="#word-diff">
+          <lem wit="#brl">ses</lem>
           <rdg wit="#atw">le</rdg>
-          <rdgGrp corresp="#orth">
-            <lem wit="#brl">ses</lem>
-            <rdg wit="#brn">ces</rdg>
-          </rdgGrp>
+          <rdg wit="#brn">ces</rdg>
         </app>procés que par<app corresp="#word-diff">
-          <lem wit="#brl">l’accord</lem>
+          <lem wit="#brl">l'accord</lem>
           <rdg wit="#atw #brn">accord</rdg>
         </app>de tous<app corresp="#punct">
           <lem wit="#brl">, et</lem>
@@ -1561,11 +1528,11 @@
           <rdg wit="#atw #brn"/>
         </app>ans<app corresp="#orth">
           <lem wit="#brl">que<persName ref="#cgfb">il</persName></lem>
-          <rdg wit="#atw #brn">qu’<persName ref="#cgfb">il</persName></rdg>
+          <rdg wit="#atw #brn">qu'<persName ref="#cgfb">il</persName></rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brn #brl">avoit</lem>
-          <rdg wit="#atw">l’avoit</rdg>
+          <rdg wit="#atw">l'avoit</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl">gardé</lem>
@@ -1587,7 +1554,7 @@
             <lem wit="#brl">,</lem>
             <rdg wit="#brn"/>
           </app>plus en eust eu</lem>
-          <rdg wit="#atw">et eut plus eul s’il eut demandé</rdg>
+          <rdg wit="#atw">et eut plus eul s'il eut demandé</rdg>
         </app>
         <app corresp="#punct">
           <lem wit="#brl">. Mais</lem>
@@ -1602,7 +1569,7 @@
           <rdg wit="#brn">sus</rdg>
         </app>la conclusion de ceste matiere affin<app corresp="#orth">
           <lem wit="#brl">que on luy</lem>
-          <rdg wit="#atw #brn">qu’on lui</rdg>
+          <rdg wit="#atw #brn">qu'on lui</rdg>
         </app>en sceust gré<app corresp="#punct">
           <lem wit="#brl">. Et</lem>
           <rdg wit="#atw #brn">et</rdg>

@@ -5,17 +5,19 @@
     exclude-result-prefixes="xs tei"
     version="2.0">
     <xsl:output method="text" encoding="UTF-8"/>
-
-
+    
+    
     <xsl:template match="TEI">
         <xsl:variable name="appfile">
             <xsl:value-of select="replace(base-uri(.), '.xml', '')"/> 
         </xsl:variable>
         
-        <xsl:result-document href="{concat($appfile, '.tex')}"> 
+        <xsl:result-document href="{concat($appfile, '.tex')}">
+            % paramétrage général
             \documentclass[12pt, a4paper]{report}
             \usepackage[utf8x]{inputenc}
             \usepackage[T1]{fontenc}
+            \usepackage{fontspec}
             \usepackage{lmodern}
             \usepackage{graphicx}
             \usepackage[french]{babel}
@@ -30,6 +32,8 @@
             
             \Xarrangement[A]{paragraph}
             \Xparafootsep{$\parallel$~}
+            
+            <!-- IL FAUDRA DEF DES METADONNEES -->
             
             \begin{document}
             
@@ -56,7 +60,13 @@
             <xsl:variable name="clean4">
                 <xsl:value-of select="replace($clean3, '(\}?) ((\\edtext\{)?(\.|,))', '$1$2')"/>
             </xsl:variable>
-            <xsl:value-of select="$clean4"/>
+            <xsl:variable name="clean5">
+                <xsl:value-of select="replace($clean4, '(\w)\s+(,|\.)', '$1$2')"/>
+            </xsl:variable>
+            <xsl:variable name="clean6">
+                <xsl:value-of select="replace($clean5, '(,|\.)(\\edtext\{)?([\w])', '$1 $2$3')"/>
+            </xsl:variable>
+            <xsl:value-of select="$clean6"/>
             \pend
             \endnumbering
             \end{document}
@@ -69,8 +79,6 @@
         https://texlive.mycozy.space/macros/latex/contrib/reledmac/reledmac.pdf
     -->    
     
-    <!-- IL Y A UNE ERREUR AVEC LA LIGNE 1216 DE MON ENCODAGE -->
-    
     <xsl:template name="header" match="teiHeader"/>
     
     <xsl:template name="body" match="body/ab">
@@ -80,13 +88,17 @@
         </xsl-copy>
     </xsl:template>
     
+    
+    <!-- !!!!!!! LES APP INTERNES SE SONT APPELER DEUX FOIS, DANS VARIANT ET SUBVARIANT !!!!!!! 
+        cf "Or ça, beaulx oncles"-->
+    
     <!-- règles pour construire l'apparat critique --> <!-- A COMPLETER -->
     <xsl:template match="body//app">
         
         <!-- sélectionner les lem qui contiennent du texte 
             mais qui n'ont pas d'enfants et dont le app parent ne contient pas de rdgGrp -->
         <xsl:choose>
-            <xsl:when test="lem[matches(., '(\w+|,|\.)+')][not(./*)][not(parent::*/rdgGrp)]">
+            <xsl:when test="lem[not(./*)][not(parent::*/rdgGrp)]">
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:apply-templates select="lem"/>
                 <xsl:text>}{\variant{</xsl:text>
@@ -94,22 +106,43 @@
                 <xsl:text>}}</xsl:text>
             </xsl:when>
             
-            <!-- règle pour les lem dont qui sont dans un app avec un rdgGrp -->
+            <!-- règle pour les lem dont qui sont dans un app avec un rdgGrp ;
+                y inclure des règles spécifiques si le lem contient un saut de page-->
             <xsl:when test=".//rdgGrp">
+                <xsl:if test=".//lem//pb">
+                    <xsl:text>\edtext{</xsl:text>
+                </xsl:if>
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:apply-templates select="lem"/>
                 <xsl:text>}{\group{</xsl:text>
                 <xsl:call-template name="grp"/>
                 <xsl:text>}}</xsl:text>
+                <xsl:if test=".//lem//pb">
+                    <xsl:text>}{\explan{Changement de page dans la leçon principale : 
+                        passage au folio </xsl:text>
+                    <xsl:value-of select="lem//pb/@n"/>
+                    <xsl:text>.}}</xsl:text>   
+                </xsl:if>
             </xsl:when>
             
-            <!-- règles pour les autres lem ... -->
-            
             <!-- règle pour les apparats critiques dans des lem -->
-            <xsl:when test="lem[(.//app)]">
+            <xsl:when test="lem[.//app]">
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:text>\edtext{</xsl:text>
-                <xsl:copy-of select="./lem[//app]/text()"/>
+                <xsl:apply-templates select="lem"/>
+                <xsl:text>}{\variant{</xsl:text>
+                <xsl:call-template name="notinternal"/>
+                <xsl:text>}}}{\subvariant{</xsl:text>
+                <xsl:call-template name="internal"/>
+                <xsl:text>}}</xsl:text>    
+            </xsl:when>
+            
+            <!-- règle pour  lem contenant des noms de lieux et de personnes -->
+            <xsl:when test="lem[(.//persName | .//placeName)]">
+                <xsl:text>\edtext{</xsl:text>
+                <xsl:text>\edtext{</xsl:text>
+                <xsl:apply-templates select="lem"/>
+                <xsl:apply-templates select="(placeName | persName)"/>
                 <xsl:text>}{\variant{</xsl:text>
                 <xsl:call-template name="notinternal"/>
                 <xsl:text>}}}{\subvariant{</xsl:text>
@@ -118,11 +151,10 @@
             </xsl:when>
             
             <!-- récupérer les witDetail et de les mettre dans un \explan -->
-            <!-- ETENDRE POUR CONTENIR LES AUTRES DÉTAILLS ?? -->
             <xsl:when test="lem[witDetail]">
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:text>\edtext{</xsl:text>
-                <xsl:copy-of select="./lem[witDetail]/text()"/>
+                <xsl:apply-templates select="lem/text()"/>
                 <xsl:text>}{\variant{</xsl:text>
                 <xsl:call-template name="notinternal"/>
                 <xsl:text>}}}{\explan{</xsl:text>
@@ -130,13 +162,27 @@
                 <xsl:text>}}</xsl:text>    
             </xsl:when>
             
-            <!-- sélectionner les lem qui contienne un changement de paragraphe -->
+            <!-- récupérer les indications pour le premier saut de page du lem et 
+                l'inclure dans un \explan (le premier saut de page ne contient 
+                pas de texte et est le seul saut de page dans un apparat qui ne contient 
+                pas de rdgGrp) -->
+            <xsl:when test="lem[.//pb][not(parent::app//rdgGrp)]">
+                <xsl:text>\edtext{</xsl:text>
+                <xsl:apply-templates select="lem/text()"/>
+                <xsl:text>}</xsl:text>
+                <xsl:text>{\explan{</xsl:text>
+                <xsl:text>La leçon principale débute au folio </xsl:text>
+                <xsl:value-of select="lem//pb/@n"/>
+                <xsl:text>.}}</xsl:text>    
+            </xsl:when>
+            
+            <!-- sélectionner les lem qui contiennent un changement de paragraphe -->
             <xsl:when test="lem//milestone">
                 <xsl:text> \pend\pstart \edtext{</xsl:text>
-                <xsl:apply-templates select="lem[matches(., '(\w+|,|\.)+')]"/>
+                <xsl:apply-templates select="lem"/>
                 <xsl:text>}{\explan{</xsl:text>
                 <xsl:text>Changement de paragraphe dans le témoin principal</xsl:text>
-                <xsl:text>}}</xsl:text>
+                <xsl:text>.}}</xsl:text>
             </xsl:when>
             
             <!-- 
@@ -149,15 +195,19 @@
     </xsl:template>
     
     
-    <!-- règle pour les rdg qui ne sont pas contenus dans des app internes --> <!-- A COMPLETER -->
-    <xsl:template match="body//app[not(ancestor::app)]//rdg[not(parent::rdgGrp)]" name="notinternal">
+    <!-- règle pour les rdg qui ne sont pas contenus dans des app internes -->
+    <xsl:template match="body//rdg[not(parent::rdgGrp)][not(ancestor::app//app)]" name="notinternal">
         
         <!-- règle pour les leçons n'ayant pas d'enfants et n'étant pas dans un rdgGrp -->
-        <xsl:for-each select="rdg[not(./*)]">
+        <xsl:for-each select="rdg[not(./*)] | rdg[.//placeName] | rdg[.//persName]">
             <!-- si ils contiennent du texte, le recopier; sinon, symbole vide -->
             <xsl:choose>
                 <xsl:when test="./matches(., '(\w+|,|\.)+')">
                     <xsl:value-of select="."/><xsl:text> </xsl:text>
+                </xsl:when>
+                <xsl:when test=".//persName | .//placeName">
+                    <xsl:apply-templates select="rdg"/><xsl:text> </xsl:text>
+                    <xsl:apply-templates select="persName | placeName"/><xsl:text> </xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:text>$\phi$</xsl:text>
@@ -171,13 +221,11 @@
             </xsl:choose>  
         </xsl:for-each>
         
-        <!-- règles pour les autres rdg ... -->
-        
     </xsl:template>
     
     
-    <!-- règle pour les rdg dans des apparats internes --> <!-- A COMPLETER ? -->
-    <xsl:template match="body//app[ancestor::app]/rdg" name="internal">
+    <!-- règle pour les rdg dans des apparats internes -->
+    <xsl:template match="body//app//app/rdg" name="internal">
         
         <!-- règle pour les leçons n'ayant pas d'enfants -->
         <xsl:for-each select="rdg">
@@ -199,17 +247,20 @@
             
         </xsl:for-each>
         
-        <!-- règles pour les autres rdg ... -->    
     </xsl:template>
     
     
-    <!-- règle pour les rdgGrp --> <!-- FINI -->
+    <!-- règle pour les rdgGrp -->
     <xsl:template match="body//rdgGrp" name="grp">
         <xsl:for-each select=".//rdg">
             <!-- si ils contiennent du texte, le recopier; sinon, symbole vide -->
             <xsl:choose>
                 <xsl:when test="matches(., '(\w+|,|\.)+')">
                     <xsl:value-of select="."/><xsl:text> </xsl:text>
+                </xsl:when>
+                <xsl:when test=".//persName | .//placeName">
+                    <xsl:apply-templates select="rdg"/><xsl:text> </xsl:text>
+                    <xsl:apply-templates select="persName | placeName"/><xsl:text> </xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:text>$\phi$</xsl:text>
@@ -223,9 +274,15 @@
             </xsl:choose>
         </xsl:for-each> 
     </xsl:template>
+    
+    <!-- règle pour les rdg contenant des persName et placeName
+        <xsl:template match="body//rdg//(placeName|persName)">
+        <xsl:apply-templates select="rdg"/>
+        <xsl:apply-templates select="(placeName | persName)"/>
+        </xsl:template> -->
 
-
-    <!-- règles pour gérer les espaces autour des placeName et persName --> <!-- FINI ? -->
+    
+    <!-- règles pour gérer les espaces autour des placeName et persName -->
     <xsl:template match="body//placeName">
         <xsl:text> </xsl:text>
         <xsl:apply-templates/>

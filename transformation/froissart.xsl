@@ -25,15 +25,19 @@
             \usepackage[switch, modulo]{lineno}
             
             % définition de commandes spécifiques pour l'apparat
+            % variation de 1er degré
             \newcommandx{\variant}[2][1,usedefault]{\Afootnote[#1]{#2}}
+            % groupe de témoins
             \newcommandx{\group}[2][1,usedefault]{\Bfootnote[#1]{#2}}
+            % sous-variation (un rdg dans un apparat interne)
             \newcommandx{\subvariant}[2][1,usedefault]{\Cfootnote[#1]{#2}}
+            % détails non textuels sur le témoin
             \newcommandx{\explan}[2][1,usedefault]{\Dfootnote[#1]{#2}}
             
             \Xarrangement[A]{paragraph}
             \Xparafootsep{$\parallel$~}
             
-            <!-- IL FAUDRA DEF DES METADONNEES -->
+            <!-- IL FAUDRA DEF DES METADONNEES DANS LE LATEX -->
             
             \begin{document}
             
@@ -66,7 +70,10 @@
             <xsl:variable name="clean6">
                 <xsl:value-of select="replace($clean5, '(,|\.)(\\edtext\{)?([\w])', '$1 $2$3')"/>
             </xsl:variable>
-            <xsl:value-of select="$clean6"/>
+            <xsl:variable name="clean7">
+                <xsl:value-of select="replace($clean6, '([a-z])([A-Z])', '$1 $2')"/>
+            </xsl:variable>
+            <xsl:value-of select="$clean7"/>
             \pend
             \endnumbering
             \end{document}
@@ -77,10 +84,31 @@
     <!-- 
         documentation REDELMAC
         https://texlive.mycozy.space/macros/latex/contrib/reledmac/reledmac.pdf
+        
+        
+        structure pour les nested footnotes :
+        - pour les \group
+        \edtext{\edtext{<txt>}{\variant{<txt> <wit>}}}{\group{<txt>}}
+        - pour les \explan
+        \edtext{\edtext{<txt>}{\variant{<txt> <wit>}}}{\explan{<txt>}}
+        - pour les \subvariant
+        \edtext{<txt> \edtext{<txt>}{\subvariant{<txt> <wit>}}\edtext{<txt>}{\subvariant{<txt> <wit>}}}{\variant{<txt>}}
     -->    
     
+    
+    <!-- ########################################################## -->
+    <!-- ################ RÈGLES POUR LE TEIHEADER ################ -->
+    <!-- ########################################################## -->
     <xsl:template name="header" match="teiHeader"/>
     
+    
+    
+    
+    <!-- ########################################################## -->
+    <!-- ############# RÈGLES POUR LE CORPS DU TEXTE ############## -->
+    <!-- ########################################################## -->
+    
+    <!-- copier le conteneur ab et le texte à la racine -->
     <xsl:template name="body" match="body/ab">
         <!-- copier ab et le texte à la racine -->
         <xsl-copy select=".">
@@ -89,16 +117,14 @@
     </xsl:template>
     
     
-    <!-- !!!!!!! LES APP INTERNES SE SONT APPELER DEUX FOIS, DANS VARIANT ET SUBVARIANT !!!!!!! 
-        cf "Or ça, beaulx oncles"-->
-    
     <!-- règles pour construire l'apparat critique --> <!-- A COMPLETER -->
     <xsl:template match="body//app">
-        
-        <!-- sélectionner les lem qui contiennent du texte 
-            mais qui n'ont pas d'enfants et dont le app parent ne contient pas de rdgGrp -->
         <xsl:choose>
-            <xsl:when test="lem[not(./*)][not(parent::*/rdgGrp)]">
+            
+            <!-- sélectionner les lem qui contiennent du texte mais qui 
+                n'ont pas d'enfants, ne sont pas dans un apparat interne et
+                dont le app parent ne contient pas de rdgGrp -->
+            <xsl:when test="lem[not(./*)][not(ancestor::*/rdgGrp)][not(ancestor::app//app)]">
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:apply-templates select="lem"/>
                 <xsl:text>}{\variant{</xsl:text>
@@ -107,7 +133,7 @@
             </xsl:when>
             
             <!-- règle pour les lem dont qui sont dans un app avec un rdgGrp ;
-                y inclure des règles spécifiques si le lem contient un saut de page-->
+                y inclure des règles spécifiques si le lem contient un saut de page -->
             <xsl:when test=".//rdgGrp">
                 <xsl:if test=".//lem//pb">
                     <xsl:text>\edtext{</xsl:text>
@@ -125,28 +151,25 @@
                 </xsl:if>
             </xsl:when>
             
-            <!-- règle pour les apparats critiques dans des lem -->
-            <xsl:when test="lem[.//app]">
+            <!-- règle pour les lem contenant un apparat interne -->
+            <xsl:when test="lem//app">
                 <xsl:text>\edtext{</xsl:text>
-                <xsl:text>\edtext{</xsl:text>
-                <xsl:apply-templates select="lem"/>
-                <xsl:text>}{\variant{</xsl:text>
+                <xsl:copy select=".">
+                    <xsl:apply-templates/>
+                </xsl:copy>
+                <xsl:text>}</xsl:text>
+                <xsl:text>{\variant{</xsl:text>
                 <xsl:call-template name="notinternal"/>
-                <xsl:text>}}}{\subvariant{</xsl:text>
-                <xsl:call-template name="internal"/>
-                <xsl:text>}}</xsl:text>    
+                <xsl:text>}}</xsl:text>
             </xsl:when>
             
             <!-- règle pour  lem contenant des noms de lieux et de personnes -->
-            <xsl:when test="lem[(.//persName | .//placeName)]">
-                <xsl:text>\edtext{</xsl:text>
+            <xsl:when test="lem[.//persName | .//placeName]">
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:apply-templates select="lem"/>
-                <xsl:apply-templates select="(placeName | persName)"/>
+                <xsl:apply-templates select="placeName | persName"/>
                 <xsl:text>}{\variant{</xsl:text>
                 <xsl:call-template name="notinternal"/>
-                <xsl:text>}}}{\subvariant{</xsl:text>
-                <xsl:call-template name="internal"/>
                 <xsl:text>}}</xsl:text>    
             </xsl:when>
             
@@ -160,6 +183,15 @@
                 <xsl:text>}}}{\explan{</xsl:text>
                 <xsl:value-of select="lem/witDetail"/>
                 <xsl:text>}}</xsl:text>    
+            </xsl:when>
+            
+            <!-- sélectionner les lem qui contiennent un changement de paragraphe -->
+            <xsl:when test="lem//milestone">
+                <xsl:text> \pend\pstart \edtext{</xsl:text>
+                <xsl:apply-templates select="lem"/>
+                <xsl:text>}{\explan{</xsl:text>
+                <xsl:text>Changement de paragraphe dans le témoin principal</xsl:text>
+                <xsl:text>.}}</xsl:text>
             </xsl:when>
             
             <!-- récupérer les indications pour le premier saut de page du lem et 
@@ -176,29 +208,25 @@
                 <xsl:text>.}}</xsl:text>    
             </xsl:when>
             
-            <!-- sélectionner les lem qui contiennent un changement de paragraphe -->
-            <xsl:when test="lem//milestone">
-                <xsl:text> \pend\pstart \edtext{</xsl:text>
-                <xsl:apply-templates select="lem"/>
-                <xsl:text>}{\explan{</xsl:text>
-                <xsl:text>Changement de paragraphe dans le témoin principal</xsl:text>
-                <xsl:text>.}}</xsl:text>
-            </xsl:when>
-            
-            <!-- 
-                structure pour les nested footnotes 
-                \edtext{\edtext{<txt>}{\variant{<txt> <wit>}}}{\explan{<txt>}}
-            -->
-            
-        </xsl:choose>
-        
+        </xsl:choose>  
+    </xsl:template>    
+    
+    
+    <!-- règle pour les lem contenant des apparats internes -->
+    <xsl:template match="lem//app" name="leminternal">
+        <xsl:text>\edtext{</xsl:text>
+        <xsl:value-of select=".//lem"/>
+        <xsl:text>}{\subvariant{</xsl:text>
+        <xsl:call-template name="internal"/>
+        <xsl:text>}}</xsl:text>
     </xsl:template>
     
     
     <!-- règle pour les rdg qui ne sont pas contenus dans des app internes -->
-    <xsl:template match="body//rdg[not(parent::rdgGrp)][not(ancestor::app//app)]" name="notinternal">
+    <xsl:template match="body//rdg[not(ancestor::rdgGrp)][not(ancestor::app//app)]" name="notinternal">
         
-        <!-- règle pour les leçons n'ayant pas d'enfants et n'étant pas dans un rdgGrp -->
+        <!-- règle pour les leçons n'ayant pas d'enfants (à part placeName et persName)
+            et n'étant pas dans un rdgGrp -->
         <xsl:for-each select="rdg[not(./*)] | rdg[.//placeName] | rdg[.//persName]">
             <!-- si ils contiennent du texte, le recopier; sinon, symbole vide -->
             <xsl:choose>
@@ -231,7 +259,7 @@
         <xsl:for-each select="rdg">
             <!-- si ils contiennent du texte, le recopier; sinon, symbole vide -->
             <xsl:choose>
-                <xsl:when test="./matches(., '(\w+|,|\.)+')">
+                <xsl:when test="matches(., '(\w+|,|\.)+')">
                     <xsl:value-of select="."/><xsl:text> </xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
@@ -253,7 +281,7 @@
     <!-- règle pour les rdgGrp -->
     <xsl:template match="body//rdgGrp" name="grp">
         <xsl:for-each select=".//rdg">
-            <!-- si ils contiennent du texte, le recopier; sinon, symbole vide -->
+            <!-- si ils contiennent du texte ou un nom de personne/lieu, le recopier; sinon, symbole vide -->
             <xsl:choose>
                 <xsl:when test="matches(., '(\w+|,|\.)+')">
                     <xsl:value-of select="."/><xsl:text> </xsl:text>
@@ -275,12 +303,6 @@
         </xsl:for-each> 
     </xsl:template>
     
-    <!-- règle pour les rdg contenant des persName et placeName
-        <xsl:template match="body//rdg//(placeName|persName)">
-        <xsl:apply-templates select="rdg"/>
-        <xsl:apply-templates select="(placeName | persName)"/>
-        </xsl:template> -->
-
     
     <!-- règles pour gérer les espaces autour des placeName et persName -->
     <xsl:template match="body//placeName">

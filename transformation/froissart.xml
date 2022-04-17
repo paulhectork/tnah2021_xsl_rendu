@@ -796,12 +796,13 @@
           <app corresp="#word-diff">
             <lem wit="#atw #brl">la fille</lem>
             <rdg wit="#brn">le filz</rdg>
-          </app>au<persName ref="#cjdb">conte Jehan de<app corresp="#orth">
-            <lem wit="#brn #brl">Boulongne</lem>
-            <rdg wit="#atw">Bouloingne</rdg>
-          </app>
-          </persName>
-        </persName>et avoit<app corresp="#add-words">
+          </app></persName>
+        au<persName ref="#cjdb">conte Jehan de<app corresp="#orth">
+          <lem wit="#brn #brl">Boulongne</lem>
+          <rdg wit="#atw">Bouloingne</rdg>
+        </app>
+        </persName>
+        et avoit<app corresp="#add-words">
           <lem wit="#brl">ja</lem>
           <rdg wit="#atw #brn"/>
         </app>eue plus de<app corresp="#orth">
@@ -1268,20 +1269,18 @@
         <app corresp="#orth">
           <lem wit="#atw #brl">devers</lem>
           <rdg wit="#brn">deverz</rdg>
-        </app>le<app corresp="#orth #add-words">
-          <lem wit="#brl"><persName ref="#cgfb">conte de Fois</persName>, quy</lem>
+        </app>le<app corresp="#orth">
+          <lem wit="#brl"><persName ref="#cgfb">conte de Fois</persName></lem>
           <rdg wit="#atw #brn">
             <persName ref="#cgfb">conte de Foix</persName>
           </rdg>
         </app>
-        <app corresp="#punct">
-          <lem wit="#atw #brl">,</lem>
-          <rdg wit="#brn"/>
+        <app corresp="#punct #orth">
+          <lem wit="#brl">, quy</lem>
+          <rdg wit="#brn">qui</rdg>
+          <rdg wit="#atw">, qui</rdg>
         </app>
-        <app corresp="#orth">
-          <lem wit="#brl">quy</lem>
-          <rdg wit="#atw #brn">qui</rdg>
-        </app>se tenoit a<placeName ref="#otz">Orthaiz en<app corresp="#orth">
+        se tenoit a<placeName ref="#otz">Orthaiz en<app corresp="#orth">
           <lem wit="#brl">Berne</lem>
           <rdg wit="#atw #brn">Bierne</rdg>
         </app>

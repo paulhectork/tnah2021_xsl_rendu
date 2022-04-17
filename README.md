@@ -17,10 +17,8 @@ compilation.
 	- `froissart.jpg` : une petite image pour décorer le présent README
 	- `LICENSE` : la licence GNU GPL 3 sous laquelle est ce projet
 	- `README.md` : le présent document
-- **`attributs_valeurs`** : trois tableaux listant les valeurs possibles pour des attributs 
-fréquemment utilisés : `persName`, `placeName` et `corresp`.
-- **`odd_documentation`** : l'ODD au format `.xml` et sa transformation aux formats 
-`.rng`, `.dtd` et `.html`.
+- **`odd_documentation`** : l'ODD au format `.xml` et sa transformation aux formats `.rng` et 
+`.dtd`.
 - **`textes`** : le contenu textuel des trois témoins, utilisés comme source pour l'édition
 critique.
 - **`transformation`** : le fichier XML TEI utilisé en entrée (`froissart.xml`), la feuille de 

@@ -68,7 +68,7 @@
               <physDesc>
                 <objectDesc>
                   <supportDesc>
-                    <support>Parchemin</support>
+                    <support>parchemin</support>
                     <extent>350 folio</extent>
                   </supportDesc>
                 </objectDesc>
@@ -99,7 +99,7 @@
                 <institution>Staatsbibliothek zu Berlin - Preussischer Kulturbesitz</institution>
                 <repository>Département des Manuscrits</repository>
                 <idno>Dep. Breslau 1</idno>
-                <msName>Le Froissart de Breslau</msName>
+                <msName>Froissart de Breslau</msName>
               </msIdentifier>
               <msContents>
                 <textLang>Moyen français</textLang>
@@ -162,7 +162,7 @@
                 <origin>
                   <origDate type="date-range">1470-1490</origDate>
                 </origin>
-                <provenance>Anciennement propriété du Comte Alexandre de Donha, bourgeois de Berne, qui en fait don à la bibliothèque en 1697.</provenance>
+                <provenance>Anciennement propriété du Comte Alexandre de Donha, bourgeois de Berne, il en fait don à la bibliothèque en 1697</provenance>
               </history>
               <additional>
                 <adminInfo>
@@ -183,7 +183,7 @@
     <encodingDesc>
       <editorialDecl>
         <!-- principes éditoriaux suivis pendant l'encodage -->
-        <p>L'alignement des témoins a été réalisé avec l'aide de l'algorithme de Dekker de<ref target="https://collatex.net/">Collatex</ref>. Cet alignement a été repris ensuite pour constituer l'édition critique qui suit.</p>
+        <p>L'alignement des témoins a été réalisé avec l'aide de l'algorithme de Dekker de <ref target="https://collatex.net/">Collatex</ref>. Cet alignement a été repris ensuite pour constituer l'édition critique qui suit.</p>
         <p>L'édition critique et l'alignement des témoins cherchent à permettre l'étude la plus précise possible de la variance et des similitudes entre les versions:<list>
           <item>La structuration du texte en paragraphes (&lt;p&gt;) a été abandonnée : les trois textes sont insérés dans un conteneur &lt;ab&gt; 
             et les changements de paragraphes sont signalés par des &lt;milestone&gt;, pour permettre un alignement des témoins phrase par phrase</item>

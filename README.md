@@ -3,7 +3,7 @@
 ![Froissart bloublou](froissart.jpg)
 
 Transformation XSL vers LaTeX d'une édition critique encodée en XML-TEI du chapitre 
-**SHF 306** : *la négogiation du mariage du Duc de Berry*.
+**SHF 3A-306** : *la négogiation du mariage du Duc de Berry*.
 
 Le fichier XSL produit a été visualisé et fonctionne sur TeXstudio avec un compilateur XeLaTeX.
 Des fois, des erreurs de compilation peuvent avoir lieu (toutes les notes de bas de page 
@@ -33,7 +33,7 @@ compte une future transformation XSL. Des modifications ont donc du être apport
 permettre la transformation :
 - les **`app` contenus dans des `rdg`** ont été transformés en `rdgGrp` : ils ne pourraient pas
 être retranscrits en latex.
-- une ** erreurs mineure** d'encodage a été corrigée.
+- une **erreur mineure** d'encodage a été corrigée.
 
 ---
 

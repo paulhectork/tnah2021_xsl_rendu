@@ -241,8 +241,13 @@
         
         <!-- to do : index des personnages et des lieux -->
         \subsubsection{Index des personnages}
+        <xsl:call-template name="person"/>
+        \subsubsection{Liste des relations dans l'extrait encodé}
+        <xsl:call-template name="listrel"/>
         \subsubsection{Index des lieux}
-    </xsl:template>
+        <xsl:call-template name="place"/>
+        
+    </xsl:template> 
     
     
     <!-- règle pour les witness -->
@@ -261,7 +266,7 @@
         <xsl:text>})}\\
             
         </xsl:text>
-        <!-- paragraphe descriptif -->
+        <!-- construire un paragraphe descriptif pour chaque manuscrit -->
         <xsl:text> \indent Le manuscrit </xsl:text>
         <xsl:choose>
             <xsl:when test="matches(.//settlement, 'A.+')">
@@ -318,6 +323,7 @@
             <xsl:value-of select="."/>
         </xsl:if>
         <xsl:if test=".//note">
+            <xsl:text>. </xsl:text>
             <xsl:value-of select=".//note"/>
             <xsl:text>. Il est donc retenu comme présentant la \textbf{leçon principale}.
                 Son contenu constitue le corps de texte de l'édition \LaTeX, et
@@ -396,14 +402,181 @@
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text> \item{\texttt{</xsl:text>
-                <xsl:value-of select="./@xml:id"/>
+                <xsl:variable name="xmlid" select="./@xml:id"/>
+                <xsl:value-of select="$xmlid"/>
                 <xsl:text>} : </xsl:text>
                 <xsl:value-of select="."/>
-                <xsl:text>} </xsl:text>
+                <xsl:text>} \begin{itemize} \item{</xsl:text>
+                <!-- nombre d'occurences de chaque type de variation -->
+                <xsl:value-of select="count(ancestor::TEI//body//(app|rdgGrp)[contains(@corresp, concat('#', $xmlid))])"/>
+                <xsl:text> variations de ce type figurent dans le chapitre encodé.} \end{itemize} </xsl:text>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     
+    
+    <!-- règle pour le listPerson -->
+    <xsl:template match="encodingDesc//listPerson" name="person">
+        <!-- faire une liste de personnages incluant leur nom et une description si elle existe -->
+        <xsl:text>\begin{itemize}</xsl:text>
+        <xsl:for-each select=".//person">
+            <xsl:variable name="id" select="@xml:id"/>
+            <xsl:text> \item{\textbf{</xsl:text>
+            <xsl:apply-templates select=".//persName"/>
+            <xsl:text>.} </xsl:text>
+            <xsl:if test=".//note">
+                <xsl:value-of select=".//note"/>
+            </xsl:if>
+            <xsl:text> \begin{itemize} \item{</xsl:text>
+            
+            <!-- compter le nombre d'occurences de des personnages dans les trois témoins -->
+            <xsl:variable name="cntbrl">
+                <xsl:value-of select="count(ancestor::TEI//body//(ab|lem)/persName[@ref=concat('#', $id)])"/>
+            </xsl:variable>
+            <xsl:variable name="cntatw">
+                <xsl:value-of select="count(ancestor::TEI//body//(ab|rdg[contains(@wit, '#atw')])/persName[@ref=concat('#', $id)])"/>
+            </xsl:variable>
+            <xsl:variable name="cntbrn">
+                <xsl:value-of select="count(ancestor::TEI//body//(ab|rdg[contains(@wit, '#brn')])/persName[@ref=concat('#', $id)])"/>
+            </xsl:variable>
+            
+            <xsl:choose>
+                <xsl:when test="($cntbrl = $cntatw) and ($cntatw = $cntbrn)">
+                    <xsl:value-of select="$cntbrl"/>
+                    <xsl:choose>
+                        <xsl:when test="$cntbrl='1'">
+                            <xsl:text> mention dans les trois leçons.} </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> mentions les trois leçons.} </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>  
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$cntbrl"/>
+                    <xsl:choose>
+                        <xsl:when test="$cntbrl='1'">
+                            <xsl:text> mention dans la leçon principale (témoin de Berlin).} </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> mentions dans la leçon principale (témoin de Berlin).} </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>  
+                    <xsl:text> \item{</xsl:text>
+                    <xsl:value-of select="$cntatw"/>
+                    <xsl:choose>
+                        <xsl:when test="$cntatw='1'">
+                            <xsl:text> mention dans le témoin d'Anvers.} </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> mentions dans le témoin d'Anvers.} </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>  
+                    <xsl:text> \item{</xsl:text>
+                    <xsl:value-of select="$cntbrn"/>
+                    <xsl:choose>
+                        <xsl:when test="$cntbrn='1'">
+                            <xsl:text> mention dans le témoin de Berne.} </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> mentions dans le témoin de Berne.} </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:otherwise>
+            </xsl:choose>
+            
+            <xsl:text> \end{itemize}} </xsl:text>
+        </xsl:for-each>
+        <xsl:text>\end{itemize}</xsl:text>
+    </xsl:template>
+    
+    <!-- règle pour le listRelation -->
+    <xsl:template match="encodingDesc//listRelation" name="listrel">
+        <xsl:text> \begin{itemize}</xsl:text>
+        <xsl:apply-templates select=".//relation//desc"/>
+        <xsl:text> \end{itemize} </xsl:text>
+    </xsl:template>
+    
+    
+    <!-- règle pour le listPlace -->
+    <xsl:template match="encodingDesc//listPlace" name="place">
+        <!-- faire une liste de lieu -->
+        <xsl:text>\begin{itemize}</xsl:text>
+        <xsl:for-each select=".//place">
+            <xsl:variable name="id" select="@xml:id"/>
+            <xsl:text> \item{\textbf{</xsl:text>
+            <xsl:call-template name="hdrplacename"/>
+            <xsl:text>.} </xsl:text>
+            <xsl:text> \begin{itemize} \item{</xsl:text>
+            
+            <!-- compter le nombre d'occurences des lieux dans les trois témoins -->
+            <xsl:variable name="cntbrl">
+                <xsl:value-of select="count(ancestor::TEI//body//(ab|lem)/placeName[@ref=concat('#', $id)])"/>
+            </xsl:variable>
+            <xsl:variable name="cntatw">
+                <xsl:value-of select="count(ancestor::TEI//body//(ab|rdg[contains(@wit, '#atw')])/placeName[@ref=concat('#', $id)])"/>
+            </xsl:variable>
+            <xsl:variable name="cntbrn">
+                <xsl:value-of select="count(ancestor::TEI//body//(ab|rdg[contains(@wit, '#brn')])/placeName[@ref=concat('#', $id)])"/>
+            </xsl:variable>
+            
+            <xsl:choose>
+                <xsl:when test="($cntbrl = $cntatw) and ($cntatw = $cntbrn)">
+                    <xsl:value-of select="$cntbrl"/>
+                    <xsl:choose>
+                        <xsl:when test="$cntbrl='1'">
+                            <xsl:text> mention dans les trois leçons.} </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> mentions les trois leçons.} </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>  
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$cntbrl"/>
+                    <xsl:choose>
+                        <xsl:when test="$cntbrl='1'">
+                            <xsl:text> mention dans la leçon principale (témoin de Berlin).} </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> mentions dans la leçon principale (témoin de Berlin).} </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>  
+                    <xsl:text> \item{</xsl:text>
+                    <xsl:value-of select="$cntatw"/>
+                    <xsl:choose>
+                        <xsl:when test="$cntatw='1'">
+                            <xsl:text> mention dans le témoin d'Anvers.} </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> mentions dans le témoin d'Anvers.} </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>  
+                    <xsl:text> \item{</xsl:text>
+                    <xsl:value-of select="$cntbrn"/>
+                    <xsl:choose>
+                        <xsl:when test="$cntbrn='1'">
+                            <xsl:text> mention dans le témoin de Berne.} </xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text> mentions dans le témoin de Berne.} </xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:otherwise>
+            </xsl:choose>
+            
+            <xsl:text> \end{itemize}} </xsl:text>
+        </xsl:for-each>
+        <xsl:text>\end{itemize}</xsl:text>
+    </xsl:template>
+    
+    
+    <!-- règle pour les descriptions des relations entre personnages -->
+    <xsl:template match="relation//desc">
+        <xsl:text> \item{ </xsl:text>
+        <xsl:value-of select="."/>
+        <xsl:text>.} </xsl:text>
+    </xsl:template>
     
     <!-- règle pour les hyperliens ; ne fonctionne pas toujours, donc pas toujours utilisée -->
     <xsl:template match="teiHeader//ref">
@@ -425,6 +598,20 @@
             </xsl:when>
             <xsl:otherwise>
                 <xsl:copy-of select=".[@type='contemporary-name']//text()"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- règle pour les placeName dans le teiHeader -->
+    <xsl:template match="teiHeader//place" name="hdrplacename">
+        <!-- récupérer le nom d'un lieu : le nom d'époque si correspond au nom contemporain ; 
+            sinon, le nom contemporain -->
+        <xsl:choose>
+            <xsl:when test="./placeName[@type='contemporary-name']">
+                <xsl:copy-of select=".//placeName[@type='contemporary-name']"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:copy-of select=".//placeName[@type='text-name']"/>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
@@ -575,7 +762,9 @@
                 </xsl:otherwise>
             </xsl:choose>
             
+            <xsl:text> \textit{\textsc{</xsl:text>
             <xsl:value-of select="./replace(@wit, '#', ' ')"/>
+            <xsl:text>}}</xsl:text>
             <xsl:choose>
                 <xsl:when test="position() != last()">; </xsl:when>
                 <xsl:otherwise/>
@@ -600,7 +789,9 @@
                 </xsl:otherwise>
             </xsl:choose>
             
+            <xsl:text> \textit{\textsc{</xsl:text>
             <xsl:value-of select="./replace(@wit, '#', ' ')"/>
+            <xsl:text>}}</xsl:text>
             <xsl:choose>
                 <xsl:when test="position() != last()">; </xsl:when>
                 <xsl:otherwise/>
@@ -628,7 +819,9 @@
                 </xsl:otherwise>
             </xsl:choose>
             
+            <xsl:text> \textit{\textsc{</xsl:text>
             <xsl:value-of select="./replace(@wit, '#', ' ')"/>
+            <xsl:text>}}</xsl:text>
             <xsl:choose>
                 <xsl:when test="position() != last()">; </xsl:when>
                 <xsl:otherwise/>

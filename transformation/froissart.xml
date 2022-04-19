@@ -411,7 +411,7 @@
           <person xml:id="sbdr">
             <persName type="contemporary-name" resp="#phk" cert="high">
               <forename>Bureau</forename>
-              <nameLink>de la&gt;</nameLink>
+              <nameLink>de la</nameLink>
               <surname>Rivière</surname>
             </persName>
             <persName type="text-name">
@@ -430,7 +430,7 @@
           <person xml:id="cdas">
             <persName type="contemporary-name" resp="#phk" cert="medium">
               <forename>Jean</forename>
-              <nameLink>de la&gt;</nameLink>
+              <nameLink>de la</nameLink>
               <surname>Personne</surname>
             </persName>
             <persName type="text-name">
@@ -1205,7 +1205,7 @@
         </app>trouverent<app corresp="#add-words">
           <lem wit="#brl">ilz</lem>
           <rdg wit="#atw #brn"/>
-        </app>messire<persName ref="#mdlx">Loÿs de Xancerre</persName>, mareschal de France,<app corresp="#sentence-order #add-words #ornementation">
+        </app>messire<persName ref="#mldx">Loÿs de Xancerre</persName>, mareschal de France,<app corresp="#sentence-order #add-words #ornementation">
           <lem wit="#brl">quy moult grandement<witDetail wit="#brl">Enluminure ou miniature, signalée mais non consultable depuis Online Froissart</witDetail>les recueilly, ce fut raison.</lem>
           <rdg wit="#atw #brn">qui les recueillit grandement</rdg>
         </app>

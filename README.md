@@ -24,7 +24,8 @@ TeXStudio
 - **`textes`** : le contenu textuel des trois témoins, utilisés comme source pour l'édition
 critique.
 - **`transformation`** : le fichier XML TEI utilisé en entrée (`froissart.xml`), la feuille de 
-style (`froissart.xsl`) et le fichier LaTeX produit en sortie (`froissart.xsl`).
+style (`froissart.xsl`) et le fichier LaTeX produit en sortie (`froissart.xsl`), ainsi 
+qu'un dossier contenant les fichiers auxiliaires produits par le compilateur LaTeX.
 
 ---
 

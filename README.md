@@ -15,6 +15,8 @@ compilation.
 ### Structure du dépôt
 - **`dossier racine`**:
 	- `froissart.jpg` : une petite image pour décorer le présent README
+	- `froissart_out.pdf` : le pdf obtenu après une transformation `XeLaTeX` sur 
+TeXStudio
 	- `LICENSE` : la licence GNU GPL 3 sous laquelle est ce projet
 	- `README.md` : le présent document
 - **`odd_documentation`** : l'ODD au format `.xml` et sa transformation aux formats `.rng` et 
@@ -33,7 +35,8 @@ compte une future transformation XSL. Des modifications ont donc du être apport
 permettre la transformation :
 - les **`app` contenus dans des `rdg`** ont été transformés en `rdgGrp` : ils ne pourraient pas
 être retranscrits en latex.
-- une **erreur mineure** d'encodage a été corrigée.
+- des **erreurs mineures** (ponctuation, espaces) ont été corrigées dans l'encodage 
+et l'ODD.
 
 ---
 
@@ -47,13 +50,13 @@ manuscrits. Tous ces éléments peuvent difficilement être traduits dans une é
 - L'apparat critique est construit avec la leçon principale (témoin de Berlin) en corps de 
 texte ; en notes de bas de page, les variations et autres détails sont signalés avec 
 **un système de notes à quatres étages** : 
-	- `\variant` correspond à `\Afootnote` et permet d'encoder les variations "simples" 
+	- **`\variant`** correspond à `\Afootnote` et permet d'encoder les variations "simples" 
 entre les leçons
-	- `\group` correspond à `\Bfootnote` et permet d'encoder les groupes de temoins (
+	- **`\group`** correspond à `\Bfootnote` et permet d'encoder les groupes de temoins (
 `<rdgGrp>` en TEI)
-	- `\subvariant` correspond à `\Cfootnote` et permet d'encoder les sous-variations dans
+	- **`\subvariant`** correspond à `\Cfootnote` et permet d'encoder les sous-variations dans
 des apparats internes (en termes TEI : les `rdg` qui sont dans des `<app>` dans des `<app>`)
-	- `\explan` correspond à `\Dfootnote` et permet d'encoder les éléments "non textuels"
+	- **`\explan`** correspond à `\Dfootnote` et permet d'encoder les éléments "non textuels"
 du témoin principal (décorations et sauts de page encodés dans des `<witDetail>`, changements
 de paragraphes).
 - Au sein d'un apparat critique (`<app>`) les **groupes de témoins** qui ne contiennent pas la

@@ -1,0 +1,317 @@
+
+
+% métadonnées
+\author{Paul, Hector KERVEGAN}
+\title{Transformation XSL d'une édition critique en XML-TEI vers LaTeX: les Chroniques de Jean Froissart, SHF 306: "La négociation du mariage du duc de Berry"}
+\date{25.04.2022}
+
+
+% chouettes paquets utilisés
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[french]{babel}
+\usepackage{reledmac}
+\usepackage[switch, modulo]{lineno}
+\usepackage[toc]{appendix}
+
+% hyperref
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Paul, Hector KERVEGAN}, pdftitle={Transformation XSL d'une édition critique en XML-TEI vers LaTeX: les Chroniques de Jean Froissart, SHF 306: "La négociation du mariage du duc de Berry"}, pdfsubject={Transformation XSL vers LaTeX}, pdfkeywords={édition critique}{XSL}{XML-TEI}{LaTeX}{Jean Froissart}}
+
+
+
+% définition de commandes spécifiques pour l'apparat
+% variation de 1er degré
+\newcommandx{\variant}[2][1,usedefault]{\Afootnote[#1]{#2}}
+% groupe de témoins
+\newcommandx{\group}[2][1,usedefault]{\Bfootnote[#1]{#2}}
+% sous-variation (un rdg dans un apparat interne)
+\newcommandx{\subvariant}[2][1,usedefault]{\Cfootnote[#1]{#2}}
+% détails non textuels sur le témoin
+\newcommandx{\explan}[2][1,usedefault]{\Dfootnote[#1]{#2}}
+
+\Xarrangement[A]{paragraph}
+\Xparafootsep{$\parallel$~}
+
+\begin{document}
+	
+	
+	\begin{titlepage}
+		\begin{center}
+			\large
+			Paul, Hector KERVEGAN
+			
+			\Large
+			\vfill
+			\textbf{Transformation XSL d'une édition critique en XML-TEI vers \LaTeX}
+			\\~\\
+			\textbf{\textit{CHRONIQUES} DE JEAN FROISSART, SHF 3A-306 : "LA NÉGOCIATION DU MARIAGE DU DUC DE BERRY"}
+			\vfill
+			
+			\large	
+			\vfill Devoir réalisé pour le master 2 TNAH de l'École nationale des Chartes - Avril 2022
+		\end{center}
+	\end{titlepage}
+	
+	
+	
+	\section{Présentation du projet}
+	\subsection{Présentation de l'encodage XML-TEI et de sa source en ligne: l'Online Froissart}
+	
+	
+	
+	\subsubsection{À propos du présent encodage}
+	La présente édition critique d'un chapitre des \textit{Chroniques} de Jean Froissart a été encodée en XML-TEI par Paul, Hector Kervegan. L'encodage s'appuie sur une édition en ligne des \textit{Chroniques} 
+	réalisée dans le cadre du projet Online Froissart.\\ \indent L'encodage en XML-TEI a été 
+	réalisé dans le cadre l'évaluation du cours de TEI du master 2 TNAH de l'École nationale des Chartes (Paris, France). L'encodage a été finalisé le 31 janvier 2022. Le présent document résulte d'une transformation XSL vers \LaTeX  réalisée
+	en avril 2022 dans le cadre de l'évaluation du cours d'XSLT de ce master.
+	
+	
+	\subsubsection{À propos du projet Online Froissart}
+	Sélection, alignement des témoins et première édition en ligne par \href{https://www.dhi.ac.uk/onlinefroissart}{\textit{The Online Froissart. A digital edition of the Chronicles of Jean Froissart}}. La source de l'encodage est disponible à \href{https://www.dhi.ac.uk/onlinefroissart/browsey.jsp?f=b&pb2=Ber-3_SHF_3A-307&disp2=shf&GlobalWord=0&div2=ms.f.transc.Ber-3&div1=ms.f.transc.Bre-3&div0=ms.f.transc.Ant-3&panes=3&GlobalMode=shf&img0=&disp0=shf&disp1=shf&pb1=Bre-3_SHF_3A-307&img2=&GlobalShf=3A-306&pb0=Ant-3_SHF_3A-307&img1=}{cette adresse}.\\~\\
+	\noindent Responsables du projet Online Froissart : \begin{itemize}\item{
+			Peter
+			Ainsworth
+		} \item{
+			Godfried
+			Croenen
+	} \end{itemize} \noindent Institutions partenaires du Online Froissart : \begin{itemize}\item{University of Sheffield} \item{University of Liverpool} \item{AHRC. Art and Humanities Research Council} \item{The Digital Humanities Institute} \item{ATLIF. Laboratoire Analyse et Traitement Informatique de la Langue Française} \item{CNRS. Centre National de la Recherche Scientifique} \end{itemize} 
+	\subsection{Principes suivis pour l'encodage}
+	\subsubsection{Principes suivis pour l'édition en XML-TEI}
+	L'alignement des témoins a été réalisé avec l'aide de l'algorithme de Dekker de  \href{https://collatex.net/}{Collatex} . Cet alignement a été repris ensuite pour constituer l'édition critique qui suit.L'édition critique et l'alignement des témoins cherchent à permettre l'étude la plus précise possible de la variance et des similitudes entre les versions : \begin{itemize} 
+		\item{La structuration du texte en paragraphes (\texttt{<p>}) a été abandonnée : les trois textes sont insérés dans un conteneur \texttt{<ab>} 
+			et les changements de paragraphes sont signalés par des \texttt{<milestone>}, pour permettre un alignement des témoins phrase par phrase.} 
+		\item{Pour cet encodage, on considère que les différences au niveau de la structure de la phrase sont plus importantes que les différences orthographiques. L'encodage suit ce principe:
+			quand la même phrase est dans un ordre différent dans différents témoins, cette phrase est encodée comme un élément entier, 
+			plutôt que de rassembler les mêmes mots de la phrase dans un seul élément \texttt{<app>}(ce qui permettrait de mettre en avant les différences orthographiques entre ces mêmes mots).} 
+		\item{Pour permettre l'étude de variance la plus précise possible, l'encodage suit un principe de modularité: lorsque 2 témoins sont semblables et diffèrent du 3e témoin, 
+			alors ces 2 témoins sont encodés dans un seul élément \texttt{<rdg>}. Les variations au sein de ces 2 témoins sont signalées dans un \texttt{<app>} à l'intérieur du \texttt{<rdg>}.
+			L'édition est donc construite en variations/sous-variations.} 
+		\item{L'élément \texttt{<rdgGrp>} est utilisé pour rassembler deux lectures très proches ; cependant, pour privilégier l'étude de la variation entre les témoins
+			et pour coller au plus près de ces variations, l'utilisation de \texttt{<rdg>} rassemblant plusieurs témoins et contenant un ou plusieurs \texttt{<app>} (comme décrit au dessus) est privilégiée.} 
+	\end{itemize} 
+	Pour chaque élément \texttt{<app>}, un attribut "\texttt{@corresp"} est utilisé pour préciser la nature de la différence entre les témoins. Les valeurs possible pour cet attribut sont: \begin{itemize} 
+		\item{\textbf{\texttt{orth}} : différence orthographique} \begin{itemize} \item{128 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+		\item{\textbf{\texttt{punct}} : différence de ponctuation} \begin{itemize} \item{57 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+		\item{\textbf{\texttt{sentence-order}} : différence dans l'ordre des mots dans un bloc de texte} \begin{itemize} \item{10 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+		\item{\textbf{\texttt{word-diff}} : des mots différents sont utilisés dans un même bloc de texte dans les différents témoins} \begin{itemize} \item{39 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+		\item{\textbf{\texttt{add-words}} : un témoin présente un ou plusieurs mots qui ne se trouvent pas dans les autres} \begin{itemize} \item{43 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+		\item{\textbf{\texttt{text-segmentation}} : la séparation du texte en paragraphes et pages est différente d'un témoin à l'autre} \begin{itemize} \item{7 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+		\item{\textbf{\texttt{ornementation}} : la décoration du manuscrit varie d'un témoin à l'autre} \begin{itemize} \item{2 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+	\end{itemize} 
+	Pour mieux aligner les textes et mettre en avant les variations entre les témoins, les paragraphes ne sont pas contenus dans des \texttt{<p>}.
+	Le passage d'un paragraphe à l'autre est signalé par un \texttt{<milestone unit="tei:p"/>} et par un \texttt{<lb/>}.
+	Cette méthode est suggérée par Beshero-Bondar, Cayless, Vigilanti (2019: 3.10)
+	
+	\footnote{
+		Beshero-Bondar, Cayless, Viglianti
+		, "Document Modeling with the TEI Critical Apparatus". \href{http://bit.ly/crit-app-panel}{Disponible en ligne} (consulté le 18.04.22).}
+	\subsubsection{Principes suivis pour l'édition \LaTeX}
+	
+	L'édition critique en XML-TEI qui est ici transformée est très (trop ?) 
+	détaillée: j'ai choisi de documenter toutes les variations entre les trois 
+	témoins : changements au niveau du texte, de la structure du texte 
+	(paragraphes et sauts de page) et changements dans la décoration des 
+	manuscrits. Tous ces éléments peuvent difficilement être traduits 
+	dans une édition critique "traditionnelle" (papier) ; les principes 
+	suivants ont donc été suivis :
+	\begin{itemize}
+		\item{L'apparat critique est construit avec la leçon principale (témoin de 
+			Berlin) en corps de texte ; en notes de bas de page, les variations et 
+			autres détails sont signalés avec un système de notes à quatres étages :}
+		\begin{itemize}
+			\item{\textbf{\texttt{\textbackslash variant}} correspond à \texttt{\textbackslash Afootnote} et 
+				permet d'encoder les variations "simples" entre les leçons.}
+			\item{\textbf{\texttt{\textbackslash group}} correspond à \texttt{\textbackslash Bfootnote} et 
+				permet d'encoder les groupes de temoins (\texttt{<rdgGrp>} 
+				en TEI).}
+			\item{\textbf{\texttt{\textbackslash subvariant}} correspond à \texttt{\textbackslash Cfootnote} 
+				et permet d'encoder les sous-variations dans des apparats internes 
+				(en termes TEI : les \texttt{<rdg>} qui sont dans des 
+				\texttt{<app>} dans des \texttt{<app>}).}
+			\item{\textbf{\texttt{\textbackslash explan}} correspond à \texttt{\textbackslash Dfootnote} et 
+				permet d'encoder les éléments "non textuels" du témoin principal 
+				(décorations et sauts de page encodés dans des \texttt{<witDetail>},
+				changements de paragraphes).}
+		\end{itemize}
+		\item{Au sein d'un apparat critique (\texttt{<app>}) les groupes de 
+			témoins qui ne contiennent pas la leçon principale (en langage TEI 
+			les \texttt{<rdgGrp>} qui contiennent seulement des 
+			\texttt{<rdg>}, mais pas de \texttt{<lem>}) se trouvent 
+			dans une note de deuxième niveau (\texttt{\textbackslash group}, en \LaTeX). Si un 
+			\texttt{<rdgGrp>} contient une partie du témoin principal, il n'est 
+			pas retranscrit en \LaTeX.}
+		\item{Les apparats internes (un \texttt{<app>} dans un 
+			\texttt{<app>}) sont retranscrits en bas de page grâce à un 
+			\texttt{\textbackslash subvariant} (note de 3e degré).}
+		\item{Pour la leçon principale (le manuscrit de Berlin), la structure du 
+			texte est retranscrite:}
+		\begin{itemize}
+			\item{Les sauts de paragraphe sont reportés en note de 
+				bas de page dans un \texttt{\textbackslash explan} correspondant à une note de 4e niveau 
+				et signifiés dans le corps du texte par un saut de paragraphe 
+				(\texttt{\textbackslash pend \textbackslash pstart}, avec \texttt{reledmac}).} 
+			\item{Les sauts de page sont également reportés en bas de page dans un 
+				\texttt{\textbackslash explan} ; le numéro de page est également mentionné. Il n'y a 
+				pas de saut de page dans le corps du texte pour éviter d'avoir un résultat 
+				trop morcelé.}
+			\item{Les détails sur la décoration du texte sont mentionnés en notes de 
+				bas de page, dans un \texttt{\textbackslash explan}.}
+			\item{Pour les autres leçons (témoins d'Anvers et de Berne), ces 
+				détails ne sont pas mentionnés.}
+		\end{itemize}
+	\end{itemize} 
+	
+	\indent Le fichier XSL produit a été visualisé et fonctionne sur TeXstudio 
+	avec un compilateur \texttt{XeLaTeX}. Des fois, des erreurs de compilation 
+	peuvent avoir lieu (toutes les notes de bas de page renvoient à la ligne 0 
+	ou se trouvent à la fin du document). Dans ce cas, relancer la compilation.
+	
+	\subsection{Description des témoins}
+	\noindent \textbf{Manuscrit de Berlin (\texttt{brl})}\\
+	
+	\indent Le manuscrit de Berlin (Allemagne) a pour identifiant \textbf{\texttt{brl}}. Il est conservé dans le Département des Manuscrits de la  Staatsbibliothek zu Berlin - Preussischer Kulturbesitz. Il a pour cote "Dep. Breslau 1" et est également connu sous le nom de \textit{Froissart de Breslau}. Il est écrit en Moyen français en 1468-1469. Le témoin de Berlin est le plus ancien des trois témoins utilisés dans cette édition critique. Il est donc retenu comme présentant la \textbf{leçon principale}.
+	Son contenu constitue le corps de texte de l'édition \LaTeX, et
+	le \texttt{lem} de l'édition TEI.\\ \indent Le manuscrit est écrit sur parchemin. Il est d'une longueur de 343 folio. Ces informations ont été proviennent de \href{http://medium-avance.irht.cnrs.fr/ark:/63955/md44pk02gf53}{Medium - Répertoire des manuscrits reproduits ou recensés}.\\~\\\noindent \textbf{Manuscrit d' Anvers (\texttt{atw})}\\
+	
+	\indent Le manuscrit d'Anvers (Belgique) a pour identifiant \textbf{\texttt{atw}}. Il est conservé dans la Collection des manuscrits du  Museum Plantin-Moretus. Il a pour cote "M 15.6". Il est écrit en Moyen français en 1475-1485.\\ \indent Le manuscrit est écrit sur parchemin. Il est d'une longueur de 350 folio. Ces informations ont été proviennent de la \href{https://anet.be/record/opacmpm/c:lvd:14057240/F}{Anet Departement Bibliotheek}.\\~\\\noindent \textbf{Manuscrit de Berne (\texttt{brn})}\\
+	
+	\indent Le manuscrit de Berne (Suisse) a pour identifiant \textbf{\texttt{brn}}. Il est conservé dans les Archives de la  Burgerbibliothek Bern - Bibliothèque de la Bourgeoisie. Il a pour cote "Cod. A 14". Il est écrit en Moyen français en 1470-1490. Anciennement propriété du Comte Alexandre de Donha, bourgeois de Berne, il en fait don à la bibliothèque en 1697.\\ \indent Le manuscrit est écrit sur parchemin. Il est d'une longueur de II + 336 folio
+	
+	. Il mesure 44 centimètres de hauteur, 34,5 cm de largeur et 10 cm de profondeur. Ces informations ont été proviennent de la \href{http://katalog.burgerbib.ch/detail.aspx?ID=147296}{Bibliothèque de la Bourgeoisie - Catalogue en ligne des Archives}.
+	\subsection{Présentation du texte encodé}
+	
+	
+	\subsubsection{À propos des \textit{Chroniques} de Froissart}
+	Datant du XIVe siècle, les \textit{Chroniques} de Froissart sont écrites en moyen français. Elles couvrent les années 1322 à 1400 et décrivent les évènements de la première moitié de la Guerre de Cent Ans.
+	Ce récit en prose s'ouvre sur les événements qui ont précédé la déposition d'Édouard II en 1326 et couvre la période allant jusqu'à 1400.\\ \indent 
+	
+	\subsubsection{À propos de l'extrait encodé}
+	Ce passage est extrait du troisième volume des Chroniques de Froissart. Dans cet extrait, Jean Froissart rapporte la manière
+	dont le duc Jean de Berry a organisé son second mariage avec Jeanne, comtesse d’Auvergne et de Boulogne.
+	Dès la mort de sa première femme, le duc a organisé des négociations avec le comte Gaston de Foix-Béarn, surnommé Fébus. Ce dernier refuse de laisser
+	le duc lui prendre sa protégée sans négociation, à cause de de querelles familiales. Afin de convaincre Fébus, le duc de Berry cherche à trouver
+	un accord ; pour ce faire, il mobilise tout son important cercle d'influence, dont le duc de Bourgogne et même Charles VI le roi de France. Les messagers du duc et ses proches se lançent donc dans un voyage pour rencontrer le conte de Foix, s'arrêtant à Avignon chez le pape Clément. Connu pour
+	sa finesse politique, Fébus s'est servi de Jeanne
+	afin d'obtenir les bonnes grâces du duc. Il accepte donc de céder la jeune femme au duc, pour obtenir ses bonnes grâces. Ce court réçit est, comme l'ensemble des Chroniques, un témoignagne du climat politique de la Guerre de Cent Ans, mais aussi des mœurs du XVe siècle : le texte décrit 
+	la façon dont les mariages s'organisent durant le Moyen-Âge tardif ; les réactions du roi de France et du duc de Bourgogne quant à différence d'âge du duc et de sa future
+	épouse donnent à voir l'organisation des relations entre les genres au XVe siècle.
+	
+	\subsubsection{Index des personnages}
+	\begin{itemize} \item{\textbf{
+				Jean
+				de
+				Berry
+				.} Le duc Jean de Berry (1340-1416), troisième fils du roi Jean II de France et de Bonne de Luxembourg, frère du roi Charles V de France et
+			oncle du roi Charles VI. Il a épousé Jeanne d'Armagnac, fille du comte Jean Ier et sœur du comte Jean II. Jean de Berry, avec son frère
+			Philippe, duc de Bourgogne, étaient des figues dominantes dans le royaume de France et des personnages centraux de la politique française
+			durant la majeure partie du règne de Charles VI, d'abord du fait de la position d'infériorité du roi, et ensuite à cause de sa folie. \begin{itemize} \item{12 mentions dans la leçon principale (témoin de Berlin).}  \item{11 mentions dans le témoin d'Anvers.}  \item{12 mentions dans le témoin de Berne.}  \end{itemize}}  \item{\textbf{
+				Jeanne
+				d'
+				Armagnac
+				.} Première femme du duc Jean de Berry, qu'elle épousa en 1360. Elle est la fille de Jean Ier, comte d'Armgnac.
+			Elle mourut le 15 mars 1388. \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Gaston
+				III
+				de
+				Foix-Béarn
+				Fébus
+				.} Gascon III comte de Foix, aussi connu sous le nom de Fébus (1331-1391). ll est le fils de Gaston II de Foix et
+			d'Aliénor de Comminges, dont Froissart a visité la cour en 1388. Gaston est né en 1331 et a succédé à son père en 1343. Le 4 août 1348, il
+			a épousé Agnès de Navarre, la fille du comte Philippe d'Évreux et de Jeanne, la reine de Navarre (qui est
+			elle même la fille de Louis X de France). Gaston est mort en 1391. Il est l'autheur d'un célèbre traité de chasse intitulé Livre de chasse. \begin{itemize} \item{13 mentions dans la leçon principale (témoin de Berlin).}  \item{12 mentions dans le témoin d'Anvers.}  \item{12 mentions dans le témoin de Berne.}  \end{itemize}}  \item{\textbf{
+				Jeanne
+				II
+				d'
+				Auvergne
+				.}  \begin{itemize} \item{8 mentions dans la leçon principale (témoin de Berlin).}  \item{7 mentions dans le témoin d'Anvers.}  \item{7 mentions dans le témoin de Berne.}  \end{itemize}}  \item{\textbf{
+				Jean
+				II
+				d'
+				Auvergne
+				.}  \begin{itemize} \item{3 mentions dans la leçon principale (témoin de Berlin).}  \item{2 mentions dans le témoin d'Anvers.}  \item{2 mentions dans le témoin de Berne.}  \end{itemize}}  \item{\textbf{
+				Charles
+				VI
+				.}  \begin{itemize} \item{5 mentions les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Philippe
+				II
+				de
+				Bourgogne
+				.} Philippe "le Hardi", duc de Bourgogne (1342-1404, est le quatrième fils de Jean II de France
+			et de Bonne de Luxembourg. Le duc de Bourgogne est une figure proéminente du gouvernement français durant le règne de son neveu Charles VI,
+			et surtout après 1392, quand le roi a commencé à souffrir de crises de folie qui donnent aux ducs de Berry et de Bourgogne l'opportunité de prendre
+			le pouvoir aux Marmousets, les administrateurs de Charles VI. Philippe épouse Margaret de Male, comtesse de Frandres. Ce marriage finit par réunir le duché 
+			de Bourgogne et des Artois. Cette union ramène aussi les comtés de Flandres, de Nevers et de Rethel sous le contrôle du duc de Bourgogne. Cette alliance 
+			maritale, ainsi que les mariages des descendants du duc de Bourgogne, furent la base du grand duché de Bourgogne, un État quasi-indépendant plus qu'un fiel de la couronne française. \begin{itemize} \item{2 mentions les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Jean
+				II
+				de
+				Berry
+				.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Bureau
+				de la
+				Rivière
+				.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Jean
+				de la
+				Personne
+				.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Guillaume
+				VI
+				de
+				Vienne
+				.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Guillaume
+				de la
+				Trémoille
+				.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Jean
+				III
+				de
+				Sancerre
+				.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Clément
+				VII
+				.} L'antipape Clément VII est né Robert de Genève (1342-1394). Il est le fil d'Amadeus III, comte de Genève et de Mathilde, fille
+			de Robert VII, comte de Boulogne et d'Auvergne et grand-parent du roi Jean II de France. Il est fait évêque de Thérouanne en 1361, archêveque de Cambrai en 1368 et
+			cardinal en 1371. Il est élu en tant que Pape Clément VII à Fondi en 1378 par les cardinaux français en oppisition à Urbain VI, et devient le premier antipape du grand schisme.
+			Plus tard, il fut reconnu comme antipape plutôt que comme pape, et son nom fut donné à un pape "légitime" du XVIe siècle. Clément a résidé à Avignon. Froissart voit en lui le "vrai"
+			pape et reconnaît son soutient au roi de France. Il est mort en 1394. \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Louis
+				de
+				Sancerre
+				.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Jean
+				de
+				Gand
+				.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+				Henri
+				IV
+				roi d'Angleterre
+				.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}} \end{itemize}
+	
+	\subsubsection{Liste des relations dans l'extrait encodé}
+	\begin{itemize} \item{ Jeanne d'Armignac est la première femme du duc de Berry.}  \item{ Gaston de Foix est le gardien de Jeanne, comtesse d'Auvergne et de Boulogne.}  \item{ Le conte Jean de Boulogne est le père de Jeanne, comtesse d'Auvergne et de Boulogne.}  \item{ Le duc Jean de Berry est l'oncle du roi de France.}  \item{ Philippe II le Hardi, duc de Bourgogne, est le frère du duc de Berry.}  \item{ Jean II de Berry est le fils du duc de Berry.}  \item{ Jean II de Berry est le cousin du roi de France.}  \item{ Bureau de la Rivière et Jean de la Personne (le conte d'Assy) sont des alliés du roi de France.}  \item{ Guillaume VI de Vienne (l'évêque d'Autun) et Guillaume de la Trémoille sont des alliés du duc de Bourgogne.}  \item{ Jean de Sancerre est un allié du duc de Berry.}  \item{ Henri IV est le fils du duc de Lancastre.}  \item{ Dans Antwerp M 15.6, Clément VII est cousin de Jeanne II d'Auvergne.}  \item{ Dans le manuscrit de Berlin (Dep. Breslau I), Clément VII est cousin du conte Jean de Boulogne, père de Jeanne II d'Auvergne.}  \end{itemize} 
+	
+	\subsubsection{Index des lieux}
+	\begin{itemize} \item{\textbf{Avignon.}  \begin{itemize} \item{2 mentions les trois leçons.}  \end{itemize}}  \item{\textbf{Nîmes.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Montpellier.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Béziers.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Carcassonne.}  \begin{itemize} \item{2 mentions dans la leçon principale (témoin de Berlin).}  \item{1 mention dans le témoin d'Anvers.}  \item{2 mentions dans le témoin de Berne.}  \end{itemize}}  \item{\textbf{Toulouse.}  \begin{itemize} \item{2 mentions les trois leçons.}  \end{itemize}}  \item{\textbf{Orthez.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Bordeaux.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Narbonne.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Nonette.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}} \end{itemize}
+	\pagebreak
+	
+	
+	
+	\section{Édition critique}
+	\beginnumbering
+	\linenumbers
+	\pstart    
+	
+	\edtext{ }{\explan{La leçon principale débute au folio 370 v.}} Le duc de \edtext{Berry}{\variant{Berri \textit{\textsc{ atw}}}}\edtext{,}{\variant{$\phi$ \textit{\textsc{ brn}}}} madame \edtext{Jehanne}{\variant{Jehenne \textit{\textsc{ brn}}}} \edtext{d'Armeignach}{\variant{d'Ermignac \textit{\textsc{ atw}}; d'Armignac \textit{\textsc{ brn}}}} \edtext{sa premiere femme trespassee}{\group{trespassee, sa premiere femme \textit{\textsc{ atw}}; trespassee sa premiere \textit{\textsc{ brn}}}}\edtext{,}{\variant{$\phi$ \textit{\textsc{ brn}}}} avoit grant \edtext{ymagination}{\variant{ymaginacion \textit{\textsc{ atw brn}}}}\edtext{. Et bien le}{\variant{et bien le \textit{\textsc{ atw brn}}}} \edtext{moustra}{\variant{monstra \textit{\textsc{ atw brn}}}} que secondement il \edtext{fust}{\variant{feust \textit{\textsc{ atw}}; fut \textit{\textsc{ brn}}}} \edtext{remarié}{\variant{marié \textit{\textsc{ atw brn}}}}. Car \edtext{tantost que}{\group{tost comme \textit{\textsc{ atw}}; trestost comme \textit{\textsc{ brn}}}} il \edtext{pot}{\variant{peut \textit{\textsc{ atw brn}}}} veoir \edtext{comment il}{\variant{qu'il \textit{\textsc{ atw brn}}}} avoit \edtext{failly}{\variant{faily \textit{\textsc{ atw}}; failli \textit{\textsc{ brn}}}} \edtext{a la fille de Castille,}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} il ne fut oncques \edtext{aise}{\variant{avisé \textit{\textsc{ atw}}}} ne \edtext{n'ot repos}{\group{eut \textit{\textsc{ atw}}; eust \textit{\textsc{ brn}}}}\edtext{. Mais}{\variant{mais \textit{\textsc{ brn}}}} \edtext{}{\variant{il \textit{\textsc{ atw brn}}}} mist \edtext{en oeuvre clers}{\group{clers en oeuvre \textit{\textsc{ atw}}; clers en euvre \textit{\textsc{ brn}}}} et \edtext{messagiers}{\variant{messaigiers \textit{\textsc{ atw brn}}}} pour \edtext{envoier}{\variant{envoyer \textit{\textsc{ atw brn}}}} devers le conte \edtext{Gascoing}{\variant{Gascon \textit{\textsc{ atw brn}}}} de \edtext{Fois}{\variant{Foix \textit{\textsc{ atw brn}}}}\edtext{,}{\variant{$\phi$ \textit{\textsc{ brn}}}} \edtext{quy}{\variant{qui \textit{\textsc{ atw brn}}}} avoit en garde \edtext{la fille}{\variant{le filz \textit{\textsc{ brn}}}} au conte Jehan de \edtext{Boulongne}{\variant{Bouloingne \textit{\textsc{ atw}}}} et avoit \edtext{ja}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} eue plus de \edtext{noeuf}{\variant{neuf \textit{\textsc{ atw}}; IX \textit{\textsc{ brn}}}} ans. Et pour tant que le duc de \edtext{Berry}{\variant{Berri \textit{\textsc{ atw}}}} ne pouoit \edtext{a ce mariage parvenir}{\variant{parvenir a ce mariage \textit{\textsc{ atw}}}} fors par \edtext{les dangiers}{\variant{le dangier \textit{\textsc{ atw brn}}}} du conte de \edtext{Fois}{\variant{Foix \textit{\textsc{ atw brn}}}}. Car au fort le dit conte ne pour pere \edtext{}{\variant{, \textit{\textsc{ atw brn}}}} ne pour mere \edtext{}{\variant{, \textit{\textsc{ atw brn}}}} \edtext{ne}{\variant{$\phi$ \textit{\textsc{ brn}}}} pour pape \edtext{}{\variant{, \textit{\textsc{ atw brn}}}} ne pour amy que la damoiselle eust\edtext{,}{\variant{$\phi$ \textit{\textsc{ brn}}}} il n'en \edtext{euist}{\variant{eust \textit{\textsc{ atw brn}}}} riens fait \edtext{\edtext{, se bienne lui feust}{\group{s'il ne lui fut bien \textit{\textsc{ atw}}; s'il ne lui fust bien \textit{\textsc{ brn}}}}}{\explan{Changement de page dans la leçon principale : passage au folio 371 r.}} venu a \edtext{sa}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} plaisance. Il en parla au roy de France, son nepveu, et au duc de \edtext{Bourgoingne}{\variant{Bourgongne \textit{\textsc{ brn}}}}, son frere\edtext{. Et leur}{\variant{, et leur \textit{\textsc{ atw brn}}}} \edtext{requist moult}{\variant{pria \textit{\textsc{ atw brn}}}} affectueusement \edtext{que ilz}{\variant{qu'ilz \textit{\textsc{ atw brn}}}} s'en voulsissent chargier\edtext{, avecques luy et embesoingnier}{\group{et embesoignier avecques lui \textit{\textsc{ atw}}; et embesongnier avecques lui \textit{\textsc{ brn}}}}. Le roy de France en \edtext{ot}{\variant{eut \textit{\textsc{ atw brn}}}} bon \edtext{rys,}{\variant{ris \textit{\textsc{ atw brn}}}} pour tant que le duc de Berry estoit ja tout \edtext{anchien,}{\variant{ancien \textit{\textsc{ atw brn}}}} et \edtext{luy}{\variant{lui \textit{\textsc{ atw brn}}}} \edtext{dist}{\variant{dit \textit{\textsc{ atw}}}}:\edtext{"Beaulx oncles}{\variant{"Bel oncle \textit{\textsc{ atw brn}}}}, que feréz vous \edtext{de une si jenne femme }{\group{d'unefillette \textit{\textsc{ atw}}; d'une tellefillette \textit{\textsc{ brn}}}} \edtext{? Elle }{\variant{qui \textit{\textsc{ atw}}}} n'a que \edtext{douze}{\variant{XII \textit{\textsc{ atw brn}}}} ans et vous en avéz \edtext{soixante}{\variant{LX \textit{\textsc{ atw brn}}}}\edtext{.}{\variant{$\phi$ \textit{\textsc{ atw}}}} Par ma foy, \edtext{c'est}{\variant{il me semble \textit{\textsc{ atw}}}} grant \edtext{folie pour}{\variant{follie de \textit{\textsc{ atw}}}} vous de penser a telle \edtext{besoigne}{\variant{chose \textit{\textsc{ atw brn}}}}. \edtext{Faittes}{\variant{Faictes \textit{\textsc{ brn}}}} \edtext{ent}{\variant{en \textit{\textsc{ atw}}}} parler pour Jehan \edtext{}{\variant{, \textit{\textsc{ atw brn}}}} beau cousin vostre filz, \edtext{quy}{\variant{qui \textit{\textsc{ atw brn}}}} est \edtext{jenne}{\variant{jeune \textit{\textsc{ atw}}}} et a venir\edtext{. La}{\variant{, la \textit{\textsc{ atw}}}} chose est \edtext{trop}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} mieulx pareille a \edtext{\edtext{luy}{\variant{lui \textit{\textsc{ atw brn}}}}}{\explan{Enluminure ou miniature, signalée mais non consultable depuis Online Froissart}} que a vous." "Monseigneur,"\edtext{respondi}{\variant{respondit \textit{\textsc{ atw brn}}}} le duc de \edtext{Berry}{\variant{Berri \textit{\textsc{ atw}}}}, "on en a parlé\edtext{,}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} mais le conte de \edtext{Foiz}{\variant{Foix \textit{\textsc{ atw brn}}}} n'y \edtext{a voulu}{\group{vault \textit{\textsc{ atw}}; veult \textit{\textsc{ brn}}}} entendre pour la cause de ce que mon filz descend de ceulx \edtext{d'Armeignach. Et}{\variant{d'Armignac et \textit{\textsc{ atw}}; de Armignac \textit{\textsc{ brn}}}} ilz sont en guerre et en hayne et ont esté \edtext{long temps}{\variant{longtemps \textit{\textsc{ brn}}}} ensemble. Se la fille est \edtext{jenne}{\variant{jeune \textit{\textsc{ atw}}}}, je \edtext{la espargneray}{\group{l'espareigneray \textit{\textsc{ atw}}; l'espargneray \textit{\textsc{ brn}}}} \edtext{trois}{\variant{troiz \textit{\textsc{ brn}}}} ou quatre ans\edtext{, voire si longuement}{\variant{tant \textit{\textsc{ atw brn}}}} qu'elle sera femme \edtext{parfaitte et}{\variant{parfaicte \textit{\textsc{ brn}}}} \edtext{fourmee}{\variant{formee \textit{\textsc{ atw}}; $\phi$ \textit{\textsc{ brn}}}}." Voire,"\edtext{respondy}{\variant{dit \textit{\textsc{ atw}}; respondit \textit{\textsc{ brn}}}} le roy,\edtext{" beaulx oncles }{\variant{$\phi$ \textit{\textsc{ atw}}; "bel oncle \textit{\textsc{ brn}}}} \edtext{mais}{\variant{maiz \textit{\textsc{ atw}}}} elle ne vous \edtext{espargnera}{\variant{espareignera \textit{\textsc{ atw}}}} pas." Et puis dist le roy tout en \edtext{ryant}{\variant{riant \textit{\textsc{ atw brn}}}}:\edtext{"Or ça, beaulx oncles }{\variant{"Bel oncle \textit{\textsc{ atw brn}}}}, \edtext{puisque}{\variant{puis que \textit{\textsc{ atw brn}}}} nous veons que \edtext{si tres}{\variant{tant \textit{\textsc{ atw}}; si \textit{\textsc{ brn}}}} grande affection vous y avéz \edtext{}{\variant{, \textit{\textsc{ atw}}}} nous y \edtext{entendrons}{\variant{entenderons \textit{\textsc{ brn}}}} \edtext{moult}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} voulentiers." \pend\pstart \edtext{Depuis}{\explan{Changement de paragraphe dans le témoin principal.}} ne demoura \edtext{gaires}{\variant{guerres \textit{\textsc{ atw}}}} de temps que le roy ordonna le sire de la Riviere, messire \edtext{Burel}{\variant{Brueil \textit{\textsc{ atw brn}}}}, son souverain \edtext{chevallier}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} \edtext{et}{\variant{$\phi$ \textit{\textsc{ brn}}}} maistre d'ostel et \edtext{chambellan}{\variant{chambrelan \textit{\textsc{ atw}}; chambrelain \textit{\textsc{ brn}}}}\edtext{,}{\variant{$\phi$ \textit{\textsc{ atw}}}} pour \edtext{aler}{\variant{aller \textit{\textsc{ atw}}}} en ce voyage\edtext{. Et avecques}{\variant{et avecques \textit{\textsc{ atw brn}}}} \edtext{luy}{\variant{lui \textit{\textsc{ atw brn}}}} le conte \edtext{d'Assy}{\variant{d'Acy \textit{\textsc{ atw brn}}}}. Et le duc de \edtext{Bourgoingne}{\variant{Bourgongne \textit{\textsc{ brn}}}} y ordonna pour \edtext{luy}{\variant{lui \textit{\textsc{ atw brn}}}} et en son nom l'evesque \edtext{d'Authun}{\variant{d'Autun \textit{\textsc{ brn}}}} et messire \edtext{Guillemme}{\variant{Guillaume \textit{\textsc{ atw}}; Guillame \textit{\textsc{ brn}}}} de la Trimoulle \edtext{et}{\variant{. Et \textit{\textsc{ atw brn}}}} le duc de Berry y ordonna \edtext{et}{\variant{$\phi$ \textit{\textsc{ atw}}}} en \edtext{prya}{\variant{pria \textit{\textsc{ atw brn}}}} le conte Jehan de Xancerre \edtext{ung}{\variant{, un \textit{\textsc{ brn}}}} grant\edtext{, sage}{\variant{saige \textit{\textsc{ atw brn}}}} et vaillant \edtext{chevallier}{\variant{chevalier \textit{\textsc{ atw}}}}. \pend\pstart \edtext{ }{\explan{Changement de paragraphe dans le témoin principal.}} Ces \edtext{cinq}{\variant{cincq \textit{\textsc{ atw}}}} seigneurs pour venir \edtext{devers}{\variant{vers \textit{\textsc{ atw brn}}}} le conte de \edtext{Fois}{\variant{Foix \textit{\textsc{ atw brn}}}} et \edtext{}{\variant{pour \textit{\textsc{ atw}}}} requerir \edtext{en}{\variant{ou \textit{\textsc{ atw brn}}}} nom \edtext{de mariage}{\variant{}} pour le duc de Berry ceste \edtext{jenne}{\variant{jeune \textit{\textsc{ atw}}}} dame \edtext{}{\variant{a mariage \textit{\textsc{ atw}}}}\edtext{,}{\variant{$\phi$ \textit{\textsc{ brn}}}} se partirent de leurs lieux et se devoient trouver en Avignon \edtext{deléz le pape comme ils firent. Ce pape Clement, quy cousin estoit du pere a la damoiselle, les retint la bien quinze jours}{\group{ainsi comme ilz deléz le pape Clementbien XV jours, qui cousin germain estoit a ladamoiselle \textit{\textsc{ atw}}; aussi comme ilz delez le pape Clementbien XV jours, qui cousin germain estoit a ladamoiselle, \textit{\textsc{ brn}}}}\edtext{. Et environ la}{\variant{, et environ la \textit{\textsc{ atw brn}}}} \edtext{Chandelleur}{\variant{Chandeller \textit{\textsc{ atw}}; Chandeleur \textit{\textsc{ brn}}}} ilz se \edtext{departirent}{\variant{partirent \textit{\textsc{ atw}}}} \edtext{tous}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} d' Avignon et prindrent le chemin de \edtext{Nismes}{\variant{Nimes \textit{\textsc{ atw}}}} et de Montpellier\edtext{. Si chevauchierent}{\group{et chevaucerent \textit{\textsc{ brn}}; et chevaulcherent \textit{\textsc{ atw}}}} a petites journees et a grans \edtext{frais. Si}{\variant{fraiz et \textit{\textsc{ atw brn}}}} passerent Besiers et vindrent a \edtext{Carcassonne}{\variant{}}\edtext{. Et la}{\variant{ou \textit{\textsc{ atw}}; et \textit{\textsc{ brn}}}} \edtext{}{\variant{ilz \textit{\textsc{ atw}}}} trouverent \edtext{ilz}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} messire Loÿs de Xancerre, mareschal de France,\edtext{\edtext{quy moult grandementles recueilly, ce fut raison.}{\variant{qui les recueillit grandement \textit{\textsc{ atw brn}}}}}{\explan{Enluminure ou miniature, signalée mais non consultable depuis Online Froissart}} \edtext{ \edtext{Et}{\subvariant{, et \textit{\textsc{ brn}}}} parla a \edtext{eulz}{\subvariant{eulx \textit{\textsc{ brn}}}} assez du conte de \edtext{Fois,}{\subvariant{Foix \textit{\textsc{ brn}}}} de son estat et de son affaire. Car il y avoit esté \edtext{de Carcassonne }{\subvariant{$\phi$ \textit{\textsc{ brn}}}} n'avoit point passé deux \edtext{mois}{\subvariant{moix \textit{\textsc{ brn}}}} }{\variant{$\phi$ \textit{\textsc{ atw}}}}.\edtext{\edtext{Ilz}{\group{Ilz \textit{\textsc{ atw}}; De Carcassonne, il \textit{\textsc{ brn}}}}}{\explan{Changement de page dans la leçon principale : passage au folio 371 v.}} se \edtext{departirent}{\group{partyrent \textit{\textsc{ brn}}; partirent \textit{\textsc{ atw}}}} \edtext{}{\variant{de la \textit{\textsc{ atw}}}} et vindrent \edtext{en la cité de}{\variant{a \textit{\textsc{ atw brn}}}} Thoulouse\edtext{,}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} et la s'arresterent\edtext{. Et envoierent}{\variant{et envoyerent \textit{\textsc{ atw brn}}}} leurs \edtext{messages}{\variant{messagiers \textit{\textsc{ atw brn}}}} \edtext{}{\variant{devant \textit{\textsc{ atw}}}} \edtext{devers}{\variant{deverz \textit{\textsc{ brn}}}} le \edtext{ conte de Fois }{\variant{ conte de Foix \textit{\textsc{ atw brn}}}}\edtext{, quy}{\variant{qui \textit{\textsc{ brn}};, qui \textit{\textsc{ atw}}}} se tenoit a Orthaiz en \edtext{Berne}{\variant{Bierne \textit{\textsc{ atw brn}}}}. Si \edtext{s'entamerent}{\variant{s'entammerent \textit{\textsc{ atw}}}} les traittiéz de ce mariage, mais ilz \edtext{}{\variant{y \textit{\textsc{ atw brn}}}} furent moult \edtext{loingtains}{\variant{longuement \textit{\textsc{ atw brn}}}}\edtext{, car}{\variant{. Car \textit{\textsc{ brn}}}} \edtext{de}{\variant{du \textit{\textsc{ atw brn}}}} commencement le conte de \edtext{Fois}{\variant{Foix \textit{\textsc{ atw brn}}}} fut \edtext{}{\variant{moult \textit{\textsc{ atw brn}}}} froit \edtext{et dur}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} pour \edtext{ce}{\variant{tant \textit{\textsc{ brn}}}} que le duc de Lancastre\edtext{,}{\variant{$\phi$ \textit{\textsc{ brn}}}} \edtext{quy}{\variant{qui \textit{\textsc{ atw brn}}}} \edtext{pour ce temps se tenoit}{\variant{se tenoit pour le temps a \textit{\textsc{ atw brn}}}} a \edtext{Bourdeaulx}{\variant{Bourdeaulz \textit{\textsc{ atw}}}} ou a \edtext{ Liebourne, en}{\variant{Lierbonne, \textit{\textsc{ atw}}; Narbonne \textit{\textsc{ brn}}}} faisoit parler et \edtext{pryer}{\variant{prier \textit{\textsc{ atw brn}}}} pour son filz \edtext{messire}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} Henry, conte \edtext{d'Erby.}{\variant{d'Erbi, \textit{\textsc{ atw}}}} \edtext{Si}{\variant{si \textit{\textsc{ atw}}; Sy \textit{\textsc{ brn}}}} fut \edtext{telle fois}{\variant{tele foiz \textit{\textsc{ brn}}}} \edtext{pour}{\variant{que \textit{\textsc{ brn}}}} le \edtext{loingtain}{\variant{longtain \textit{\textsc{ atw}}}} sejour \edtext{que l'}{\variant{qu' \textit{\textsc{ atw brn}}}} on veoit \edtext{advenir, que on disoit que le mariage pour lequel ces seigneurs s'arresterent en la bonne cité de}{\variant{a ces seigneurs faire qu'on disoit que le mariage pour lequel ilz sejournoient a \textit{\textsc{ atw brn}}}} Thoulouse\edtext{,}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} ne se feroit point\edtext{, et}{\variant{. Et \textit{\textsc{ atw brn}}}} tout leur estat et \edtext{toutes}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} les ordonnances, \edtext{responses}{\variant{responces \textit{\textsc{ atw brn}}}} et \edtext{traittiés}{\variant{traittiéz \textit{\textsc{ atw}}; traitiéz \textit{\textsc{ brn}}}} du conte de \edtext{Fois,}{\variant{Foix \textit{\textsc{ atw brn}}}} de jour en jour \edtext{et de septmaine en septmaine,}{\variant{, de sepmaine en sepmaine \textit{\textsc{ atw brn}}}} ilz \edtext{envoierent}{\variant{envoioient \textit{\textsc{ atw}}; envoyoient \textit{\textsc{ brn}}}} soingneusement devers le duc de Berry\edtext{,}{\variant{$\phi$ \textit{\textsc{ brn}}}} \edtext{quy}{\variant{qui \textit{\textsc{ atw brn}}}} se tenoit a la Nonnette en Auvergne. Et le duc\edtext{, quy}{\variant{qui \textit{\textsc{ atw brn}}}} n'avoit autre desir fors que les choses approchassent,\edtext{}{\variant{souvent \textit{\textsc{ atw}}}} \edtext{escripsoit}{\variant{$\phi$ \textit{\textsc{ atw}}; rescripvoit \textit{\textsc{ brn}}}} devers \edtext{eulz}{\variant{eulx \textit{\textsc{ brn}}}}\edtext{,}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} et \edtext{les raffreschissoit souvent}{\variant{souvent les raffreschissoit de \textit{\textsc{ atw}}}} \edtext{nouveaulz}{\variant{nouveaulx \textit{\textsc{ atw brn}}}} \edtext{messages}{\variant{messaiges \textit{\textsc{ atw}}}}\edtext{. En}{\variant{en \textit{\textsc{ atw brn}}}} \edtext{eulz}{\variant{leur \textit{\textsc{ atw}}; eulx \textit{\textsc{ brn}}}} \edtext{signiffiant}{\variant{seigniffiant \textit{\textsc{ atw}}}} que \edtext{par nul moyen}{\variant{nullement \textit{\textsc{ atw brn}}}} \edtext{ilz}{\variant{$\phi$ \textit{\textsc{ atw}}}} ne \edtext{cessassent point}{\variant{cessasent \textit{\textsc{ atw}}}} que la \edtext{besoingne}{\variant{chose \textit{\textsc{ atw}}; besongne \textit{\textsc{ brn}}}} ne se \edtext{fesist.}{\variant{feïst. \textit{\textsc{ brn}}}} Le conte de \edtext{Foiz}{\variant{Foix \textit{\textsc{ atw brn}}}}, \edtext{quy}{\variant{qui \textit{\textsc{ atw brn}}}} estoit \edtext{sage}{\variant{saige \textit{\textsc{ atw}}}} \edtext{}{\variant{homme \textit{\textsc{ atw brn}}}} et \edtext{soubtil}{\variant{subtil \textit{\textsc{ brn}}}}\edtext{, et quy}{\variant{et qui \textit{\textsc{ atw brn}}}} veoit \edtext{l'ardent}{\variant{l'ardant \textit{\textsc{ atw brn}}}} desir du duc de Berry\edtext{, traittoit sagement}{\variant{traitoit saigement \textit{\textsc{ atw}}}} et bellement et si froidement mena \edtext{ses}{\variant{le \textit{\textsc{ atw}}; ces \textit{\textsc{ brn}}}} procés que par \edtext{l'accord}{\variant{accord \textit{\textsc{ atw brn}}}} de tous\edtext{, et}{\variant{et \textit{\textsc{ atw brn}}}} \edtext{encoires}{\variant{encores \textit{\textsc{ atw}}}} a \edtext{grans prieres}{\variant{grant priere \textit{\textsc{ atw brn}}}} il \edtext{ot}{\variant{eut \textit{\textsc{ atw}}; eust \textit{\textsc{ brn}}}} \edtext{trente mille}{\variant{XXXM \textit{\textsc{ atw brn}}}} frans pour les \edtext{dix}{\variant{$\phi$ \textit{\textsc{ atw brn}}}} ans \edtext{que il }{\variant{qu'il \textit{\textsc{ atw brn}}}} \edtext{avoit}{\variant{l'avoit \textit{\textsc{ atw}}}} \edtext{gardé}{\variant{gardee \textit{\textsc{ atw brn}}}} la damoiselle \edtext{}{\variant{, \textit{\textsc{ atw brn}}}} \edtext{nourrie et tenu son estat.}{\variant{nourie et tenue son estat \textit{\textsc{ atw}}}} \edtext{ Encoires se plus \edtext{il}{\subvariant{$\phi$ \textit{\textsc{ brn}}}} en eust demandé\edtext{,}{\subvariant{$\phi$ \textit{\textsc{ brn}}}} plus en eust eu et eut plus eul s'il eut demandé }{\variant{et eut plus eul s'il eut demandé \textit{\textsc{ atw}}}}\edtext{. Mais}{\variant{mais \textit{\textsc{ atw}};, mais \textit{\textsc{ brn}}}} \edtext{moiennement il volt}{\variant{moyennement il en voult \textit{\textsc{ atw brn}}}} ouvrer \edtext{sur}{\variant{sus \textit{\textsc{ brn}}}} la conclusion de ceste matiere affin \edtext{que on luy}{\variant{qu'on lui \textit{\textsc{ atw brn}}}} en sceust gré\edtext{. Et}{\variant{et \textit{\textsc{ atw brn}}}} \edtext{aussi}{\variant{$\phi$ \textit{\textsc{ atw}}}} que le duc de \edtext{Berry}{\variant{Berri \textit{\textsc{ atw}}}} sentist que il \edtext{faisoit}{\variant{feist \textit{\textsc{ atw}}; feïst \textit{\textsc{ brn}}}} aucune chose pour \edtext{luy}{\variant{lui \textit{\textsc{ atw}}}}.
+	\pend
+	\endnumbering
+	
+	\pagebreak
+	\tableofcontents
+\end{document}

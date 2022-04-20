@@ -58,7 +58,249 @@
             \end{titlepage}
             
             
-             \section{Présentation du projet} \subsection{Présentation de l'encodage XML-TEI et de sa source en ligne: l'Online Froissart} \subsubsection{À propos du présent encodage} La présente édition critique d'un chapitre des \textit{Chroniques} de Jean Froissart a été encodée en XML-TEI par Paul, Hector Kervegan. L'encodage s'appuie sur une édition en ligne des \textit{Chroniques} réalisée dans le cadre du projet Online Froissart.\\ \indent L'encodage en XML-TEI a été réalisé dans le cadre l'évaluation du cours de TEI du master 2 TNAH de l'École nationale des Chartes (Paris, France). L'encodage a été finalisé le 31 janvier 2022. Le présent document résulte d'une transformation XSL vers \LaTeX réalisée en avril 2022 dans le cadre de l'évaluation du cours d'XSLT de ce master. \subsubsection{À propos du projet Online Froissart} Sélection, alignement des témoins et première édition en ligne par \href{https://www.dhi.ac.uk/onlinefroissart}{\textit{The Online Froissart. A digital edition of the Chronicles of Jean Froissart}}. La source de l'encodage est disponible à \href{https://www.dhi.ac.uk/onlinefroissart/browsey.jsp?f=b&pb2=Ber-3_SHF_3A-307&disp2=shf&GlobalWord=0&div2=ms.f.transc.Ber-3&div1=ms.f.transc.Bre-3&div0=ms.f.transc.Ant-3&panes=3&GlobalMode=shf&img0=&disp0=shf&disp1=shf&pb1=Bre-3_SHF_3A-307&img2=&GlobalShf=3A-306&pb0=Ant-3_SHF_3A-307&img1=}{cette adresse}.\\~\\ \noindent Responsables du projet Online Froissart : \begin{itemize}\item{ Peter Ainsworth } \item{ Godfried Croenen } \end{itemize} \noindent Institutions partenaires du Online Froissart : \begin{itemize}\item{University of Sheffield} \item{University of Liverpool} \item{AHRC. Art and Humanities Research Council} \item{The Digital Humanities Institute} \item{ATLIF. Laboratoire Analyse et Traitement Informatique de la Langue Française} \item{CNRS. Centre National de la Recherche Scientifique} \end{itemize} \subsection{Description des témoins} \noindent \textbf{Manuscrit de Berlin (\texttt{brl})}\\ \indent Le manuscrit de Berlin (Allemagne) a pour identifiant \textbf{\texttt{brl}}. Il est conservé dans le Département des Manuscrits de la Staatsbibliothek zu Berlin - Preussischer Kulturbesitz. Il a pour cote "Dep. Breslau 1" et est également connu sous le nom de \textit{Froissart de Breslau}. Il est écrit en Moyen français en 1468-1469. Le témoin de Berlin est le plus ancien des trois témoins utilisés dans cette édition critique. Il est donc retenu comme présentant la \textbf{leçon principale}. Son contenu constitue le corps de texte de l'édition \LaTeX, et le \texttt{lem} de l'édition TEI.\\ \indent Le manuscrit est écrit sur parchemin. Il est d'une longueur de 343 folio. Ces informations ont été proviennent de \href{http://medium-avance.irht.cnrs.fr/ark:/63955/md44pk02gf53}{Medium - Répertoire des manuscrits reproduits ou recensés}.\\~\\\noindent \textbf{Manuscrit d' Anvers (\texttt{atw})}\\ \indent Le manuscrit d'Anvers (Belgique) a pour identifiant \textbf{\texttt{atw}}. Il est conservé dans la Collection des manuscrits du Museum Plantin-Moretus. Il a pour cote "M 15.6". Il est écrit en Moyen français en 1475-1485.\\ \indent Le manuscrit est écrit sur parchemin. Il est d'une longueur de 350 folio. Ces informations ont été proviennent de la \href{https://anet.be/record/opacmpm/c:lvd:14057240/F}{Anet Departement Bibliotheek}.\\~\\\noindent \textbf{Manuscrit de Berne (\texttt{brn})}\\ \indent Le manuscrit de Berne (Suisse) a pour identifiant \textbf{\texttt{brn}}. Il est conservé dans les Archives de la Burgerbibliothek Bern - Bibliothèque de la Bourgeoisie. Il a pour cote "Cod. A 14". Il est écrit en Moyen français en 1470-1490 Suisse Berne Burgerbibliothek Bern - Bibliothèque de la Bourgeoisie Archives Section Bongarsiana/Codices Cod. A 14 Moyen français parchemin II + 336 folio 44 34,5 10 1470-1490 Anciennement propriété du Comte Alexandre de Donha, bourgeois de Berne, il en fait don à la bibliothèque en 1697 Bibliothèque de la Bourgeoisie - Catalogue en ligne des Archives .\\ \indent Le manuscrit est écrit sur parchemin. Il est d'une longueur de II + 336 folio .Il mesure 44 centimètres de hauteur, 34,5 cm de largeur et 10 cm de profondeur. Ces informations ont été proviennent de la \href{http://katalog.burgerbib.ch/detail.aspx?ID=147296}{Bibliothèque de la Bourgeoisie - Catalogue en ligne des Archives}. \subsection{Principes d'encodage suivis pour l'édition en XML-TEI} L'alignement des témoins a été réalisé avec l'aide de l'algorithme de Dekker de \href{https://collatex.net/}{Collatex} . Cet alignement a été repris ensuite pour constituer l'édition critique qui suit.L'édition critique et l'alignement des témoins cherchent à permettre l'étude la plus précise possible de la variance et des similitudes entre les versions: \begin{itemize} \item{La structuration du texte en paragraphes (\texttt{<p>}) a été abandonnée : les trois textes sont insérés dans un conteneur \texttt{<ab>} et les changements de paragraphes sont signalés par des \texttt{<milestone>}, pour permettre un alignement des témoins phrase par phrase} \item{Pour cet encodage, on considère que les différences au niveau de la structure de la phrase sont plus importantes que les différences orthographiques. L'encodage suit ce principe: quand la même phrase est dans un ordre différent dans différents témoins, cette phrase est encodée comme un élément entier, plutôt que de rassembler les mêmes mots de la phrase dans un seul élément \texttt{<app>}(ce qui permettrait de mettre en avant les différences orthographiques entre ces mêmes mots).} \item{Pour permettre l'étude de variance la plus précise possible, l'encodage suit un principe de modularité: lorsque 2 témoins sont semblables et diffèrent du 3e témoin, alors ces 2 témoins sont encodés dans un seul élément \texttt{<rdg>}. Les variations au sein de ces 2 témoins sont signalées dans un \texttt{<app>} à l'intérieur du \texttt{<rdg>}. L'édition est donc construite en variations/sous-variations.} \item{L'élément \texttt{<rdgGrp>} est utilisé pour rassembler deux lectures très proches ; cependant, pour privilégier l'étude de la variation entre les témoins et pour coller au plus près de ces variations, l'utilisation de \texttt{<rdg>} rassemblant plusieurs témoins et contenant un ou plusieurs \texttt{<app>} (comme décrit au dessus) est privilégiée.} \end{itemize} Pour chaque élément \texttt{<app>}, un attribut "\texttt{@corresp"} est utilisé pour préciser la nature de la différence entre les témoins. Les valeurs possible pour cet attribut sont: \begin{itemize} \item{\texttt{orth} : différence orthographique} \begin{itemize} \item{128 variations de ce type figurent dans le chapitre encodé.} \end{itemize} \item{\texttt{punct} : différence de ponctuation} \begin{itemize} \item{57 variations de ce type figurent dans le chapitre encodé.} \end{itemize} \item{\texttt{sentence-order} : différence dans l'ordre des mots dans un bloc de texte} \begin{itemize} \item{10 variations de ce type figurent dans le chapitre encodé.} \end{itemize} \item{\texttt{word-diff} : des mots différents sont utilisés dans un même bloc de texte dans les différents témoins} \begin{itemize} \item{39 variations de ce type figurent dans le chapitre encodé.} \end{itemize} \item{\texttt{add-words} : un témoin présente un ou plusieurs mots qui ne se trouvent pas dans les autres} \begin{itemize} \item{43 variations de ce type figurent dans le chapitre encodé.} \end{itemize} \item{\texttt{text-segmentation} : la séparation du texte en paragraphes et pages est différente d'un témoin à l'autre} \begin{itemize} \item{7 variations de ce type figurent dans le chapitre encodé.} \end{itemize} \item{\texttt{ornementation} : la décoration du manuscrit varie d'un témoin à l'autre} \begin{itemize} \item{2 variations de ce type figurent dans le chapitre encodé.} \end{itemize} \end{itemize} Pour mieux aligner les textes et mettre en avant les variations entre les témoins, les paragraphes ne sont pas contenus dans des \texttt{<p>}. Le passage d'un paragraphe à l'autre est signalé par un \texttt{<milestone unit="tei:p"/>} et par un \texttt{<lb/>}. Cette méthode est suggérée par Beshero-Bondar, Cayless, Vigilanti (2019: 3.10) \footnote{ Beshero-Bondar, Cayless, Viglianti , "Document Modeling with the TEI Critical Apparatus". \href{http://bit.ly/crit-app-panel}{Disponible en ligne} (consulté le 18.04.22).} \subsection{Présentation du texte encodé} \subsubsection{À propos des \textit{Chroniques} de Froissart} Datant du XIVe siècle, les \textit{Chroniques} de Froissart sont écrites en moyen français. Elles couvrent les années 1322 à 1400 et décrivent les évènements de la première moitié de la Guerre de Cent Ans. Ce récit en prose s'ouvre sur les événements qui ont précédé la déposition d'Édouard II en 1326 et couvre la période allant jusqu'à 1400.\\ \indent \subsubsection{À propos de l'extrait encodé} Ce passage est extrait du troisième volumes des Chroniques de Froissart. Dans cet extrait, Jean Froissart rapporte la manière dont le duc Jean de Berry a organisé son second mariage avec Jeanne, comtesse d’Auvergne et de Boulogne. Dès la mort de sa première femme, le duc a organisé des négociations avec le comte Gaston de Foix-Béarn, surnommé Fébus. Ce dernier refuse de laisser le duc lui prendre sa protégée sans négociation, à cause de de querelles familiales. Afin de convaincre Fébus, le duc de Berry cherche à trouver un accord ; pour ce faire, il mobilise tout son important cercle d'influence, dont le duc de Bourgogne et même Charles VI le roi de France.Les messagers du duc et ses proches se lançent donc dans un voyage pour rencontrer le conte de Foix, s'arrêtant à Avignon chez le pape Clément. Connu pour sa finesse politique, Fébus s'est servi de Jeanne afin d'obtenir les bonnes grâces du duc. Il accepte donc de céder la jeune femme au duc, pour obtenir ses bonnes grâces.Ce court réçit est, comme l'ensemble des Chroniques, est un témoignagne du climat politique de la Guerre de Cent Ans, mais aussi des mœurs du XVe siècle : le texte décrit la façon dont les mariages s'organisent durant le Moyen-Âge tardif ; les réactions du roi de France et du duc de Bourgogne quant à différence d'âge du duc et de sa future épouse donnent à voir l'organisation des relations entre les genres au XVe siècle. \subsubsection{Index des personnages} \begin{itemize} \item{\textbf{ Jean de Berry .} Le duc Jean de Berry (1340-1416), troisième fils du roi Jean II de France et de Bonne de Luxembourg, frère du roi Charles V de France et oncle du roi Charles VI. Il a épousé Jeanne d'Armagnac, fille du comte Jean Ier et sœur du comte Jean II. Jean de Berry, avec son frère Philippe, duc de Bourgogne, étaient des figues dominantes dans le royaume de France et des personnages centraux de la politique française durant la majeure partie du règne de Charles VI, d'abord du fait de la position d'infériorité du roi, et ensuite à cause de sa folie. \begin{itemize} \item{12 mentions dans la leçon principale (témoin de Berlin).} \item{11 mentions dans le témoin d'Anvers.} \item{12 mentions dans le témoin de Berne.} \end{itemize}} \item{\textbf{ Jeanne d' Armagnac .} Première femme du duc Jean de Berry, qu'elle épousa en 1360. Elle est la fille de Jean Ier, comte d'Armgnac. Elle mourut le 15 mars 1388. \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{ Gaston III de Foix-Béarn Fébus .} Gascon III comte de Foix, aussi connu sous le nom de Fébus (1331-1391). ll est le fils de Gaston II de Foix et d'Aliénor de Comminges, dont Froissart a visité la cour en 1388. Gaston est né en 1331 et a succédé à son père en 1343. Le 4 août 1348, il a épousé Agnès de Navarre, la fille du comte Philippe d'Évreux et de Jeanne, la reine de Navarre (qui est elle même la fille de Louis X de France). Gaston est mort en 1391. Il est l'autheur d'un célèbre traité de chasse intitulé Livre de chasse. \begin{itemize} \item{13 mentions dans la leçon principale (témoin de Berlin).} \item{12 mentions dans le témoin d'Anvers.} \item{12 mentions dans le témoin de Berne.} \end{itemize}} \item{\textbf{ Jeanne II d' Auvergne .} \begin{itemize} \item{8 mentions dans la leçon principale (témoin de Berlin).} \item{7 mentions dans le témoin d'Anvers.} \item{7 mentions dans le témoin de Berne.} \end{itemize}} \item{\textbf{ Jean II d' Auvergne .} \begin{itemize} \item{3 mentions dans la leçon principale (témoin de Berlin).} \item{2 mentions dans le témoin d'Anvers.} \item{2 mentions dans le témoin de Berne.} \end{itemize}} \item{\textbf{ Charles VI .} \begin{itemize} \item{5 mentions les trois leçons.} \end{itemize}} \item{\textbf{ Philippe II de Bourgogne .} Philippe "le Hardi", duc de Bourgogne (1342-1404, est le quatrième fils de Jean II de France et de Bonne de Luxembourg. Le duc de Bourgogne est une figure proéminente du gouvernement français durant le règne de son neveu Charles VI, et surtout après 1392, quand le roi a commencé à souffrir de crises de folie qui donnent aux ducs de Berry et de Bourgogne l'opportunité de prendre le pouvoir aux Marmousets, les administrateurs de Charles VI. Philippe épouse Margaret de Male, comtesse de Frandres. Ce marriage finit par réunir le duché de Bourgogne et des Artois. Cette union ramène aussi les comtés de Flandres, de Nevers et de Rethel sous le contrôle du duc de Bourgogne. Cette alliance maritale, ainsi que les mariages des descendants du duc de Bourgogne, furent la base du grand duché de Bourgogne, un État quasi-indépendant plus qu'un fiel de la couronne française. \begin{itemize} \item{2 mentions les trois leçons.} \end{itemize}} \item{\textbf{ Jean II de Berry .} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{ Bureau de la Rivière .} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{ Jean de la Personne .} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{ Guillaume VI de Vienne .} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{ Guillaume de la Trémoille .} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{ Jean III de Sancerre .} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{ Clément VII .} L'antipape Clément VII est né Robert de Genève (1342-1394). Il est le fil d'Amadeus III, comte de Genève et de Mathilde, fille de Robert VII, comte de Boulogne et d'Auvergne et grand-parent du roi Jean II de France. Il est fait évêque de Thérouanne en 1361, archêveque de Cambrai en 1368 et cardinal en 1371. Il est élu en tant que Pape Clément VII à Fondi en 1378 par les cardinaux français en oppisition à Urbain VI, et devient le premier antipape du grand schisme. Plus tard, il fut reconnu comme antipape plutôt que comme pape, et son nom fut donné à un pape "légitime" du XVIe siècle. Clément a résidé à Avignon. Froissart voit en lui le "vrai" pape et reconnaît son soutient au roi de France. Il est mort en 1394. \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{ Louis de Sancerre .} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{ Jean de Gand .} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{ Henri IV roi d'Angleterre .} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \end{itemize} \subsubsection{Liste des relations dans l'extrait encodé} \begin{itemize} \item{ Jeanne d'Armignac est la première femme du duc de Berry.} \item{ Gaston de Foix est le gardien de Jeanne, comtesse d'Auvergne et de Boulogne.} \item{ Le conte Jean de Boulogne est le père de Jeanne, comtesse d'Auvergne et de Boulogne.} \item{ Le duc Jean de Berry est l'oncle du roi de France.} \item{ Philippe II le Hardi, duc de Bourgogne, est le frère du duc de Berry.} \item{ Jean II de Berry est le fils du duc de Berry.} \item{ Jean II de Berry est le cousin du roi de France.} \item{ Bureau de la Rivière et Jean de la Personne (le conte d'Assy) sont des alliés du roi de France.} \item{ Guillaume VI de Vienne (l'évêque d'Autun) et Guillaume de la Trémoille sont des alliés du duc de Bourgogne.} \item{ Jean de Sancerre est un allié du duc de Berry.} \item{ Henri IV est le fils du duc de Lancastre.} \item{ Dans Antwerp M 15.6, Clément VII est cousin de Jeanne II d'Auvergne..} \item{ Dans le manuscrit de Berlin (Dep. Breslau I), Clément VII est cousin du conte Jean de Boulogne, père de Jeanne II d'Auvergne..} \end{itemize} \subsubsection{Index des lieux} \begin{itemize} \item{\textbf{Avignon.} \begin{itemize} \item{2 mentions les trois leçons.} \end{itemize}} \item{\textbf{Nîmes.} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{Montpellier.} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{Béziers.} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{Carcassonne.} \begin{itemize} \item{2 mentions dans la leçon principale (témoin de Berlin).} \item{1 mention dans le témoin d'Anvers.} \item{2 mentions dans le témoin de Berne.} \end{itemize}} \item{\textbf{Toulouse.} \begin{itemize} \item{2 mentions les trois leçons.} \end{itemize}} \item{\textbf{Orthez.} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{Bordeaux.} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{Narbonne.} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \item{\textbf{Nonette.} \begin{itemize} \item{1 mention dans les trois leçons.} \end{itemize}} \end{itemize} \pagebreak 
+            
+                \section{Présentation du projet}
+                \subsection{Présentation de l'encodage XML-TEI et de sa source en ligne: l'Online Froissart}
+                
+        
+        
+        \subsubsection{À propos du présent encodage}
+        La présente édition critique d'un chapitre des \textit{Chroniques} de Jean Froissart a été encodée en XML-TEI par Paul, Hector Kervegan. L'encodage s'appuie sur une édition en ligne des \textit{Chroniques} 
+            réalisée dans le cadre du projet Online Froissart.\\ \indent L'encodage en XML-TEI a été 
+            réalisé dans le cadre l'évaluation du cours de TEI du master 2 TNAH de l'École nationale des Chartes (Paris, France). L'encodage a été finalisé le 31 janvier 2022. Le présent document résulte d'une transformation XSL vers \LaTeX  réalisée
+            en avril 2022 dans le cadre de l'évaluation du cours d'XSLT de ce master.
+        
+        
+        \subsubsection{À propos du projet Online Froissart}
+        Sélection, alignement des témoins et première édition en ligne par \href{https://www.dhi.ac.uk/onlinefroissart}{\textit{The Online Froissart. A digital edition of the Chronicles of Jean Froissart}}. La source de l'encodage est disponible à \href{https://www.dhi.ac.uk/onlinefroissart/browsey.jsp?f=b&pb2=Ber-3_SHF_3A-307&disp2=shf&GlobalWord=0&div2=ms.f.transc.Ber-3&div1=ms.f.transc.Bre-3&div0=ms.f.transc.Ant-3&panes=3&GlobalMode=shf&img0=&disp0=shf&disp1=shf&pb1=Bre-3_SHF_3A-307&img2=&GlobalShf=3A-306&pb0=Ant-3_SHF_3A-307&img1=}{cette adresse}.\\~\\
+        \noindent Responsables du projet Online Froissart : \begin{itemize}\item{
+            Peter
+            Ainsworth
+          } \item{
+            Godfried
+            Croenen
+          } \end{itemize} \noindent Institutions partenaires du Online Froissart : \begin{itemize}\item{University of Sheffield} \item{University of Liverpool} \item{AHRC. Art and Humanities Research Council} \item{The Digital Humanities Institute} \item{ATLIF. Laboratoire Analyse et Traitement Informatique de la Langue Française} \item{CNRS. Centre National de la Recherche Scientifique} \end{itemize} 
+                \subsection{Principes suivis pour l'encodage}
+                \subsubsection{Principes suivis pour l'édition en XML-TEI}
+                L'alignement des témoins a été réalisé avec l'aide de l'algorithme de Dekker de  \href{https://collatex.net/}{Collatex} . Cet alignement a été repris ensuite pour constituer l'édition critique qui suit.L'édition critique et l'alignement des témoins cherchent à permettre l'étude la plus précise possible de la variance et des similitudes entre les versions : \begin{itemize} 
+           \item{La structuration du texte en paragraphes (\texttt{<p>}) a été abandonnée : les trois textes sont insérés dans un conteneur \texttt{<ab>} 
+            et les changements de paragraphes sont signalés par des \texttt{<milestone>}, pour permettre un alignement des témoins phrase par phrase.} 
+           \item{Pour cet encodage, on considère que les différences au niveau de la structure de la phrase sont plus importantes que les différences orthographiques. L'encodage suit ce principe:
+            quand la même phrase est dans un ordre différent dans différents témoins, cette phrase est encodée comme un élément entier, 
+            plutôt que de rassembler les mêmes mots de la phrase dans un seul élément \texttt{<app>}(ce qui permettrait de mettre en avant les différences orthographiques entre ces mêmes mots).} 
+           \item{Pour permettre l'étude de variance la plus précise possible, l'encodage suit un principe de modularité: lorsque 2 témoins sont semblables et diffèrent du 3e témoin, 
+            alors ces 2 témoins sont encodés dans un seul élément \texttt{<rdg>}. Les variations au sein de ces 2 témoins sont signalées dans un \texttt{<app>} à l'intérieur du \texttt{<rdg>}.
+            L'édition est donc construite en variations/sous-variations.} 
+           \item{L'élément \texttt{<rdgGrp>} est utilisé pour rassembler deux lectures très proches ; cependant, pour privilégier l'étude de la variation entre les témoins
+            et pour coller au plus près de ces variations, l'utilisation de \texttt{<rdg>} rassemblant plusieurs témoins et contenant un ou plusieurs \texttt{<app>} (comme décrit au dessus) est privilégiée.} 
+         \end{itemize} 
+        Pour chaque élément \texttt{<app>}, un attribut "\texttt{@corresp"} est utilisé pour préciser la nature de la différence entre les témoins. Les valeurs possible pour cet attribut sont: \begin{itemize} 
+           \item{\textbf{\texttt{orth}} : différence orthographique} \begin{itemize} \item{128 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+           \item{\textbf{\texttt{punct}} : différence de ponctuation} \begin{itemize} \item{57 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+           \item{\textbf{\texttt{sentence-order}} : différence dans l'ordre des mots dans un bloc de texte} \begin{itemize} \item{10 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+           \item{\textbf{\texttt{word-diff}} : des mots différents sont utilisés dans un même bloc de texte dans les différents témoins} \begin{itemize} \item{39 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+           \item{\textbf{\texttt{add-words}} : un témoin présente un ou plusieurs mots qui ne se trouvent pas dans les autres} \begin{itemize} \item{43 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+           \item{\textbf{\texttt{text-segmentation}} : la séparation du texte en paragraphes et pages est différente d'un témoin à l'autre} \begin{itemize} \item{7 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+           \item{\textbf{\texttt{ornementation}} : la décoration du manuscrit varie d'un témoin à l'autre} \begin{itemize} \item{2 variations de ce type figurent dans le chapitre encodé.} \end{itemize} 
+         \end{itemize} 
+        Pour mieux aligner les textes et mettre en avant les variations entre les témoins, les paragraphes ne sont pas contenus dans des \texttt{<p>}.
+            Le passage d'un paragraphe à l'autre est signalé par un \texttt{<milestone unit="tei:p"/>} et par un \texttt{<lb/>}.
+            Cette méthode est suggérée par Beshero-Bondar, Cayless, Vigilanti (2019: 3.10)
+            
+          \footnote{
+                Beshero-Bondar, Cayless, Viglianti
+              , "Document Modeling with the TEI Critical Apparatus". \href{http://bit.ly/crit-app-panel}{Disponible en ligne} (consulté le 18.04.22).}
+                \subsubsection{Principes suivis pour l'édition \LaTeX}
+                
+            L'édition critique en XML-TEI qui est ici transformée est très (trop ?) 
+            détaillée: j'ai choisi de documenter toutes les variations entre les trois 
+            témoins : changements au niveau du texte, de la structure du texte 
+            (paragraphes et sauts de page) et changements dans la décoration des 
+            manuscrits. Tous ces éléments peuvent difficilement être traduits 
+            dans une édition critique "traditionnelle" (papier) ; les principes 
+            suivants ont donc été suivis :
+            \begin{itemize}
+            	\item{L'apparat critique est construit avec la leçon principale (témoin de 
+            		Berlin) en corps de texte ; en notes de bas de page, les variations et 
+            		autres détails sont signalés avec un système de notes à quatres étages :}
+            		\begin{itemize}
+            			\item{\textbf{\texttt{\textbackslash variant}} correspond à \texttt{\textbackslash Afootnote} et 
+            				permet d'encoder les variations "simples" entre les leçons.}
+            			\item{\textbf{\texttt{\textbackslash group}} correspond à \texttt{\textbackslash Bfootnote} et 
+            				permet d'encoder les groupes de temoins (\texttt{<rdgGrp>} 
+            				en TEI).}
+            			\item{\textbf{\texttt{\textbackslash subvariant}} correspond à \texttt{\textbackslash Cfootnote} 
+            			et permet d'encoder les sous-variations dans des apparats internes 
+            			(en termes TEI : les \texttt{<rdg>} qui sont dans des 
+            			\texttt{<app>} dans des \texttt{<app>}).}
+            			\item{\textbf{\texttt{\textbackslash explan}} correspond à \texttt{\textbackslash Dfootnote} et 
+            				permet d'encoder les éléments "non textuels" du témoin principal 
+            				(décorations et sauts de page encodés dans des \texttt{<witDetail>},
+            				changements de paragraphes).}
+            		\end{itemize}
+            	\item{Au sein d'un apparat critique (\texttt{<app>}) les groupes de 
+            		témoins qui ne contiennent pas la leçon principale (en langage TEI 
+            		les \texttt{<rdgGrp>} qui contiennent seulement des 
+            		\texttt{<rdg>}, mais pas de \texttt{<lem>}) se trouvent 
+            		dans une note de deuxième niveau (\texttt{\textbackslash group}, en \LaTeX). Si un 
+            		\texttt{<rdgGrp>} contient une partie du témoin principal, il n'est 
+            		pas retranscrit en \LaTeX.}
+            	\item{Les apparats internes (un \texttt{<app>} dans un 
+            		\texttt{<app>}) sont retranscrits en bas de page grâce à un 
+            		\texttt{\textbackslash subvariant} (note de 3e degré).}
+            	\item{Pour la leçon principale (le manuscrit de Berlin), la structure du 
+            		texte est retranscrite:}
+            		\begin{itemize}
+            			\item{Les sauts de paragraphe sont reportés en note de 
+            				bas de page dans un \texttt{\textbackslash explan} correspondant à une note de 4e niveau 
+            				et signifiés dans le corps du texte par un saut de paragraphe 
+            				(\texttt{\textbackslash pend \textbackslash pstart}, avec \texttt{reledmac}).} 
+            			\item{Les sauts de page sont également reportés en bas de page dans un 
+            				\texttt{\textbackslash explan} ; le numéro de page est également mentionné. Il n'y a 
+            				pas de saut de page dans le corps du texte pour éviter d'avoir un résultat 
+            				trop morcelé.}
+            			\item{Les détails sur la décoration du texte sont mentionnés en notes de 
+            				bas de page, dans un \texttt{\textbackslash explan}.}
+            			\item{Pour les autres leçons (témoins d'Anvers et de Berne), ces 
+            				détails ne sont pas mentionnés.}
+            	\end{itemize}
+            \end{itemize} 
+            
+            \indent Le fichier XSL produit a été visualisé et fonctionne sur TeXstudio 
+            avec un compilateur \texttt{XeLaTeX}. Des fois, des erreurs de compilation 
+            peuvent avoir lieu (toutes les notes de bas de page renvoient à la ligne 0 
+            ou se trouvent à la fin du document). Dans ce cas, relancer la compilation.
+        
+                \subsection{Description des témoins}
+                \noindent \textbf{Manuscrit de Berlin (\texttt{brl})}\\
+            
+         \indent Le manuscrit de Berlin (Allemagne) a pour identifiant \textbf{\texttt{brl}}. Il est conservé dans le Département des Manuscrits de la  Staatsbibliothek zu Berlin - Preussischer Kulturbesitz. Il a pour cote "Dep. Breslau 1" et est également connu sous le nom de \textit{Froissart de Breslau}. Il est écrit en Moyen français en 1468-1469. Le témoin de Berlin est le plus ancien des trois témoins utilisés dans cette édition critique. Il est donc retenu comme présentant la \textbf{leçon principale}.
+                Son contenu constitue le corps de texte de l'édition \LaTeX, et
+                le \texttt{lem} de l'édition TEI.\\ \indent Le manuscrit est écrit sur parchemin. Il est d'une longueur de 343 folio. Ces informations ont été proviennent de \href{http://medium-avance.irht.cnrs.fr/ark:/63955/md44pk02gf53}{Medium - Répertoire des manuscrits reproduits ou recensés}.\\~\\\noindent \textbf{Manuscrit d' Anvers (\texttt{atw})}\\
+            
+         \indent Le manuscrit d'Anvers (Belgique) a pour identifiant \textbf{\texttt{atw}}. Il est conservé dans la Collection des manuscrits du  Museum Plantin-Moretus. Il a pour cote "M 15.6". Il est écrit en Moyen français en 1475-1485.\\ \indent Le manuscrit est écrit sur parchemin. Il est d'une longueur de 350 folio. Ces informations ont été proviennent de la \href{https://anet.be/record/opacmpm/c:lvd:14057240/F}{Anet Departement Bibliotheek}.\\~\\\noindent \textbf{Manuscrit de Berne (\texttt{brn})}\\
+            
+         \indent Le manuscrit de Berne (Suisse) a pour identifiant \textbf{\texttt{brn}}. Il est conservé dans les Archives de la  Burgerbibliothek Bern - Bibliothèque de la Bourgeoisie. Il a pour cote "Cod. A 14". Il est écrit en Moyen français en 1470-1490. Anciennement propriété du Comte Alexandre de Donha, bourgeois de Berne, il en fait don à la bibliothèque en 1697.\\ \indent Le manuscrit est écrit sur parchemin. Il est d'une longueur de II + 336 folio
+                      
+                    . Il mesure 44 centimètres de hauteur, 34,5 cm de largeur et 10 cm de profondeur. Ces informations ont été proviennent de la \href{http://katalog.burgerbib.ch/detail.aspx?ID=147296}{Bibliothèque de la Bourgeoisie - Catalogue en ligne des Archives}.
+                \subsection{Présentation du texte encodé}
+                
+        
+        \subsubsection{À propos des \textit{Chroniques} de Froissart}
+        Datant du XIVe siècle, les \textit{Chroniques} de Froissart sont écrites en moyen français. Elles couvrent les années 1322 à 1400 et décrivent les évènements de la première moitié de la Guerre de Cent Ans.
+          Ce récit en prose s'ouvre sur les événements qui ont précédé la déposition d'Édouard II en 1326 et couvre la période allant jusqu'à 1400.\\ \indent 
+        
+        \subsubsection{À propos de l'extrait encodé}
+        Ce passage est extrait du troisième volume des Chroniques de Froissart. Dans cet extrait, Jean Froissart rapporte la manière
+                     dont le duc Jean de Berry a organisé son second mariage avec Jeanne, comtesse d’Auvergne et de Boulogne.
+                     Dès la mort de sa première femme, le duc a organisé des négociations avec le comte Gaston de Foix-Béarn, surnommé Fébus. Ce dernier refuse de laisser
+                     le duc lui prendre sa protégée sans négociation, à cause de de querelles familiales. Afin de convaincre Fébus, le duc de Berry cherche à trouver
+                     un accord ; pour ce faire, il mobilise tout son important cercle d'influence, dont le duc de Bourgogne et même Charles VI le roi de France. Les messagers du duc et ses proches se lançent donc dans un voyage pour rencontrer le conte de Foix, s'arrêtant à Avignon chez le pape Clément. Connu pour
+                     sa finesse politique, Fébus s'est servi de Jeanne
+                     afin d'obtenir les bonnes grâces du duc. Il accepte donc de céder la jeune femme au duc, pour obtenir ses bonnes grâces. Ce court réçit est, comme l'ensemble des Chroniques, un témoignagne du climat politique de la Guerre de Cent Ans, mais aussi des mœurs du XVe siècle : le texte décrit 
+                     la façon dont les mariages s'organisent durant le Moyen-Âge tardif ; les réactions du roi de France et du duc de Bourgogne quant à différence d'âge du duc et de sa future
+                     épouse donnent à voir l'organisation des relations entre les genres au XVe siècle.
+        
+        \subsubsection{Index des personnages}
+        \begin{itemize} \item{\textbf{
+              Jean
+              de
+              Berry
+            .} Le duc Jean de Berry (1340-1416), troisième fils du roi Jean II de France et de Bonne de Luxembourg, frère du roi Charles V de France et
+              oncle du roi Charles VI. Il a épousé Jeanne d'Armagnac, fille du comte Jean Ier et sœur du comte Jean II. Jean de Berry, avec son frère
+              Philippe, duc de Bourgogne, étaient des figues dominantes dans le royaume de France et des personnages centraux de la politique française
+              durant la majeure partie du règne de Charles VI, d'abord du fait de la position d'infériorité du roi, et ensuite à cause de sa folie. \begin{itemize} \item{12 mentions dans la leçon principale (témoin de Berlin).}  \item{11 mentions dans le témoin d'Anvers.}  \item{12 mentions dans le témoin de Berne.}  \end{itemize}}  \item{\textbf{
+              Jeanne
+              d'
+              Armagnac
+            .} Première femme du duc Jean de Berry, qu'elle épousa en 1360. Elle est la fille de Jean Ier, comte d'Armgnac.
+              Elle mourut le 15 mars 1388. \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Gaston
+              III
+              de
+              Foix-Béarn
+              Fébus
+            .} Gascon III comte de Foix, aussi connu sous le nom de Fébus (1331-1391). ll est le fils de Gaston II de Foix et
+              d'Aliénor de Comminges, dont Froissart a visité la cour en 1388. Gaston est né en 1331 et a succédé à son père en 1343. Le 4 août 1348, il
+              a épousé Agnès de Navarre, la fille du comte Philippe d'Évreux et de Jeanne, la reine de Navarre (qui est
+              elle même la fille de Louis X de France). Gaston est mort en 1391. Il est l'autheur d'un célèbre traité de chasse intitulé Livre de chasse. \begin{itemize} \item{13 mentions dans la leçon principale (témoin de Berlin).}  \item{12 mentions dans le témoin d'Anvers.}  \item{12 mentions dans le témoin de Berne.}  \end{itemize}}  \item{\textbf{
+              Jeanne
+              II
+              d'
+              Auvergne
+            .}  \begin{itemize} \item{8 mentions dans la leçon principale (témoin de Berlin).}  \item{7 mentions dans le témoin d'Anvers.}  \item{7 mentions dans le témoin de Berne.}  \end{itemize}}  \item{\textbf{
+              Jean
+              II
+              d'
+              Auvergne
+            .}  \begin{itemize} \item{3 mentions dans la leçon principale (témoin de Berlin).}  \item{2 mentions dans le témoin d'Anvers.}  \item{2 mentions dans le témoin de Berne.}  \end{itemize}}  \item{\textbf{
+              Charles
+              VI
+            .}  \begin{itemize} \item{5 mentions les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Philippe
+              II
+              de
+              Bourgogne
+            .} Philippe "le Hardi", duc de Bourgogne (1342-1404, est le quatrième fils de Jean II de France
+              et de Bonne de Luxembourg. Le duc de Bourgogne est une figure proéminente du gouvernement français durant le règne de son neveu Charles VI,
+              et surtout après 1392, quand le roi a commencé à souffrir de crises de folie qui donnent aux ducs de Berry et de Bourgogne l'opportunité de prendre
+              le pouvoir aux Marmousets, les administrateurs de Charles VI. Philippe épouse Margaret de Male, comtesse de Frandres. Ce marriage finit par réunir le duché 
+              de Bourgogne et des Artois. Cette union ramène aussi les comtés de Flandres, de Nevers et de Rethel sous le contrôle du duc de Bourgogne. Cette alliance 
+              maritale, ainsi que les mariages des descendants du duc de Bourgogne, furent la base du grand duché de Bourgogne, un État quasi-indépendant plus qu'un fiel de la couronne française. \begin{itemize} \item{2 mentions les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Jean
+              II
+              de
+              Berry
+            .}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Bureau
+              de la
+              Rivière
+            .}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Jean
+              de la
+              Personne
+            .}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Guillaume
+              VI
+              de
+              Vienne
+            .}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Guillaume
+              de la
+              Trémoille
+            .}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Jean
+              III
+              de
+              Sancerre
+            .}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Clément
+              VII
+            .} L'antipape Clément VII est né Robert de Genève (1342-1394). Il est le fil d'Amadeus III, comte de Genève et de Mathilde, fille
+              de Robert VII, comte de Boulogne et d'Auvergne et grand-parent du roi Jean II de France. Il est fait évêque de Thérouanne en 1361, archêveque de Cambrai en 1368 et
+              cardinal en 1371. Il est élu en tant que Pape Clément VII à Fondi en 1378 par les cardinaux français en oppisition à Urbain VI, et devient le premier antipape du grand schisme.
+              Plus tard, il fut reconnu comme antipape plutôt que comme pape, et son nom fut donné à un pape "légitime" du XVIe siècle. Clément a résidé à Avignon. Froissart voit en lui le "vrai"
+              pape et reconnaît son soutient au roi de France. Il est mort en 1394. \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Louis
+              de
+              Sancerre
+            .}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Jean
+              de
+              Gand
+            .}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{
+              Henri
+              IV
+              roi d'Angleterre
+            .}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}} \end{itemize}
+        
+        \subsubsection{Liste des relations dans l'extrait encodé}
+         \begin{itemize} \item{ Jeanne d'Armignac est la première femme du duc de Berry.}  \item{ Gaston de Foix est le gardien de Jeanne, comtesse d'Auvergne et de Boulogne.}  \item{ Le conte Jean de Boulogne est le père de Jeanne, comtesse d'Auvergne et de Boulogne.}  \item{ Le duc Jean de Berry est l'oncle du roi de France.}  \item{ Philippe II le Hardi, duc de Bourgogne, est le frère du duc de Berry.}  \item{ Jean II de Berry est le fils du duc de Berry.}  \item{ Jean II de Berry est le cousin du roi de France.}  \item{ Bureau de la Rivière et Jean de la Personne (le conte d'Assy) sont des alliés du roi de France.}  \item{ Guillaume VI de Vienne (l'évêque d'Autun) et Guillaume de la Trémoille sont des alliés du duc de Bourgogne.}  \item{ Jean de Sancerre est un allié du duc de Berry.}  \item{ Henri IV est le fils du duc de Lancastre.}  \item{ Dans Antwerp M 15.6, Clément VII est cousin de Jeanne II d'Auvergne.}  \item{ Dans le manuscrit de Berlin (Dep. Breslau I), Clément VII est cousin du conte Jean de Boulogne, père de Jeanne II d'Auvergne.}  \end{itemize} 
+        
+        \subsubsection{Index des lieux}
+        \begin{itemize} \item{\textbf{Avignon.}  \begin{itemize} \item{2 mentions les trois leçons.}  \end{itemize}}  \item{\textbf{Nîmes.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Montpellier.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Béziers.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Carcassonne.}  \begin{itemize} \item{2 mentions dans la leçon principale (témoin de Berlin).}  \item{1 mention dans le témoin d'Anvers.}  \item{2 mentions dans le témoin de Berne.}  \end{itemize}}  \item{\textbf{Toulouse.}  \begin{itemize} \item{2 mentions les trois leçons.}  \end{itemize}}  \item{\textbf{Orthez.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Bordeaux.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Narbonne.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}}  \item{\textbf{Nonette.}  \begin{itemize} \item{1 mention dans les trois leçons.}  \end{itemize}} \end{itemize}
+                \pagebreak
+            
             
             
             \section{Édition critique}

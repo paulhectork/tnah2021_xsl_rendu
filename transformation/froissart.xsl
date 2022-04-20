@@ -12,6 +12,10 @@
             <xsl:value-of select="replace(base-uri(.), '.xml', '')"/> 
         </xsl:variable>
         
+        
+        
+        <!-- ################ STRUCTURE D'ACCUEIL ################ -->
+        
         <xsl:result-document href="{concat($appfile, '.tex')}">
             <!-- paramétrage du latex -->
             % métadonnées
@@ -76,10 +80,13 @@
                 \section{Présentation du projet}
                 \subsection{Présentation de l'encodage XML-TEI et de sa source en ligne: l'Online Froissart}
                 <xsl:call-template name="titlestmt"/>
+                \subsection{Principes suivis pour l'encodage}
+                \subsubsection{Principes suivis pour l'édition en XML-TEI}
+                <xsl:call-template name="encodingdesc"/>
+                \subsubsection{Principes suivis pour l'édition \LaTeX}
+                <xsl:call-template name="latex"/>
                 \subsection{Description des témoins}
                 <xsl:call-template name="sourcedesc"/>
-                \subsection{Principes d'encodage suivis pour l'édition en XML-TEI}
-                <xsl:call-template name="encodingdesc"/>
                 \subsection{Présentation du texte encodé}
                 <xsl:call-template name="profiledesc"/>
                 \pagebreak
@@ -88,7 +95,10 @@
             <xsl:variable name="hdr1">
                 <xsl:value-of select="replace($header, '\s+', ' ')"/>
             </xsl:variable>
-            <xsl:value-of select="$hdr1"/>
+            <xsl:variable name="hdr2">
+                <xsl:value-of select="replace($header, '\.+', '.')"/>
+            </xsl:variable>
+            <xsl:value-of select="$hdr2"/>
             
             <!-- corps de texte -->
             \section{Édition critique}
@@ -133,15 +143,11 @@
     
     
     
-    
-    
-    
-    <!-- ########################################################## -->
     <!-- ################ RÈGLES POUR LE TEIHEADER ################ -->
-    <!-- ########################################################## -->
     
     <!-- règle pour le titleStmt qui appelle une règle pour le publicationStmt 
-        (informations bibliographiques sur l'édition TEI) -->
+        (informations bibliographiques sur l'édition TEI) : construire des paragraphes
+        descriptifs -->
     <xsl:template name="titlestmt" match="titleStmt">
         
         <!-- informations biblio sur l'encodage XML TEI -->
@@ -177,9 +183,7 @@
             <xsl:call-template name="hdrpersname"/>
             <xsl:text>} </xsl:text>
         </xsl:for-each>
-        <xsl:text>\end{itemize}
-            
-        </xsl:text>
+        <xsl:text>\end{itemize} </xsl:text>
         
         <xsl:text>\noindent </xsl:text>
         <xsl:value-of select=".//titleStmt//respStmt[3]/resp"/>
@@ -189,7 +193,7 @@
             <xsl:value-of select="."/>
             <xsl:text>} </xsl:text>
         </xsl:for-each>
-        <xsl:text>\end{itemize}</xsl:text>
+        <xsl:text>\end{itemize} </xsl:text>
         
     </xsl:template>
     
@@ -205,7 +209,8 @@
     </xsl:template>
     
     
-    <!-- règle pour le sourceDesc (information sur les témoins encodés) -->
+    <!-- règle pour le sourceDesc (information sur les témoins encodés) :
+        construire 3 paragraphes descriptifs (un pour chaque témoin) -->
     <xsl:template name="sourcedesc" match="sourceDesc">
         <xsl:apply-templates select=".//witness[@xml:id='brl']"/>
         <xsl:text>\\~\\</xsl:text>
@@ -215,7 +220,9 @@
     </xsl:template>
     
     
-    <!-- règle pour le encodingDesc (principes d'encodages suivis en TEI) -->
+    <!-- règle pour le encodingDesc (principes d'encodages suivis en TEI) :
+        récupérer le texte du encoding desc et ajouter à chaque type de variation
+        un décompte du nombre de variations de ce type dans l'encodage -->
     <xsl:template name="encodingdesc" match="encodingDesc">
         <xsl:variable name="enc">
             <xsl:apply-templates select=".//p[not(parent::projectDesc)][not(parent::abstract)]"/>
@@ -224,8 +231,12 @@
     </xsl:template>
     
     
-    <!-- règle pour le profileDesc (aspects non bibliographiques des textes encodés) -->
+    <!-- règle pour le profileDesc (aspects non bibliographiques des textes encodés) : 
+        récupérer une présentation des Chroniques et du passage encodé, faire un index 
+        des personnages, de leurs relations et des lieux. Pour l'index des personnages et des
+        lieux, faire le décompte du nombre de mentions dans chaque témoin -->
     <xsl:template name="profiledesc" match="profileDesc">
+        
         \subsubsection{À propos des \textit{Chroniques} de Froissart}
         <xsl:text>Datant du </xsl:text>
         <xsl:value-of select=".//profileDesc//origDate"/>
@@ -236,14 +247,16 @@
         <xsl:text>. </xsl:text>
         <xsl:value-of select="replace(.//profileDesc//abstract/p, 'Les Chroniques de Froissart', 'Elles')"/>
         <xsl:text>\\ \indent </xsl:text>
+        
         \subsubsection{À propos de l'extrait encodé}
         <xsl:value-of select="document('../odd_documentation/ODD_froissart.xml')//div3[contains(./head, 'Le second')]/p//text()"/>
         
-        <!-- to do : index des personnages et des lieux -->
         \subsubsection{Index des personnages}
         <xsl:call-template name="person"/>
+        
         \subsubsection{Liste des relations dans l'extrait encodé}
         <xsl:call-template name="listrel"/>
+        
         \subsubsection{Index des lieux}
         <xsl:call-template name="place"/>
         
@@ -320,7 +333,8 @@
         <xsl:text> en </xsl:text>
         <xsl:value-of select=".//origDate"/>
         <xsl:if test=".//provenance">
-            <xsl:value-of select="."/>
+            <xsl:text>. </xsl:text>
+            <xsl:value-of select=".//provenance"/>
         </xsl:if>
         <xsl:if test=".//note">
             <xsl:text>. </xsl:text>
@@ -335,7 +349,7 @@
         <xsl:value-of select=".//extent/text()"/>
         <xsl:text>.</xsl:text>
         <xsl:if test=".//dimensions">
-            <xsl:text>Il mesure </xsl:text>
+            <xsl:text> Il mesure </xsl:text>
             <xsl:value-of select=".//height"/>
             <xsl:text> centimètres de hauteur, </xsl:text>
             <xsl:value-of select=".//width"/>
@@ -355,7 +369,8 @@
     </xsl:template>
     
     
-    <!-- règle pour les paragraphes du encodingDesc -->
+    <!-- règle pour les paragraphes du encodingDesc : récupérer le texte, construire une
+        \footnote à partir de l'élément bibl -->
     <xsl:template match="encodingDesc//p">
         <xsl:choose>
             <xsl:when test='.//list'>
@@ -392,7 +407,8 @@
     </xsl:template>
     
     
-    <!-- règle pour les <item> du encoding desc -->
+    <!-- règle pour les <item> du encoding desc : récupérer les types de variations et
+        le nombre d'occurences de chacune -->
     <xsl:template match="encodingDesc//list//item">
         <xsl:choose>
             <xsl:when test="not(./@xml:id)">
@@ -401,10 +417,10 @@
                 <xsl:text>} </xsl:text>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:text> \item{\texttt{</xsl:text>
+                <xsl:text> \item{\textbf{\texttt{</xsl:text>
                 <xsl:variable name="xmlid" select="./@xml:id"/>
                 <xsl:value-of select="$xmlid"/>
-                <xsl:text>} : </xsl:text>
+                <xsl:text>}} : </xsl:text>
                 <xsl:value-of select="."/>
                 <xsl:text>} \begin{itemize} \item{</xsl:text>
                 <!-- nombre d'occurences de chaque type de variation -->
@@ -429,7 +445,7 @@
             </xsl:if>
             <xsl:text> \begin{itemize} \item{</xsl:text>
             
-            <!-- compter le nombre d'occurences de des personnages dans les trois témoins -->
+            <!-- compter le nombre d'occurences des personnages dans les trois témoins -->
             <xsl:variable name="cntbrl">
                 <xsl:value-of select="count(ancestor::TEI//body//(ab|lem)/persName[@ref=concat('#', $id)])"/>
             </xsl:variable>
@@ -490,6 +506,7 @@
         <xsl:text>\end{itemize}</xsl:text>
     </xsl:template>
     
+    
     <!-- règle pour le listRelation -->
     <xsl:template match="encodingDesc//listRelation" name="listrel">
         <xsl:text> \begin{itemize}</xsl:text>
@@ -500,7 +517,7 @@
     
     <!-- règle pour le listPlace -->
     <xsl:template match="encodingDesc//listPlace" name="place">
-        <!-- faire une liste de lieu -->
+        <!-- faire une liste de lieux -->
         <xsl:text>\begin{itemize}</xsl:text>
         <xsl:for-each select=".//place">
             <xsl:variable name="id" select="@xml:id"/>
@@ -571,12 +588,14 @@
     </xsl:template>
     
     
-    <!-- règle pour les descriptions des relations entre personnages -->
+    <!-- règle pour les descriptions des relations entre personnages: 
+        créer un item de liste -->
     <xsl:template match="relation//desc">
         <xsl:text> \item{ </xsl:text>
         <xsl:value-of select="."/>
         <xsl:text>.} </xsl:text>
     </xsl:template>
+    
     
     <!-- règle pour les hyperliens ; ne fonctionne pas toujours, donc pas toujours utilisée -->
     <xsl:template match="teiHeader//ref">
@@ -602,10 +621,11 @@
         </xsl:choose>
     </xsl:template>
     
+    
     <!-- règle pour les placeName dans le teiHeader -->
     <xsl:template match="teiHeader//place" name="hdrplacename">
-        <!-- récupérer le nom d'un lieu : le nom d'époque si correspond au nom contemporain ; 
-            sinon, le nom contemporain -->
+        <!-- récupérer le nom d'un lieu : le contemporary-name ou le text-name si aucun
+            contemporary-name n'est indiqué -->
         <xsl:choose>
             <xsl:when test="./placeName[@type='contemporary-name']">
                 <xsl:copy-of select=".//placeName[@type='contemporary-name']"/>
@@ -616,16 +636,74 @@
         </xsl:choose>
     </xsl:template>
     
-    <!-- règle pour les placeName dans le teiHeader -->
+    
+    <!-- normes d'encodage latex -->
+    <xsl:template name="latex">
+        <xsl:text>
+            L'édition critique en XML-TEI qui est ici transformée est très (trop ?) 
+            détaillée: j'ai choisi de documenter toutes les variations entre les trois 
+            témoins : changements au niveau du texte, de la structure du texte 
+            (paragraphes et sauts de page) et changements dans la décoration des 
+            manuscrits. Tous ces éléments peuvent difficilement être traduits 
+            dans une édition critique "traditionnelle" (papier) ; les principes 
+            suivants ont donc été suivis :
+            \begin{itemize}
+            	\item{L'apparat critique est construit avec la leçon principale (témoin de 
+            		Berlin) en corps de texte ; en notes de bas de page, les variations et 
+            		autres détails sont signalés avec un système de notes à quatres étages :}
+            		\begin{itemize}
+            			\item{\textbf{\texttt{\textbackslash variant}} correspond à \texttt{\textbackslash Afootnote} et 
+            				permet d'encoder les variations "simples" entre les leçons.}
+            			\item{\textbf{\texttt{\textbackslash group}} correspond à \texttt{\textbackslash Bfootnote} et 
+            				permet d'encoder les groupes de temoins (\texttt{&lt;rdgGrp&gt;} 
+            				en TEI).}
+            			\item{\textbf{\texttt{\textbackslash subvariant}} correspond à \texttt{\textbackslash Cfootnote} 
+            			et permet d'encoder les sous-variations dans des apparats internes 
+            			(en termes TEI : les \texttt{&lt;rdg&gt;} qui sont dans des 
+            			\texttt{&lt;app&gt;} dans des \texttt{&lt;app&gt;}).}
+            			\item{\textbf{\texttt{\textbackslash explan}} correspond à \texttt{\textbackslash Dfootnote} et 
+            				permet d'encoder les éléments "non textuels" du témoin principal 
+            				(décorations et sauts de page encodés dans des \texttt{&lt;witDetail&gt;},
+            				changements de paragraphes).}
+            		\end{itemize}
+            	\item{Au sein d'un apparat critique (\texttt{&lt;app&gt;}) les groupes de 
+            		témoins qui ne contiennent pas la leçon principale (en langage TEI 
+            		les \texttt{&lt;rdgGrp&gt;} qui contiennent seulement des 
+            		\texttt{&lt;rdg&gt;}, mais pas de \texttt{&lt;lem&gt;}) se trouvent 
+            		dans une note de deuxième niveau (\texttt{\textbackslash group}, en \LaTeX). Si un 
+            		\texttt{&lt;rdgGrp&gt;} contient une partie du témoin principal, il n'est 
+            		pas retranscrit en \LaTeX.}
+            	\item{Les apparats internes (un \texttt{&lt;app&gt;} dans un 
+            		\texttt{&lt;app&gt;}) sont retranscrits en bas de page grâce à un 
+            		\texttt{\textbackslash subvariant} (note de 3e degré).}
+            	\item{Pour la leçon principale (le manuscrit de Berlin), la structure du 
+            		texte est retranscrite:}
+            		\begin{itemize}
+            			\item{Les sauts de paragraphe sont reportés en note de 
+            				bas de page dans un \texttt{\textbackslash explan} correspondant à une note de 4e niveau 
+            				et signifiés dans le corps du texte par un saut de paragraphe 
+            				(\texttt{\textbackslash pend \textbackslash pstart}, avec \texttt{reledmac}).} 
+            			\item{Les sauts de page sont également reportés en bas de page dans un 
+            				\texttt{\textbackslash explan} ; le numéro de page est également mentionné. Il n'y a 
+            				pas de saut de page dans le corps du texte pour éviter d'avoir un résultat 
+            				trop morcelé.}
+            			\item{Les détails sur la décoration du texte sont mentionnés en notes de 
+            				bas de page, dans un \texttt{\textbackslash explan}.}
+            			\item{Pour les autres leçons (témoins d'Anvers et de Berne), ces 
+            				détails ne sont pas mentionnés.}
+            	\end{itemize}
+            \end{itemize} 
+            
+            \indent Le fichier XSL produit a été visualisé et fonctionne sur TeXstudio 
+            avec un compilateur \texttt{XeLaTeX}. Des fois, des erreurs de compilation 
+            peuvent avoir lieu (toutes les notes de bas de page renvoient à la ligne 0 
+            ou se trouvent à la fin du document). Dans ce cas, relancer la compilation.
+        </xsl:text>
+    </xsl:template>
     
     
     
-    
-    
-    
-    <!-- ########################################################## -->
     <!-- ############# RÈGLES POUR LE CORPS DU TEXTE ############## -->
-    <!-- ########################################################## -->
     
     <!-- copier le conteneur ab et le texte à la racine ; appliquer les templates pour 
         le corps du texte-->
@@ -717,7 +795,7 @@
             <!-- récupérer les indications pour le premier saut de page du lem et 
                 l'inclure dans un \explan (le premier saut de page ne contient 
                 pas de texte et est le seul saut de page dans un apparat qui ne contient 
-                pas de rdgGrp) -->
+                pas de rdgGrp) ; c'est pourquoi il est ciblé aussi spécifiquement -->
             <xsl:when test="lem[.//pb][not(parent::app//rdgGrp)]">
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:apply-templates select="lem/text()"/>
@@ -742,7 +820,7 @@
     </xsl:template>
     
     
-    <!-- règle pour les rdg qui ne sont pas contenus dans des app internes -->
+    <!-- règle pour les rdg qui ne sont pas contenus dans des app internes ou des rdgGrp -->
     <xsl:template match="body//rdg[not(ancestor::rdgGrp)][not(ancestor::app//app)]" name="notinternal">
         
         <!-- règle pour les leçons n'ayant pas d'enfants (à part placeName et persName)

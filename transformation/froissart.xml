@@ -184,9 +184,9 @@
       <editorialDecl>
         <!-- principes éditoriaux suivis pendant l'encodage -->
         <p>L'alignement des témoins a été réalisé avec l'aide de l'algorithme de Dekker de <ref target="https://collatex.net/">Collatex</ref>. Cet alignement a été repris ensuite pour constituer l'édition critique qui suit.</p>
-        <p>L'édition critique et l'alignement des témoins cherchent à permettre l'étude la plus précise possible de la variance et des similitudes entre les versions:<list>
+        <p>L'édition critique et l'alignement des témoins cherchent à permettre l'étude la plus précise possible de la variance et des similitudes entre les versions :<list>
           <item>La structuration du texte en paragraphes (&lt;p&gt;) a été abandonnée : les trois textes sont insérés dans un conteneur &lt;ab&gt; 
-            et les changements de paragraphes sont signalés par des &lt;milestone&gt;, pour permettre un alignement des témoins phrase par phrase</item>
+            et les changements de paragraphes sont signalés par des &lt;milestone&gt;, pour permettre un alignement des témoins phrase par phrase.</item>
           <item>Pour cet encodage, on considère que les différences au niveau de la structure de la phrase sont plus importantes que les différences orthographiques. L'encodage suit ce principe:
             quand la même phrase est dans un ordre différent dans différents témoins, cette phrase est encodée comme un élément entier, 
             plutôt que de rassembler les mêmes mots de la phrase dans un seul élément &lt;app&gt;(ce qui permettrait de mettre en avant les différences orthographiques entre ces mêmes mots).</item>

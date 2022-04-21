@@ -19,6 +19,9 @@ compilation.
 TeXStudio
 	- `LICENSE` : la licence GNU GPL 3 sous laquelle est ce projet
 	- `README.md` : le présent document
+- **`levenshtein`** : le fichier XML d'entrée et de sortie ainsi qu'un script python
+calculant, pour chaque variation textuelle, la distance de Levenshtein du `rdg` avec le
+`lem`.
 - **`odd_documentation`** : l'ODD au format `.xml` et sa transformation aux formats `.rng` et 
 `.dtd`.
 - **`textes`** : le contenu textuel des trois témoins, utilisés comme source pour l'édition
@@ -38,6 +41,10 @@ permettre la transformation :
 être retranscrits en latex.
 - des **erreurs mineures** (ponctuation, espaces) ont été corrigées dans l'encodage 
 et l'ODD.
+- un script (`lvstn.py`) met à jour l'édition critique XML pour ajouter à chaque `rdg` un
+attribut `@lev` qui donne la distance de Levenshtein de ce `rdg` avec le `lem`.
+- l'ODD a été mise à jour pour refléter ce changement et autoriser un attribut `@lev` 
+pour les `rdg`
 
 ---
 
@@ -60,6 +67,11 @@ des apparats internes (en termes TEI : les `rdg` qui sont dans des `<app>` dans 
 	- **`\explan`** correspond à `\Dfootnote` et permet d'encoder les éléments "non textuels"
 du témoin principal (décorations et sauts de page encodés dans des `<witDetail>`, changements
 de paragraphes).
+	- **`\lvstn`**  correspond à `\Aendnote` et permet de renvoyer à la fin du document 
+les variations textuelles ayant une distance de Levenshtein avec le témoin principal 
+inférieure à 2
+-  Les variations dans un témoin ayant une **distance de Levenshtein inférieure à 2**
+ sont renvoyés en note de fin de document dans un `\lvstn`.
 - Au sein d'un apparat critique (`<app>`) les **groupes de témoins** qui ne contiennent pas la
 leçon principale (en langage TEI les `<rdgGrp>` qui contiennent deux `<rdg>`, mais pas de
  `<lem>`) se trouvent dans une note de deuxième niveau (`\group`, en latex). Si un `<rdgGrp>`

@@ -1,0 +1,532 @@
+
+            
+            % métadonnées
+            \author{Paul, Hector KERVEGAN}
+            \title{Transformation XSL d'une édition critique en XML-TEI vers LaTeX: les Chroniques de Jean Froissart, SHF 306: "La négociation du mariage du duc de Berry"}
+            \date{25.04.2022}
+            
+            
+            % chouettes paquets utilisés
+            \documentclass[12pt, a4paper]{article}
+            \usepackage[utf8x]{inputenc}
+            \usepackage[T1]{fontenc}
+            \usepackage{fontspec}
+            \usepackage{lmodern}
+            \usepackage{graphicx}
+            \usepackage[french]{babel}
+            \usepackage{reledmac}
+            \usepackage[switch, modulo]{lineno}
+            \usepackage[toc]{appendix}
+            
+            % hyperref
+            \usepackage{hyperref}
+            \hypersetup{pdfauthor={Paul, Hector KERVEGAN}, pdftitle={Transformation XSL d'une édition critique en XML-TEI vers LaTeX: les Chroniques de Jean Froissart, SHF 306: "La négociation du mariage du duc de Berry"}, pdfsubject={Transformation XSL vers LaTeX}, pdfkeywords={édition critique}{XSL}{XML-TEI}{LaTeX}{Jean Froissart}}
+            
+            
+            
+            % définition de commandes spécifiques pour l'apparat
+            % variation de 1er degré
+            \newcommandx{\variant}[2][1,usedefault]{\Afootnote[#1]{#2}}
+            % groupe de témoins
+            \newcommandx{\group}[2][1,usedefault]{\Bfootnote[#1]{#2}}
+            % sous-variation (un rdg dans un apparat interne)
+            \newcommandx{\subvariant}[2][1,usedefault]{\Cfootnote[#1]{#2}}
+            % détails non textuels sur le témoin
+            \newcommandx{\explan}[2][1,usedefault]{\Dfootnote[#1]{#2}}
+            
+            \Xarrangement[A]{paragraph}
+            \Xparafootsep{$\parallel$~}
+            
+            \begin{document}
+            
+            
+            \begin{titlepage}
+            \begin{center}
+            \large
+            Paul, Hector KERVEGAN
+            
+            \Large
+            \vfill
+            \textbf{Transformation XSL d'une édition critique en XML-TEI vers \LaTeX}
+            \\~\\
+            \textbf{\textit{CHRONIQUES} DE JEAN FROISSART, SHF 3A-306 : "LA NÉGOCIATION DU MARIAGE DU DUC DE BERRY"}
+            \vfill
+            
+            \large	
+            \vfill Devoir réalisé pour le master 2 TNAH de l'École nationale des Chartes - Avril 2022
+            \end{center}
+            \end{titlepage}
+            
+            
+            
+                \section{Présentation du projet}
+                \subsection{Présentation de l'encodage XML-TEI et de sa source en ligne: l'Online Froissart}
+                
+        
+        
+        \subsubsection{À propos du présent encodage}
+        La présente édition critique d'un chapitre des \textit{odd froissart ODD de l'édition critique numérique des Chroniques (XIVè s.) de Jean Froissart en XML TEI} de  a été encodée en XML-TEI par . L'encodage s'appuie sur une édition en ligne des \textit{Chroniques} 
+            réalisée dans le cadre du projet Online Froissart.\\ \indent L'encodage en XML-TEI a été 
+            réalisé dans le cadre l'évaluation du cours de TEI du master 2 TNAH de l'
+               École nationale des Chartes
+               ODD réalisée à partir de ODD by Example, une feuille XSL créé par le TEI consortium.
+             (Paris, France). L'encodage a été finalisé le 31 janvier 2022. Le présent document résulte d'une transformation XSL vers \LaTeX  réalisée
+            en avril 2022 dans le cadre de l'évaluation du cours d'XSLT de ce master.
+        
+        
+        \subsubsection{À propos du projet Online Froissart}
+         \href{}{\textit{}}. La source de l'encodage est disponible à \href{https://www.dhi.ac.uk/onlinefroissart/browsey.jsp?f=b&pb2=Ber-3_SHF_3A-307&disp2=shf&GlobalWord=0&div2=ms.f.transc.Ber-3&div1=ms.f.transc.Bre-3&div0=ms.f.transc.Ant-3&panes=3&GlobalMode=shf&img0=&disp0=shf&disp1=shf&pb1=Bre-3_SHF_3A-307&img2=&GlobalShf=3A-306&pb0=Ant-3_SHF_3A-307&img1=}{cette adresse}.\\~\\
+        \noindent  : \begin{itemize}\end{itemize} \noindent  : \begin{itemize}\end{itemize} 
+                \subsection{Principes suivis pour l'encodage}
+                \subsubsection{Principes suivis pour l'édition en XML-TEI}
+                Dérivé de  \href{https://www.tei-c.org/Vault/P5/current/xml/tei/odd/p5subset.xml}{l'odd de la TEI}  après l'analyse des fichiers TEI du rendu.Ce projet est une proposition d'encodage numérique d'un passage des Chroniques de Jean Froissart à l'aide de la 
+                  Text Encoding Initiative. L'apparat critique est composé de trois témoins
+                  encodés en segmentation parrallèle (collation des différentes version d'un textes faite en les mettant en parrallèle dans le corps du document).
+                  Grâce à l'encodage déjà réalisé et à la présente ODD qui documente le projet et la méthode à suivre pour la collation, il est possible de compléter l'encodage
+                  par l'ajout d'autres manuscrits, ou d'encoder d'autres chapitres des Chroniques.Ce passage est extrait du troisième volume des Chroniques de Froissart. Dans cet extrait,  Jean Froissart  rapporte la manière
+                     dont le  duc Jean de Berry  a organisé son second mariage avec  Jeanne, comtesse d’Auvergne et de Boulogne .
+                     Dès la mort de sa première femme, le duc a organisé des négociations avec le comte  Gaston de Foix-Béarn , surnommé Fébus. Ce dernier refuse de laisser
+                     le duc lui prendre sa protégée sans négociation, à cause de de querelles familiales. Afin de convaincre  Fébus , le  duc de Berry  cherche à trouver
+                     un accord ; pour ce faire, il mobilise tout son important cercle d'influence, dont le  duc de Bourgogne  et même  Charles VI  le roi de France. Les messagers du duc et ses proches se lançent donc dans un voyage pour rencontrer le conte de Foix, s'arrêtant à Avignon chez le  pape Clément . Connu pour
+                     sa finesse politique,  Fébus  s'est servi de  Jeanne 
+                     afin d'obtenir les bonnes grâces du duc. Il accepte donc de céder la jeune femme au duc, pour obtenir ses bonnes grâces. Ce court réçit est, comme l'ensemble des Chroniques, un témoignagne du climat politique de la Guerre de Cent Ans, mais aussi des mœurs du XVe siècle : le texte décrit 
+                     la façon dont les mariages s'organisent durant le Moyen-Âge tardif ; les réactions du roi de France et du  duc de Bourgogne  quant à différence d'âge du duc et de sa future
+                     épouse donnent à voir l'organisation des relations entre les genres au XVe siècle.L'édition critique est réalisée à partir de trois témoins, tous trois écrits en moyen français :
+                     
+                        Le manuscrit de la Staatsbibliothek zu Berlin - Preussischer Kulturbesitz
+                           (la bibliothèque nationale, située à Berlin). Ce manuscrit est également connu comme le Berlin Rehdiger 3, Rehdiger 3, le Breslauer Froissart 
+                           ou, en français, le Froissart de Breslau. C'est le plus ancien des trois manuscrits ; il est donc choisi comme la leçon principale.
+                        Le manuscrit du Museum Plantin-Moretus d'Anvers, 
+                           çi-dessous également nommé Antwerp M 15.6.
+                        Le manuscrit de la Burgerbibliothek Bern,
+                           la bibliothèque de la Bourgeoisie de Berne, en Suisse. Le manuscrit est également nommé Bern A14.
+                     
+                  Le texte des trois témoins est retranscrit et aligné sur  The Online Froissart. Ce 
+                     site est issu d'un projet inter-universitaire dirigé par  Peter Ainsworth  et  Godfried Croenen . Ce projet propose une édition 
+                     numérique de plusieurs témoins des Chroniques, avec un alignement par chapitres. À partir de cette base, la présente édition, documentée dans cette ODD, 
+                     propose une édition critique plus fine, qui retrace toutes les variations entre les trois témoins.Le manuscrit de Berlin a été copié au XVe siècle, entre 1468 et 1469. Le troisième volume des chroniques est enrichi de 
+                        miniatures dont la présence est attestée sur l'Online Froissart Il est l'un des quatres volumes conservés par la 
+                        Staatbibliothek. Tous les quatre viennent du dépôt Breslau et sont conservés par le département des manuscrits médiévaux 
+                        (Manuscrpta medievalia). Le premier volume fait 344 folio, le deuxième 414, le troisième (qui contient le chapitre encodé) 373, et le quatrième 
+                        volume 324 pages.Ce manuscrit est le plus ancien des trois manuscrits qui constituent la présente édition critique. C'est aussi le plus précisément daté. 
+                        C'est pourquoi il a été choisi comme le témoin principal, et encodé dans l'élément lem.Le manuscrit d'Anvers a également été copié au XVe siècle sur parchemin, entre 1475 et 1485. Le troisième volume, d'où est extrait le 
+                        manuscrit encodé, est composé de 350 folios. Il est actuellement conservé par le musée Plantin-Moretus à Anvers, en Belgique.Le manuscrit de Berne a été écrit entre 1470 et 1490. Le troisième volume mesure 336 folio ; il est complété par une page de couverture
+                        et un page de dos et mesure 44 centimètres de haut, 34,5 cm de large et 10 cm de profondeur. Il est à l'origine la propriété du comte  Alexandre de Donha 
+                        , un bourgeois de Berne. Celui-çi en a fait don à la Bibliothèque de la Bourgeoisie de Berne (Suisse) en 1697.
+                        Depuis cette date, c'est cette institution qui conserve le manuscrit.Le document est TEI-conformant : il est conforme aux principes de la TEI, et la présente ODD est donc une spécification des TEI guidelines.Cet élément sert à encoder les informations principales sur le document encodé ; il regroupe donc
+                        
+                           Le titre et le nom de l'auteur du document originel, dans les éléments title et author.
+                           Des références aux responsables de l'édition numérique, c'est à dire:
+                              
+                                 Le responsable de la présente ODD et de l'édition en TEI (moi), dans le principal
+                                 Les responsables du Online Froissart, dans trois respStmt (le premier indiquant le nom du projet, le second les responsables
+                                    scientifiques et le troisième les institutions partenaires du projet.
+                              
+                           
+                           Le publicationStmt permet d'encoder les informations relatives à la présente édition en XML-TEI.
+                        
+                     Le sourceDesc sert à encoder les informations relatives aux trois témoins qui composent la présente édition critique. Ils constituent les
+                        sources "matérielles", par opposition au texte de Jean Froissart, une source "intellectuelle" ; c'est pourquoi ce sont les témoins qui sont décrits
+                        dans le sourceDesc, et non le texte de Froissart.Cet élement sert à décire l'encodage de l'apparat critique en TEI. Il contient autant des données descriptives sur l'encodage (contexte de
+                        production de l'encodage dans le projectDesc, méthode d'alignement dans le variantEncoding) que les principes éditoriaux 
+                        suivis pendant l'encodage, dans le editorialDesc ; ces principes sont également décrits dans la présente ODD
+                        (/TEI/text[1]/body[1]/div1[1]/div2[3]).Cet élément contient une description des aspects non bibliographiques du texte encodé.
+                        
+                           Il contient d'abord, dans le creation, des informations
+                              relatives à la création du texte originel de Froissart. 
+                           Le particDesc contient des informations sur les personnages dans l'extrait :
+                              
+                                 La liste des personnages, dans un listPerson. Pour chaque
+                                    personnage du passage encodé, un attribut unique (xml:id) est fourni, ainsi que le
+                                    nom du personnages, sous deux formes : nom contemporain et noms des personnages dans les témoins.
+                                    Pour le nom des personnages dans les témoins, un élément app sert à encoder les différences
+                                    orthographiques d'un témoin à l'autre. Éventuellement, les noms des personnages peuvent être complétés
+                                    par une courte notice bibliographique, dans un élément note.
+                                 La liste des relations entre les personnages, dans un listRelation. Ces relations
+                                    sont encodées dans des éléments relation et complétées d'une courte description (desc). Un 
+                                    cas particulier complique cette liste des relations : dans le manuscrit d'Anvers, Clément VII est le 
+                                    cousin de Jeanne II d'Auvergne ; dans les autres textes, le pape est cousin du père de Jeanne II. 
+                                    Ne pouvant pas utiliser un app dans le listRelation, le parti-pris a été d'encoder 
+                                    ce cas particulier dans un listRelation contenu au sein du premier listRelation :
+                                    
+                                       
+                                          
+                                          
+                                             
+                                                Dans Antwerp M 15.6, Clément VII est cousin de Jeanne II d'Auvergne.
+                                             
+                                             
+                                                Dans le manuscrit de Berlin (Dep. Breslau I), Clément VII est cousin du conte Jean de Boulogne, père de Jeanne II d'Auvergne.
+                                             
+                                          
+                                       
+                                    
+                              
+                           
+                           Enfin, le settingDesc permet de décrire les lieux mentionnés dans l'extrait, dans un 
+                              listPlace. Comme pour les noms des personnages, un xml:id est fourni, ainsi 
+                              que les orthographes du nom utilisées dans les différents témoins et l'appelation contemporaine du nom 
+                              (si elle diffère de l'appelation dans les témoins). La valeur 
+                              de l'attribut att de placeName permett d'indiquer s'il s'agit du nom 
+                              contemporain ou du nom dans les témoins :
+                              
+                                 
+                                    Nîmes
+                                    
+                                       
+                                          Nismes
+                                          Nimes
+                                       
+                                    
+                                 
+                              
+                           
+                        
+                     Cet élément contient le corps des témoins encodés. Ils sont contenus dans un ab, un conteneur qui a été choisi car il n'a 
+                     pas de valeur sémantique, ni de valeur structurante pour le texte (contrairement à p), mais qui peut contenir directement du 
+                     texte (contrairement à div ). Les principes suivis pour l'encodage du texte des trois témoins sont décrits dans la partie suivante :
+                     Méthodologie d'encodage.Comme cela a été dit au dessus, le témoin principal est le Breslauer Froissart, conservé à Berlin par la Staatsbibliothek.
+                     C'est le témoin le plus ancien et le plus précisément daté du présent apparat critique. C'est donc ce témoin qui est encodé dans le lem, tandis que les autres
+                     témoins sont encodés dans des éléments rdg. Lorsque le contenu d'un des autres témoins est similaire à celui du manuscrit de Berlin, le témoin "non-Berlin" est
+                     également encodé dans le lem : il correspond à la leçon principale.L'édition critique a été réalisée à partir du fichier XML produit par Collatex, un logiciel d'édition critique. Le script python
+                        qui a produit le fichier de base est inclut dans le dépôt GitHub, dans le dossier collatex.Collatex permet de faire une tokénisation au mot : l'étude de variance entre les témoins est faite mot-par-mot (et non lettre par lettre, par
+                        exemple).À partir de la base fournie par Collatex (également présente dans le dossier collatex, l'encodage a été repris pour le rendre plus scientifiquement pertinent : 
+                        
+                           un témoin principal a été choisi, et l'élément lui correspondant a été transformé de rdg à lem grâce à un script xQuery (disponible à la racine du dépôt
+                              GitHub : froissart_xquery_createlem.xq).
+                           Les témoins se ressemblant ont été groupés dans un rdgGrp
+                           Les différences dans la structure du texte sont considérées comme plus importantes que les différences orthographiques ; le découpage de Collatex
+                              a donc été repris pour suivre ces principes
+                        
+                     L'ensemble du texte est contenu dans un élément ab dans le body de l'édition critique. Ce ab prend un attribut type qui permet d'indiquer
+                        qu'il s'agit d'un chapitre SHF ainsi qu'un attribut n qui permet d'indiquer le numéro de chapitre : 3A-306.
+                        
+                           
+                              
+                                 
+                              
+                           
+                        
+                     Les changements de page sont considérés comme signifiants dans la présente édition critique, puisqu'ils permettent de restituer la structure originelle des témoins.
+                        Ils sont signifiés dans un app à l'aide un élément pb prenant un attribut n qui permet de donner le numéro de page :
+                        
+                           
+                              Carcassonne
+                              Carcassonne
+                           
+                        
+                     Afin de permettre une comparaison des témoins phrase par phrase, le découpage du texte en paragraphes a été abandonné. Les sauts de ligne sont signifiés dans un élément
+                        milestone avec attribut unit prenant pour valeur "tei:p" ; cette méthode est proposée dans une présentation du TEI consortium
+                        (Beshero-Bondar, Cayless, Vigilanti (2019: 3.10) ; voir dans le fichier froissart.xml à /TEI/teiHeader[1]/encodingDesc[1]/editorialDecl[1]/segmentation[1]/p[1]/bibl[1]
+                        pour une référence bibliographique complète). Pour s'assurer que la structure du texte est respectée, un élément lb suit le milestone.
+                        
+                           
+                              
+                                 
+                                 
+                              
+                           
+                        
+                     Pour cet encodage, on considère que les différences au niveau de la structure de la phrase sont plus importantes que les différences orthographiques. L'encodage suit ce principe:
+                        quand la même phrase est dans un ordre différent dans différents témoins, cette phrase est encodée comme un élément entier, plutôt que de rassembler les mêmes mots de la phrase 
+                        dans un seul élément app (ce qui permettrait de mettre en avant les différences orthographiques entre ces mêmes mots). Dans l'exemple ci-dessous, par exemple, plutôt que
+                        de chercher à rassembler les mêmes mots des deux témoins, l'encodage met en avant une différence dans la structure de la phrase.
+                        
+                           
+                              a ce mariage parvenir
+                              parvenir a ce mariage
+                           
+                        
+                     Dans cet édition critique, la ponctuation a été prise en compte : une différence de ponctuation entre les témoins sera encodée dans un app.
+                        
+                           
+                              
+                              ,
+                           
+                        
+                     Comme cela a été dit plus haut, la présente édition critique suit un principe de modularité : elle permet de voir "les-variations-dans-les-variations".
+                        Pour permettre l'étude de variance la plus précise possible, l'encodage suit un principe de modularité: lorsque 2 témoins sont semblables et diffèrent du 3e témoin, 
+                        alors ces 2 témoins sont encodés dans un seul élément rdg (ou lem). Les variations au sein de ces 2 témoins sont signalées dans un app 
+                        à l'intérieur du rdg ou du lem. L'édition est donc construite en variations/sous-variations. L'exemple ci-dessous montre une imbrication où un app contient 
+                        
+                           Un lem
+                            Un rdg ; ce dernier élément contient deux app à la suite et permet d'encoder des variations mineures entre deux témoins.
+                        
+                        Cette organisation permet d'indiquer deux  niveaux de variations : 
+                        
+                           Un premier entre rdg et lem : l'ordre des mots diffère entre les deux éléments
+                           Un deuxième niveau de variation, au sein du rdg : dans cet élément, il y a une différence de ponctuation et une différence dans les mots utilisés (un mot est
+                              présent dans un témoin et non dans un autre), ce qui correspond à deux app.
+                        
+                        
+                           
+                              sa premiere femme trespassee
+                              trespassee
+                                 
+                                    ,
+                                    
+                                 sa premiere
+                                    femme
+                                    
+                                 
+                              
+                           
+                        
+                     L'élément rdgGrp permet de rassembler plusieurs témoins partageant des caractéristiques. Il est à utiliser quand les témoins du rdgGrp présentent pas
+                        assez de similarités pour être encodés dans un même rdg / lem. Dans les faits, les rdgGrp sont principalement utilisés lorsque un app 
+                        ne contient qu'un mot et que, dans ce app, un groupe de témoins se distingue d'un autre (voir l'exemple qui suit). Sinon, pour privilégier l'étude de la variation
+                        entre les témoins et pour coller au plus près de ces variations, l'utilisation d'éléments app imbriqués (comme décrit au dessus) est privilégiée.
+                        
+                           
+                              dit
+                              
+                                 respondy
+                                 respondit
+                              
+                           
+                        
+                     Placé sur les éléments rdg et lem, l'attribut wit permet d'identifier les témoins au sein de l'apparat critique. Trois valeurs sont possibles:
+                        
+                           #atw : l'identifiant du témoin d'Anvers
+                           #brl : l'identifiant du témoin de Berlin
+                           #brn : l'identifiant du témoin de Berne.
+                        
+                        Ces trois valeurs font référence à l'attribut xml:id des témoins, qui est donné dans les éléments witness du teiHeader 
+                        (/TEI/teiHeader[1]/fileDesc[1]/sourceDesc[1]/listWit[1]/witness).L'attribut corresp permet de caractériser la différence entre les témoins selon un vocabulaire contrôlé, défini (entre autres) dans le teiHeader 
+                        (/TEI/teiHeader[1]/encodingDesc[1]/editorialDecl[1]/p[3]). Il est utilisé à la place du type (qui est préconisé par le TEI consortium) :
+                        contrairement à type, corresp permet de fournir plusieurs valeurs et donc d'indiquer plusieurs différences entre les témoins au sein d'un même app. 
+                        La liste des valeurs possibles pour corresp est :
+                        
+                           #orth : différence orthographique
+                           #punct : différence de ponctuation
+                           #sentence-order : différence dans l'ordre des mots dans un bloc de texte
+                           #word-diff : des mots différents sont utilisés dans un même bloc de texte dans les différents témoins
+                           #add-words : un témoin présente un ou plusieurs mots qui ne se trouvent pas dans les autres
+                           #text-segmentation : la séparation du texte en paragraphes et pages est différente d'un témoin à l'autre
+                           #ornementation : la décoration du manuscrit varie d'un témoin à l'autre.
+                        
+                        
+                           
+                              Depuis
+                              Et depuis
+                           
+                        
+                     Dans le corps du texte, les différents personnages mentionnés sont encodés dans un persName. L'élément est utilisé à chaque fois qu'il est fait mention d'un personnage, 
+                        et pas seulement quand le personnage est nommé. Cela permet de faire un renvoi vers le descriptif du personnage situé dans le teiHeader. Dans le corps du texte (body),
+                        le persName prend un attribut ref dont la valeur est un identifiant à quatres lettres précédées d'un '#'. Ces valeurs sont dérivées de l'attribut xml:id 
+                        de chaque personnage (valeur référencée dans le person du teiHeader : /TEI/teiHeader[1]/profileDesc[1]/particDesc[1]/listPerson[1]/person). Les valeurs possibles sont :
+                        
+                           "#djdb" : Jean Ier de Berry
+                           "#mjda" : Jeanne d'Armagnac
+                           "#cgfb" : Gaston III de Foix-Béarn
+                           "#fjda" : Jeanne, comtesse d'Auvergne et de Boulogne
+                           "#cjdb" : Jean II d'Auvergne
+                           "#rcha" : Charles VI
+                           "#dpdb" : Philippe II de Bourgogne
+                           "#fjdb" : Jean II de Berry
+                           "#sbdr" : Bureau de la Rivière
+                           "#cdas" : Jean de la Personne
+                           "#egdv" : Guillaume VI de Vienne
+                           "#mgdt" : Guillaume de la Trémoille
+                           "#cjdx" : Jean III de Sancerre
+                           "#pclv" : Clément VII
+                           "#mldx" : Louis de Sancerre
+                           "#djdg" : Jean de Gand
+                           "#hcde" : Henri IV (conte d'Erbi dans le texte)
+                        
+                        
+                           duc de
+                              Bourgoingne
+                              Bourgongne
+                           
+                           
+                        
+                     Dans le corps du texte, les différents lieux mentionnés sont encodés dans un placeName ; comme avec persName, cet élément porte un attribut ref
+                        dont la valeur (trois lettres précédées d'un '#') permet de renvoyer au descriptif du lieu situé dans dans le teiHeader. Les valeurs de ref sont dérivées du
+                        xml:id de chaque lieu, qui est situé dans l'élément place du teiHeader (/TEI/teiHeader[1]/profileDesc[1]/settingDesc[1]/listPlace[1]/place).
+                        Les valeurs possibles de ref sont :
+                        
+                           "#avg" : renvoi à Avignon
+                           "#nim" : renvoi à Nîmes
+                           "#mtp" : renvoi à Montpellier
+                           "#bsr" : renvoi à Béziers
+                           "#crs" : renvoi à Carcassonne
+                           "#tls" : renvoi à Toulouse
+                           "#otz" : renvoi à Orthez
+                           "#bdx" : renvoi à Bordeaux
+                           "#nrb" : renvoi à Narbonne
+                           "#nnt" : renvoi à Nonnette
+                        
+                        
+                           Avignon
+                        
+                     Huit règles Schematron ont étés crées; parmi elles, 7 utilisent des conditions multiples (avec des and et or). Voici la liste et leur utilité:
+                     
+                        Règle contraignant l'usage d'un attribut et ses valeurs : un lem prend un attribut wit obligatoire ;
+                           Cet attribut doit contenir '#brl' parmi ses valeurs (c-à-d : la valeur de wit doit renvoyer au témoin principal).
+                           XPath: /TEI/text[1]/body[1]/div1[2]/schemaSpec[1]/elementSpec[3]/constraintSpec[1]/TEI/text[1]/body[1]/div1[2]/schemaSpec[1]/elementSpec[3]/constraintSpec[1]
+                        
+                        Règle contraignant l'usage d'un attribut et ses valeurs : un rdg doit contenir un wit dont la valeur ne peut pas
+                           contenir '#brl', puisque c'est le témoin principal.
+                           XPath: /TEI/text[1]/body[1]/div1[2]/schemaSpec[1]/elementSpec[3]/constraintSpec[1]
+                        
+                        Règle contraignant l'usage d'un attribut et de ses valeurs : un witDetail doit contenir un wit. 
+                           La valeur de cet attribut doit être une ou plusieurs séquences de '#' suivi de 3 lettres minuscules.
+                           XPath: /TEI/text[1]/body[1]/div1[2]/schemaSpec[1]/elementSpec[5]/constraintSpec[1]
+                        
+                        Règle contraignant l'usage d'un attribut et ses valeurs : un witness doit contenir un attribut xml:id
+                           dont la valeur est composée de 3 chiffres minuscules.
+                           XPath: /TEI/text[1]/body[1]/div1[2]/schemaSpec[1]/elementSpec[5]/constraintSpec[1]
+                        
+                        Règle contraignant l'usage d'un attribut en fonction de son contexte : un persName doit prendre un attribut attribut type
+                           si il est contenu dans le profileDesc.
+                           XPath: /TEI/text[1]/body[1]/div1[2]/schemaSpec[1]/elementSpec[33]/constraintSpec[1]
+                        
+                        Règle contraignant l'usage d'un attribut et ses valeurs : un persName dans le body prend un attribut ref.
+                           La valeur de cet attribut doit être un '#' suivi de 4 lettres minuscules ('#djdb')
+                           XPath: /TEI/text[1]/body[1]/div1[2]/schemaSpec[1]/elementSpec[33]/attList[1]/attDef[9]/constraintSpec[1]
+                        
+                        Règle contraignant les usages d'attributs et les valeurs: une relation; mutuelle doit être décrite avec deux références à des xml:id de personnes,
+                           composées chacune d'un '#' et de 4 lettres et séparées d'un espace. Une relation active/passive doit être décrite avec
+                           deux attributs passive et active, chacun contenant une référence à un xml:id composée d'un '#' et de 4 lettres ('#djdb').
+                           XPath: /TEI/text[1]/body[1]/div1[2]/schemaSpec[1]/elementSpec[48]/constraintSpec[1]
+                        
+                        Règle contraignant l'enchaînement d'attributs : un milestone doit être suivi directement d'un élément lb.
+                           XPath: /TEI/text[1]/body[1]/div1[2]/schemaSpec[1]/elementSpec[69]/constraintSpec[1]
+                        
+                     
+                  Constituer un apparat critique nativuement numérique des Chroniques de  Froissart  présente plusieurs avantages par rapport à un apparat critique classique :
+                  
+                     La caractérisation des variations. Grâce à l'attribut corresp ou type placé sur les app et autres rdgGrp, il est facile de
+                        caractériser la différence entre les témoins et d'indiquer si c'est une différence orthographique, de conjuguaison ou encore de une erreur de copie.
+                     Enrichissement et mise à jour de l'apparat. La TEI est un format de conservation pour des données textuelles ; cependant, c'est un format qui peut être enrichi.
+                        Il est possible de rajouter d'autres témoins à la présente édition de ce chapitre ; grâce à cette ODD, il est aussi possible d'encoder d'autres chapitres du Froissart.
+                        Enfin, le présent encodage peut être amélioré en lui apportant plus de précision scientifique : la liste de variations possibles pour un app, par exemple, peut être
+                        affinée ; il est aussi possible d'indiquer la raison de la variation, grâce à l'élément cause.
+                     Possibilités d'exploitation de l'apparat.
+                        
+                           Publication. Si la TEI est un format de conservation pérenne des documents, elle peut également servir de format pivot à partir duquel l'apparat encodé peut être transformé
+                              et prendre d'autres formes : à l'aide d'une feuille XSL, il est par exemple envisageable de transformer cette édition en une publication sur internet (transformation de XML-TEI vers
+                              HTML ou XHTML), d'en faire une publication papier (transformation vers un format dérivé de .TeX) ou encore de transformer l'apparat en un autre document XML (transformation de 
+                              XML vers XML).
+                           Analyses statistiques. Grâce au haut degré de précision et de caractérisation permis par un apparat critique en TEI, il est envisageable de mener une étude des textes
+                              encodés par "lecture distante" (analyse des textes par des méthodes computationnelles). Il serait par exemple possible d'étudier le degré de proximité entre des
+                              témoins (mesurer le nombre de mots qui diffèrent entre les témoins, quantifier la similitude entre les témoins.). Il est aussi possible d'étudier les types de variations, puisqu'elles
+                              ont étés caractérisées selon un vocabulaire contrôlé : on peut par exemple mesurer la proportion de chaque type de variation, ou voir quelle variation est la plus répandue
+                        
+                     
+                     La lisibilité. Grâce à la segmentation parrallèle, toute l'édition est faite dans le corps du texte, sans renvoi à des notes de bas de pages. Une édition critique en TEI
+                        n'utilise pas les abbréviations complexes des apparats critiques traditionnels ; un document nativement numérique est donc potentiellement plus facile à comprendre pour un.e novice.
+                  
+               Le xml:id des différents témoins est référencé dans le witness de chaque témoin
+                              (chemin xPath : /TEI/teiHeader[1]/fileDesc[1]/sourceDesc[1]/listWit[1]/witness).Le rdg ne doit pas prendre pour valeur #brl, puisque ce témoin a été choisi comme témoin principal et est encodé dans le lemLe lem peut avoir pour valeur un renvoi vers plusieurs témoins : si un témoin ne diffère pas de la leçon principale, il est encodé dans la même balise lem que cette leçon.L'attribut corresp est utilisé à la place de l'attribut type, pour indiquer le type de différence entre les témoins :
+                           l'utilisation de corresp, avec une valeur renvoyant à une liste définie dans l'ODD et dans le teiHeader permet de rentrer plusieurs valeurs,
+                           et donc d'indiquer si besoin plusieurs types de variation entre deux témoins.L'attribut corresp est utilisé à la place de l'attribut type, pour indiquer le type de différence entre les témoins de ce groupeLes valeurs de corresp font référence à des xml:id décrites dans /TEI/teiHeader[1]/encodingDesc[1]/editorialDecl[1]/p[3]/list[1]
+                              (une liste de valeurs dans le encodingDesc).Cette ODD est pensée pour une édition critique en segmentation parrallèle ; c'est dont la
+                           seule valeur autorisée pour l'attribut method.L'ODD est pensée pour une segmentation parrallèle où tous les témoins sont contenus dans le fichier XML;
+                           c'est donc la seule valeur autorisée pour l'attribut location.Dans ce cas, l'orthographe a été récupérée sur Wikipedia.Les attributs de ref font référence aux attributs xml:id des person contenus dans le listPerson.Les attributs de ref font référence aux attributs xml:id des place; contenus dans le listPlace.Il n'y a pas de sœurs dans l'extrait encodé, et donc pas de valeur "sister" équivalente à "brother"
+                \subsubsection{Principes suivis pour l'édition \LaTeX}
+                
+            L'édition critique en XML-TEI qui est ici transformée est très (trop ?) 
+            détaillée: j'ai choisi de documenter toutes les variations entre les trois 
+            témoins : changements au niveau du texte, de la structure du texte 
+            (paragraphes et sauts de page) et changements dans la décoration des 
+            manuscrits. Tous ces éléments peuvent difficilement être traduits 
+            dans une édition critique "traditionnelle" (papier) ; les principes 
+            suivants ont donc été suivis :
+            \begin{itemize}
+            	\item{L'apparat critique est construit avec la leçon principale (témoin de 
+            		Berlin) en corps de texte ; en notes de bas de page, les variations et 
+            		autres détails sont signalés avec un système de notes à quatres étages :}
+            		\begin{itemize}
+            			\item{\textbf{\texttt{\textbackslash variant}} correspond à \texttt{\textbackslash Afootnote} et 
+            				permet d'encoder les variations "simples" entre les leçons.}
+            			\item{\textbf{\texttt{\textbackslash group}} correspond à \texttt{\textbackslash Bfootnote} et 
+            				permet d'encoder les groupes de temoins (\texttt{<rdgGrp>} 
+            				en TEI).}
+            			\item{\textbf{\texttt{\textbackslash subvariant}} correspond à \texttt{\textbackslash Cfootnote} 
+            			et permet d'encoder les sous-variations dans des apparats internes 
+            			(en termes TEI : les \texttt{<rdg>} qui sont dans des 
+            			\texttt{<app>} dans des \texttt{<app>}).}
+            			\item{\textbf{\texttt{\textbackslash explan}} correspond à \texttt{\textbackslash Dfootnote} et 
+            				permet d'encoder les éléments "non textuels" du témoin principal 
+            				(décorations et sauts de page encodés dans des \texttt{<witDetail>},
+            				changements de paragraphes).}
+            		\end{itemize}
+            	\item{Au sein d'un apparat critique (\texttt{<app>}) les groupes de 
+            		témoins qui ne contiennent pas la leçon principale (en langage TEI 
+            		les \texttt{<rdgGrp>} qui contiennent seulement des 
+            		\texttt{<rdg>}, mais pas de \texttt{<lem>}) se trouvent 
+            		dans une note de deuxième niveau (\texttt{\textbackslash group}, en \LaTeX). Si un 
+            		\texttt{<rdgGrp>} contient une partie du témoin principal, il n'est 
+            		pas retranscrit en \LaTeX.}
+            	\item{Les apparats internes (un \texttt{<app>} dans un 
+            		\texttt{<app>}) sont retranscrits en bas de page grâce à un 
+            		\texttt{\textbackslash subvariant} (note de 3e degré).}
+            	\item{Pour la leçon principale (le manuscrit de Berlin), la structure du 
+            		texte est retranscrite:}
+            		\begin{itemize}
+            			\item{Les sauts de paragraphe sont reportés en note de 
+            				bas de page dans un \texttt{\textbackslash explan} correspondant à une note de 4e niveau 
+            				et signifiés dans le corps du texte par un saut de paragraphe 
+            				(\texttt{\textbackslash pend \textbackslash pstart}, avec \texttt{reledmac}).} 
+            			\item{Les sauts de page sont également reportés en bas de page dans un 
+            				\texttt{\textbackslash explan} ; le numéro de page est également mentionné. Il n'y a 
+            				pas de saut de page dans le corps du texte pour éviter d'avoir un résultat 
+            				trop morcelé.}
+            			\item{Les détails sur la décoration du texte sont mentionnés en notes de 
+            				bas de page, dans un \texttt{\textbackslash explan}.}
+            			\item{Pour les autres leçons (témoins d'Anvers et de Berne), ces 
+            				détails ne sont pas mentionnés.}
+            	\end{itemize}
+            \end{itemize} 
+            
+            \indent Le fichier XSL produit a été visualisé et fonctionne sur TeXstudio 
+            avec un compilateur \texttt{XeLaTeX}. Des fois, des erreurs de compilation 
+            peuvent avoir lieu (toutes les notes de bas de page renvoient à la ligne 0 
+            ou se trouvent à la fin du document). Dans ce cas, relancer la compilation.
+        
+                \subsection{Description des témoins}
+                \\~\\\\~\\
+                \subsection{Présentation du texte encodé}
+                
+        
+        \subsubsection{À propos des \textit{Chroniques} de Froissart}
+        Datant du , les \textit{} de Froissart sont écrites en . \\ \indent 
+        
+        \subsubsection{À propos de l'extrait encodé}
+        Ce passage est extrait du troisième volume des Chroniques de Froissart. Dans cet extrait, Jean Froissart rapporte la manière
+                     dont le duc Jean de Berry a organisé son second mariage avec Jeanne, comtesse d’Auvergne et de Boulogne.
+                     Dès la mort de sa première femme, le duc a organisé des négociations avec le comte Gaston de Foix-Béarn, surnommé Fébus. Ce dernier refuse de laisser
+                     le duc lui prendre sa protégée sans négociation, à cause de de querelles familiales. Afin de convaincre Fébus, le duc de Berry cherche à trouver
+                     un accord ; pour ce faire, il mobilise tout son important cercle d'influence, dont le duc de Bourgogne et même Charles VI le roi de France. Les messagers du duc et ses proches se lançent donc dans un voyage pour rencontrer le conte de Foix, s'arrêtant à Avignon chez le pape Clément. Connu pour
+                     sa finesse politique, Fébus s'est servi de Jeanne
+                     afin d'obtenir les bonnes grâces du duc. Il accepte donc de céder la jeune femme au duc, pour obtenir ses bonnes grâces. Ce court réçit est, comme l'ensemble des Chroniques, un témoignagne du climat politique de la Guerre de Cent Ans, mais aussi des mœurs du XVe siècle : le texte décrit 
+                     la façon dont les mariages s'organisent durant le Moyen-Âge tardif ; les réactions du roi de France et du duc de Bourgogne quant à différence d'âge du duc et de sa future
+                     épouse donnent à voir l'organisation des relations entre les genres au XVe siècle.
+        
+        \subsubsection{Index des personnages}
+        \begin{itemize}\end{itemize}
+        
+        \subsubsection{Liste des relations dans l'extrait encodé}
+         \begin{itemize} \end{itemize} 
+        
+        \subsubsection{Index des lieux}
+        \begin{itemize}\end{itemize}
+                \pagebreak
+            
+            
+            
+            \section{Édition critique}
+            \beginnumbering
+            \linenumbers
+            \pstart    
+            
+            
+            \pend
+            \endnumbering
+            
+            \pagebreak
+            \tableofcontents
+            \end{document}
+        

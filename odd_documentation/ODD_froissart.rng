@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2022-02-06T18:41:43Z. .
+Schema generated from ODD source 2022-04-21T22:12:19Z. .
 TEI Edition: Version 4.3.0. Last updated on
         31st August 2021, revision b4f72b1ff
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0/
@@ -2712,6 +2712,14 @@ ayant les fonctions d'un titre) paraphrase descriptive de l'oeuvre fonctionnant 
                      </choice>
                   </oneOrMore>
                </list>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="lev">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Distance de Levenshtein (nombre entier) entre ce témoin et la leçon principale (témoin de Berlin)</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
             </attribute>
          </optional>
          <empty/>

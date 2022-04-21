@@ -1,7 +1,7 @@
-<?xml version='1.0' encoding='UTF-8'?>
 <?xml-model href="../odd_documentation/ODD_froissart.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../odd_documentation/ODD_froissart.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <!DOCTYPE TEI SYSTEM "../odd_documentation/ODD_froissart.dtd">
+
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
   
   <!-- HEADER -->
@@ -673,921 +673,921 @@
           <lem wit="#brl">
             <pb n="370 v"/>
           </lem>
-          <rdg wit="#atw" lev="0">
+          <rdg wit="#atw">
             <pb n="340 v"/>
           </rdg>
-          <rdg wit="#brn" lev="0">
+          <rdg wit="#brn">
             <pb n="333 r"/>
           </rdg>
           <witDetail wit="#atw #brl #brn" type="precision-about-page-numbering">Les pages des manuscrits contiennent du texte avant ce qui a été encodé; l'élément 'pb' sert ici à indiquer les pages où commençent l'encodage</witDetail>
         </app>Le<persName ref="#djdb">duc de<app corresp="#orth">
           <lem wit="#brn #brl">Berry</lem>
-          <rdg wit="#atw" lev="1">Berri</rdg>
+          <rdg wit="#atw">Berri</rdg>
         </app>
         </persName>
         <app corresp="#punct">
           <lem wit="#atw #brl">,</lem>
-          <rdg wit="#brn" lev="4"/>
+          <rdg wit="#brn"/>
         </app>
         <persName ref="#mjda">madame<app corresp="#orth">
           <lem wit="#atw #brl">Jehanne</lem>
-          <rdg wit="#brn" lev="1">Jehenne</rdg>
+          <rdg wit="#brn">Jehenne</rdg>
         </app>
           <app corresp="#orth">
             <lem wit="#brl">d'Armeignach</lem>
-            <rdg wit="#atw" lev="3">d'Ermignac</rdg>
-            <rdg wit="#brn" lev="2">d'Armignac</rdg>
+            <rdg wit="#atw">d'Ermignac</rdg>
+            <rdg wit="#brn">d'Armignac</rdg>
           </app>
         </persName>
         <app corresp="#sentence-order">
           <lem wit="#brl">sa premiere femme trespassee</lem>
           <rdgGrp corresp="#punct #word-diff">
-            <rdg wit="#atw" lev="23">trespassee, sa premiere femme</rdg>
-            <rdg wit="#brn" lev="21">trespassee sa premiere</rdg>
+            <rdg wit="#atw">trespassee, sa premiere femme</rdg>
+            <rdg wit="#brn">trespassee sa premiere</rdg>
           </rdgGrp>
         </app>
         <app corresp="#punct">
           <lem wit="#atw #brl">,</lem>
-          <rdg wit="#brn" lev="4"/>
+          <rdg wit="#brn"/>
         </app>avoit grant<app corresp="#orth">
           <lem wit="#brl">ymagination</lem>
-          <rdg wit="#atw #brn" lev="1">ymaginacion</rdg>
+          <rdg wit="#atw #brn">ymaginacion</rdg>
         </app>
         <app corresp="#punct">
           <lem wit="#brl">. Et bien le</lem>
-          <rdg wit="#atw #brn" lev="3">et bien le</rdg>
+          <rdg wit="#atw #brn">et bien le</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl">moustra</lem>
-          <rdg wit="#atw #brn" lev="1">monstra</rdg>
+          <rdg wit="#atw #brn">monstra</rdg>
         </app>que secondement il<app corresp="#orth">
           <lem wit="#brl">fust</lem>
-          <rdg wit="#atw" lev="1">feust</rdg>
-          <rdg wit="#brn" lev="1">fut</rdg>
+          <rdg wit="#atw">feust</rdg>
+          <rdg wit="#brn">fut</rdg>
         </app>
         <app corresp="#word-diff">
           <lem wit="#brl">remarié</lem>
-          <rdg wit="#atw #brn" lev="2">marié</rdg>
+          <rdg wit="#atw #brn">marié</rdg>
         </app>. Car<app corresp="#word-diff">
           <lem wit="#brl">tantost que</lem>
           <rdgGrp corresp="#word-diff">
-            <rdg wit="#atw" lev="7">tost comme</rdg>
-            <rdg wit="#brn" lev="9"><pb n="333 v"/>trestost comme</rdg>
+            <rdg wit="#atw">tost comme</rdg>
+            <rdg wit="#brn"><pb n="333 v"/>trestost comme</rdg>
           </rdgGrp>
         </app>il<app corresp="#orth">
           <lem wit="#brl">pot</lem>
-          <rdg wit="#atw #brn" lev="2">peut</rdg>
+          <rdg wit="#atw #brn">peut</rdg>
         </app>veoir<app corresp="#word-diff">
           <lem wit="#brl">comment il</lem>
-          <rdg wit="#atw #brn" lev="8">qu'il</rdg>
+          <rdg wit="#atw #brn">qu'il</rdg>
         </app>avoit<app corresp="#orth">
           <lem wit="#brl">failly</lem>
-          <rdg wit="#atw" lev="1">faily</rdg>
-          <rdg wit="#brn" lev="1">failli</rdg>
+          <rdg wit="#atw">faily</rdg>
+          <rdg wit="#brn">failli</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brl">a la fille de Castille,</lem>
-          <rdg wit="#atw #brn" lev="22"/>
+          <rdg wit="#atw #brn"/>
         </app>il ne fut oncques<app corresp="#word-diff">
           <lem wit="#brn #brl">aise</lem>
-          <rdg wit="#atw" lev="2">avisé</rdg>
+          <rdg wit="#atw">avisé</rdg>
         </app>ne<app corresp="#word-diff">
           <lem wit="#brl">n'ot repos</lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#atw" lev="9">eut</rdg>
-            <rdg wit="#brn" lev="9">eust</rdg>
+            <rdg wit="#atw">eut</rdg>
+            <rdg wit="#brn">eust</rdg>
           </rdgGrp>
         </app>
         <app corresp="#punct">
           <lem wit="#atw #brl">. Mais</lem>
-          <rdg wit="#brn" lev="3">mais</rdg>
+          <rdg wit="#brn">mais</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brl"/>
-          <rdg wit="#atw #brn" lev="4">il</rdg>
+          <rdg wit="#atw #brn">il</rdg>
         </app>mist<app corresp="#sentence-order">
           <lem wit="#brl">en oeuvre clers</lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#atw" lev="12">clers en oeuvre</rdg>
-            <rdg wit="#brn" lev="12">clers en euvre</rdg>
+            <rdg wit="#atw">clers en oeuvre</rdg>
+            <rdg wit="#brn">clers en euvre</rdg>
           </rdgGrp>
         </app>et<app corresp="#orth">
           <lem wit="#brl">messagiers</lem>
-          <rdg wit="#atw #brn" lev="1">messaigiers</rdg>
+          <rdg wit="#atw #brn">messaigiers</rdg>
         </app>pour<app corresp="#orth">
           <lem wit="#brl">envoier</lem>
-          <rdg wit="#atw #brn" lev="1">envoyer</rdg>
+          <rdg wit="#atw #brn">envoyer</rdg>
         </app>devers le<persName ref="#cgfb">conte<app corresp="#orth">
           <lem wit="#brl">Gascoing</lem>
-          <rdg wit="#atw #brn" lev="2">Gascon</rdg>
+          <rdg wit="#atw #brn">Gascon</rdg>
         </app>de<app corresp="#orth">
           <lem wit="#brl">Fois</lem>
-          <rdg wit="#atw #brn" lev="1">Foix</rdg>
+          <rdg wit="#atw #brn">Foix</rdg>
         </app>
         </persName>
         <app corresp="#punct">
           <lem wit="#atw #brl">,</lem>
-          <rdg wit="#brn" lev="4"/>
+          <rdg wit="#brn"/>
         </app>
         <app corresp="#orth">
           <lem wit="#brl">quy</lem>
-          <rdg wit="#atw #brn" lev="1">qui</rdg>
+          <rdg wit="#atw #brn">qui</rdg>
         </app>avoit en garde<persName ref="#fjda">
           <app corresp="#word-diff">
             <lem wit="#atw #brl">la fille</lem>
-            <rdg wit="#brn" lev="3">le filz</rdg>
+            <rdg wit="#brn">le filz</rdg>
           </app></persName>
         au<persName ref="#cjdb">conte Jehan de<app corresp="#orth">
           <lem wit="#brn #brl">Boulongne</lem>
-          <rdg wit="#atw" lev="1">Bouloingne</rdg>
+          <rdg wit="#atw">Bouloingne</rdg>
         </app>
         </persName>
         et avoit<app corresp="#add-words">
           <lem wit="#brl">ja</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>eue plus de<app corresp="#orth">
           <lem wit="#brl">noeuf</lem>
-          <rdg wit="#atw" lev="1">neuf</rdg>
-          <rdg wit="#brn" lev="5">IX</rdg>
+          <rdg wit="#atw">neuf</rdg>
+          <rdg wit="#brn">IX</rdg>
         </app>ans. Et pour tant que le<persName ref="#djdb">duc de<app corresp="#orth">
           <lem wit="#brn #brl">Berry</lem>
-          <rdg wit="#atw" lev="1">Berri</rdg>
+          <rdg wit="#atw">Berri</rdg>
         </app>
         </persName>ne pouoit<app corresp="#sentence-order">
           <lem wit="#brn #brl">a ce mariage parvenir</lem>
-          <rdg wit="#atw" lev="15">parvenir a ce mariage</rdg>
+          <rdg wit="#atw">parvenir a ce mariage</rdg>
         </app>fors par<app corresp="#word-diff">
           <lem wit="#brl">les dangiers</lem>
-          <rdg wit="#atw #brn" lev="2">le dangier</rdg>
+          <rdg wit="#atw #brn">le dangier</rdg>
         </app>du<persName ref="#cgfb">conte de<app corresp="#orth">
           <lem wit="#brl">Fois</lem>
-          <rdg wit="#atw #brn" lev="1">Foix</rdg>
+          <rdg wit="#atw #brn">Foix</rdg>
         </app>
         </persName>. Car au fort le dit<persName ref="#cgfb">conte</persName>ne pour pere<app corresp="#punct">
           <lem wit="#brl"/>
-          <rdg wit="#atw #brn" lev="4">,</rdg>
+          <rdg wit="#atw #brn">,</rdg>
         </app>ne pour mere<app corresp="#punct">
           <lem wit="#brl"/>
-          <rdg wit="#atw #brn" lev="4">,</rdg>
+          <rdg wit="#atw #brn">,</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#atw #brl">ne</lem>
-          <rdg wit="#brn" lev="2"/>
+          <rdg wit="#brn"/>
         </app>pour pape<app corresp="#punct">
           <lem wit="#brl"/>
-          <rdg wit="#atw #brn" lev="4">,</rdg>
+          <rdg wit="#atw #brn">,</rdg>
         </app>ne pour amy que la<persName ref="#fjda">damoiselle</persName>eust<app corresp="#punct">
           <lem wit="#atw #brl">,</lem>
-          <rdg wit="#brn" lev="4"/>
+          <rdg wit="#brn"/>
         </app>il n'en<app corresp="#orth">
           <lem wit="#brl">euist</lem>
-          <rdg wit="#atw #brn" lev="1">eust</rdg>
+          <rdg wit="#atw #brn">eust</rdg>
         </app>riens fait<app corresp="#punct #word-diff #text-segmentation">
           <lem wit="#brl">, se bien<pb n="371 r"/>ne lui feust</lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#atw" lev="13">s'il ne lui fut bien</rdg>
-            <rdg wit="#brn" lev="14">s'il ne lui fust bien</rdg>
+            <rdg wit="#atw">s'il ne lui fut bien</rdg>
+            <rdg wit="#brn">s'il ne lui fust bien</rdg>
           </rdgGrp>
         </app>venu a<app corresp="#add-words">
           <lem wit="#brl">sa</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>plaisance. Il en parla au<persName ref="#rcha">roy de France</persName>, son nepveu, et au <persName ref="#dpdb">duc de<app corresp="#orth">
           <lem wit="#atw #brl">Bourgoingne</lem>
-          <rdg wit="#brn" lev="1">Bourgongne</rdg>
+          <rdg wit="#brn">Bourgongne</rdg>
         </app>
         </persName>, son frere<app corresp="#punct">
           <lem wit="#brl">. Et leur</lem>
-          <rdg wit="#atw #brn" lev="2">, et leur</rdg>
+          <rdg wit="#atw #brn">, et leur</rdg>
         </app>
         <app corresp="#word-diff">
           <lem wit="#brl">requist moult</lem>
-          <rdg wit="#atw #brn" lev="12">pria</rdg>
+          <rdg wit="#atw #brn">pria</rdg>
         </app>affectueusement<app corresp="#orth">
           <lem wit="#brl">que ilz</lem>
-          <rdg wit="#atw #brn" lev="2">qu'ilz</rdg>
+          <rdg wit="#atw #brn">qu'ilz</rdg>
         </app>s'en voulsissent chargier<app corresp="#sentence-order #orth">
           <lem wit="#brl">, avecques luy et embesoingnier</lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#atw" lev="25">et embesoignier avecques lui</rdg>
-            <rdg wit="#brn" lev="25">et embesongnier avecques lui</rdg>
+            <rdg wit="#atw">et embesoignier avecques lui</rdg>
+            <rdg wit="#brn">et embesongnier avecques lui</rdg>
           </rdgGrp>
         </app>. Le<persName ref="#rcha">roy de France</persName>en<app corresp="#orth">
           <lem wit="#brl">ot</lem>
-          <rdg wit="#atw #brn" lev="2">eut</rdg>
+          <rdg wit="#atw #brn">eut</rdg>
         </app>bon<app corresp="#orth #punct">
           <lem wit="#brl">rys,</lem>
-          <rdg wit="#atw #brn" lev="2">ris</rdg>
+          <rdg wit="#atw #brn">ris</rdg>
         </app>pour tant que le<persName ref="#djdb">duc de Berry</persName>estoit ja tout<app corresp="#orth #punct">
           <lem wit="#brl">anchien,</lem>
-          <rdg wit="#atw #brn" lev="2">ancien</rdg>
+          <rdg wit="#atw #brn">ancien</rdg>
         </app>et<app corresp="#orth">
           <lem wit="#brl">luy</lem>
-          <rdg wit="#atw #brn" lev="1">lui</rdg>
+          <rdg wit="#atw #brn">lui</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brn #brl">dist</lem>
-          <rdg wit="#atw" lev="1">dit</rdg>
+          <rdg wit="#atw">dit</rdg>
         </app>:<app corresp="#orth">
           <lem wit="#brl">"Beaulx oncles</lem>
-          <rdg wit="#atw #brn" lev="4">"Bel oncle</rdg>
+          <rdg wit="#atw #brn">"Bel oncle</rdg>
         </app>, que feréz vous<app corresp="#word-diff">
           <lem wit="#brl">de une si<persName ref="#fjda">jenne femme</persName></lem>
           <rdgGrp corresp="#add-words">
-            <rdg wit="#atw" lev="5">d'une<persName ref="#fjda">fillette</persName>
+            <rdg wit="#atw">d'une<persName ref="#fjda">fillette</persName>
             </rdg>
-            <rdg wit="#brn" lev="7">d'une telle<persName ref="#fjda">fillette</persName>
+            <rdg wit="#brn">d'une telle<persName ref="#fjda">fillette</persName>
             </rdg>
           </rdgGrp>
         </app>
         <app corresp="#punct word-diff">
           <lem wit="#brl #brn">?<persName ref="#fjda">Elle</persName>
           </lem>
-          <rdg wit="#atw" lev="3">qui</rdg>
+          <rdg wit="#atw">qui</rdg>
         </app>n'a que<app corresp="#orth">
           <lem wit="#brl">douze</lem>
-          <rdg wit="#atw #brn" lev="5">XII</rdg>
+          <rdg wit="#atw #brn">XII</rdg>
         </app>ans et vous en avéz<app corresp="#orth">
           <lem wit="#brl">soixante</lem>
-          <rdg wit="#atw #brn" lev="8">LX</rdg>
+          <rdg wit="#atw #brn">LX</rdg>
         </app>
         <app corresp="#punct">
           <lem wit="#brn #brl">.</lem>
-          <rdg wit="#atw" lev="1">?</rdg>
+          <rdg wit="#atw">?</rdg>
         </app>Par ma foy,<app corresp="#word-diff">
           <lem wit="#brn #brl">c'est</lem>
-          <rdg wit="#atw" lev="10">il me semble</rdg>
+          <rdg wit="#atw">il me semble</rdg>
         </app>grant<app corresp="#orth word-diff">
           <lem wit="#brn #brl">folie pour</lem>
-          <rdg wit="#atw" lev="5">follie de</rdg>
+          <rdg wit="#atw">follie de</rdg>
         </app>vous de penser a telle<app corresp="#word-diff">
           <lem wit="#brl">besoigne</lem>
-          <rdg wit="#atw #brn" lev="6">chose</rdg>
+          <rdg wit="#atw #brn">chose</rdg>
         </app>.<app corresp="#orth">
           <lem wit="#atw #brl">Faittes</lem>
-          <rdg wit="#brn" lev="1">Faictes</rdg>
+          <rdg wit="#brn">Faictes</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brn #brl">ent</lem>
-          <rdg wit="#atw" lev="1">en</rdg>
+          <rdg wit="#atw">en</rdg>
         </app>parler pour<persName ref="#fjdb">Jehan</persName>
         <app corresp="#punct">
           <lem wit="#brl"/>
-          <rdg wit="#atw #brn" lev="4">,</rdg>
+          <rdg wit="#atw #brn">,</rdg>
         </app>beau cousin vostre filz,<app corresp="#orth">
           <lem wit="#brl">quy</lem>
-          <rdg wit="#atw #brn" lev="1">qui</rdg>
+          <rdg wit="#atw #brn">qui</rdg>
         </app>est<app corresp="#orth">
           <lem wit="#brn #brl">jenne</lem>
-          <rdg wit="#atw" lev="1">jeune</rdg>
+          <rdg wit="#atw">jeune</rdg>
         </app>et a venir<app corresp="#punct">
           <lem wit="#brn #brl">. La</lem>
-          <rdg wit="#atw" lev="2">, la</rdg>
+          <rdg wit="#atw">, la</rdg>
         </app>chose est<app corresp="#add-words">
           <lem wit="#brl">trop</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>mieulx pareille a<app corresp="#orth #ornementation">
           <lem wit="#brl"><witDetail wit="#brl">Enluminure ou miniature, signalée mais non consultable depuis Online Froissart</witDetail>luy</lem>
-          <rdg wit="#atw #brn" lev="4">lui</rdg>
+          <rdg wit="#atw #brn">lui</rdg>
         </app>que a vous." "Monseigneur,"<app corresp="#orth">
           <lem wit="#brl">respondi</lem>
-          <rdg wit="#atw #brn" lev="1">respondit</rdg>
+          <rdg wit="#atw #brn">respondit</rdg>
         </app>le<persName ref="#djdb">duc de<app corresp="#orth">
           <lem wit="#brn #brl">Berry</lem>
-          <rdg wit="#atw" lev="1">Berri</rdg>
+          <rdg wit="#atw">Berri</rdg>
         </app>
         </persName>, "on en a parlé<app corresp="#punct">
           <lem wit="#brl">,</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>mais le<persName ref="#cgfb">conte de<app corresp="#orth">
           <lem wit="#brl">Foiz</lem>
-          <rdg wit="#atw #brn" lev="1">Foix</rdg>
+          <rdg wit="#atw #brn">Foix</rdg>
         </app>
         </persName>n'y<app corresp="#word-diff">
           <lem wit="#brl">a voulu</lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#atw" lev="4">vault</rdg>
-            <rdg wit="#brn" lev="4">veult</rdg>
+            <rdg wit="#atw">vault</rdg>
+            <rdg wit="#brn">veult</rdg>
           </rdgGrp>
         </app>entendre pour la cause de ce que<persName ref="#cjdb">mon filz</persName>descend de ceulx<app corresp="#orth #punct">
           <lem wit="#brl">d'Armeignach. Et</lem>
-          <rdg wit="#atw" lev="4">d'Armignac et</rdg>
-          <rdg wit="#brn" lev="8">de Armignac</rdg>
+          <rdg wit="#atw">d'Armignac et</rdg>
+          <rdg wit="#brn">de Armignac</rdg>
         </app>ilz sont en guerre et en hayne et ont esté<app corresp="#orth">
           <lem wit="#atw #brl">long temps</lem>
-          <rdg wit="#brn" lev="1">longtemps</rdg>
+          <rdg wit="#brn">longtemps</rdg>
         </app>ensemble. Se la<persName ref="#fjda">fille</persName>est<app corresp="#orth">
           <lem wit="#brn #brl">jenne</lem>
-          <rdg wit="#atw" lev="1">jeune</rdg>
+          <rdg wit="#atw">jeune</rdg>
         </app>, je<app corresp="#orth">
           <lem wit="#brl">la espargneray</lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#atw" lev="4">l'espareigneray</rdg>
-            <rdg wit="#brn" lev="2">l'espargneray</rdg>
+            <rdg wit="#atw">l'espareigneray</rdg>
+            <rdg wit="#brn">l'espargneray</rdg>
           </rdgGrp>
         </app>
         <app corresp="#orth">
           <lem wit="#atw #brl">trois</lem>
-          <rdg wit="#brn" lev="1">troiz</rdg>
+          <rdg wit="#brn">troiz</rdg>
         </app>ou quatre ans<app corresp="#word-diff">
           <lem wit="#brl">, voire si longuement</lem>
-          <rdg wit="#atw #brn" lev="19">tant</rdg>
+          <rdg wit="#atw #brn">tant</rdg>
         </app>qu'elle sera femme<app corresp="#orth #word-diff">
           <lem wit="#atw #brl">parfaitte et</lem>
-          <rdg wit="#brn" lev="4">parfaicte</rdg>
+          <rdg wit="#brn">parfaicte</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brl">fourmee</lem>
-          <rdg wit="#atw" lev="1">formee</rdg>
-          <rdg wit="#brn" lev="5"/>
+          <rdg wit="#atw">formee</rdg>
+          <rdg wit="#brn"/>
         </app>." Voire,"<app corresp="#word-diff">
           <lem wit="#brl">respondy</lem>
-          <rdg wit="#atw" lev="8">dit</rdg>
-          <rdg wit="#brn" lev="2">respondit</rdg>
+          <rdg wit="#atw">dit</rdg>
+          <rdg wit="#brn">respondit</rdg>
         </app>le<persName ref="#rcha">roy</persName>,<app corresp="#punct add-words">
           <lem wit="#brl">"<persName ref="#djdb">beaulx oncles</persName></lem>
-          <rdg wit="#atw" lev="0">"</rdg>
-          <rdg wit="#brn" lev="0">"<persName ref="#djdb">bel oncle</persName></rdg>
+          <rdg wit="#atw">"</rdg>
+          <rdg wit="#brn">"<persName ref="#djdb">bel oncle</persName></rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl #brn">mais</lem>
-          <rdg wit="#atw" lev="1">maiz</rdg>
+          <rdg wit="#atw">maiz</rdg>
         </app>elle ne vous<app corresp="#orth">
           <lem wit="#brn #brl">espargnera</lem>
-          <rdg wit="#atw" lev="2">espareignera</rdg>
+          <rdg wit="#atw">espareignera</rdg>
         </app>pas." Et puis dist le<persName ref="#rcha">roy</persName>tout en<app corresp="#orth">
           <lem wit="#brl">ryant</lem>
-          <rdg wit="#atw #brn" lev="1">riant</rdg>
+          <rdg wit="#atw #brn">riant</rdg>
         </app>:<app corresp="#punct #add-words #word-diff">
           <lem wit="#brl">"Or ça,<persName ref="#djdb">beaulx oncles</persName></lem>
-          <rdg wit="#atw #brn" lev="6">"<persName ref="#djdb">Bel oncle</persName>
+          <rdg wit="#atw #brn">"<persName ref="#djdb">Bel oncle</persName>
           </rdg>
         </app>,<app corresp="#orth">
           <lem wit="#brl">puisque</lem>
-          <rdg wit="#atw #brn" lev="1">puis que</rdg>
+          <rdg wit="#atw #brn">puis que</rdg>
         </app>nous veons que<app corresp="#word-diff">
           <lem wit="#brl">si tres</lem>
-          <rdg wit="#atw" lev="6">tant</rdg>
-          <rdg wit="#brn" lev="5">si</rdg>
+          <rdg wit="#atw">tant</rdg>
+          <rdg wit="#brn">si</rdg>
         </app>grande affection vous y avéz<app corresp="#punct">
           <lem wit="#brn #brl"/>
-          <rdg wit="#atw" lev="4">,</rdg>
+          <rdg wit="#atw">,</rdg>
         </app>nous y<app corresp="#orth">
           <lem wit="#atw #brl">entendrons</lem>
-          <rdg wit="#brn" lev="1">entenderons</rdg>
+          <rdg wit="#brn">entenderons</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brl">moult</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>voulentiers."<app corresp="#add-words #text-segmentation">
           <lem wit="#brn #brl"><milestone unit="tei:p"/><lb/>Depuis</lem>
-          <rdg wit="#atw" lev="8">Et depuis</rdg>
+          <rdg wit="#atw">Et depuis</rdg>
         </app>ne demoura<app corresp="#orth">
           <lem wit="#brn #brl">gaires</lem>
-          <rdg wit="#atw" lev="3">guerres</rdg>
+          <rdg wit="#atw">guerres</rdg>
         </app>de temps que le<persName ref="#rcha">roy</persName>ordonna le<persName ref="#sbdr">sire de la Riviere, messire<app corresp="#orth">
           <lem wit="#brl">Burel</lem>
-          <rdg wit="#atw #brn" lev="3">Brueil</rdg>
+          <rdg wit="#atw #brn">Brueil</rdg>
         </app>
         </persName>, son souverain<app corresp="#add-words">
           <lem wit="#brl">chevallier</lem>
-          <rdg wit="#atw #brn" lev="9"/>
+          <rdg wit="#atw #brn"/>
         </app>
         <app corresp="#add-words">
           <lem wit="#atw #brl">et</lem>
-          <rdg wit="#brn" lev="4"/>
+          <rdg wit="#brn"/>
         </app>maistre d'ostel et<app corresp="#orth">
           <lem wit="#brl">chambellan</lem>
-          <rdg wit="#atw" lev="2">chambrelan</rdg>
-          <rdg wit="#brn" lev="3">chambrelain</rdg>
+          <rdg wit="#atw">chambrelan</rdg>
+          <rdg wit="#brn">chambrelain</rdg>
         </app>
         <app corresp="#punct">
           <lem wit="#brn #brl">,</lem>
-          <rdg wit="#atw" lev="4"/>
+          <rdg wit="#atw"/>
         </app>pour<app corresp="#orth">
           <lem wit="#brn #brl">aler</lem>
-          <rdg wit="#atw" lev="1">aller</rdg>
+          <rdg wit="#atw">aller</rdg>
         </app>en ce voyage<app corresp="#punct">
           <lem wit="#brl">. Et avecques</lem>
-          <rdg wit="#atw #brn" lev="3">et avecques</rdg>
+          <rdg wit="#atw #brn">et avecques</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl">luy</lem>
-          <rdg wit="#atw #brn" lev="1">lui</rdg>
+          <rdg wit="#atw #brn">lui</rdg>
         </app>le<persName ref="#cdas">conte<app corresp="#orth">
           <lem wit="#brl">d'Assy</lem>
-          <rdg wit="#atw #brn" lev="2">d'Acy</rdg>
+          <rdg wit="#atw #brn">d'Acy</rdg>
         </app>
         </persName>. Et le<persName ref="#dpdb">duc de<app corresp="#orth">
           <lem wit="#atw #brl">Bourgoingne</lem>
-          <rdg wit="#brn" lev="1">Bourgongne</rdg>
+          <rdg wit="#brn">Bourgongne</rdg>
         </app>
         </persName>y ordonna pour<app corresp="#orth">
           <lem wit="#brl">luy</lem>
-          <rdg wit="#atw #brn" lev="1">lui</rdg>
+          <rdg wit="#atw #brn">lui</rdg>
         </app>et en son nom<persName ref="#egdv">l'evesque<app corresp="#orth">
           <lem wit="#atw #brl">d'Authun</lem>
-          <rdg wit="#brn" lev="1">d'Autun</rdg>
+          <rdg wit="#brn">d'Autun</rdg>
         </app>
         </persName>et<persName ref="#mgdt">messire<app corresp="#orth">
           <lem wit="#brl">Guillemme</lem>
-          <rdg wit="#atw" lev="2">Guillaume</rdg>
-          <rdg wit="#brn" lev="2">Guillame</rdg>
+          <rdg wit="#atw">Guillaume</rdg>
+          <rdg wit="#brn">Guillame</rdg>
         </app>de la Trimoulle</persName>
         <app corresp="#punct">
           <lem wit="#brl">et</lem>
-          <rdg wit="#atw #brn" lev="3">. Et</rdg>
+          <rdg wit="#atw #brn">. Et</rdg>
         </app>le<persName ref="#djdb">duc de Berry</persName>y ordonna<app corresp="#add-words">
           <lem wit="#brn #brl">et</lem>
-          <rdg wit="#atw" lev="4"/>
+          <rdg wit="#atw"/>
         </app>en<app corresp="#orth">
           <lem wit="#brl">prya</lem>
-          <rdg wit="#atw #brn" lev="1">pria</rdg>
+          <rdg wit="#atw #brn">pria</rdg>
         </app>le conte<persName ref="#cjdx">Jehan de Xancerre</persName>
         <app corresp="#punct orth">
           <lem wit="#atw #brl">ung</lem>
-          <rdg wit="#brn" lev="3">, un</rdg>
+          <rdg wit="#brn">, un</rdg>
         </app>grant<app corresp="#punct #orth">
           <lem wit="#brl">, sage</lem>
-          <rdg wit="#atw #brn" lev="3">saige</rdg>
+          <rdg wit="#atw #brn">saige</rdg>
         </app>et vaillant<app corresp="#orth">
           <lem wit="#brn #brl">chevallier</lem>
-          <rdg wit="#atw" lev="1">chevalier</rdg>
+          <rdg wit="#atw">chevalier</rdg>
         </app>.<app corresp="#text-segmentation">
           <lem wit="#brn #brl">
             <milestone unit="tei:p"/>
             <lb/>
           </lem>
-          <rdg wit="#atw" lev="13"/>
+          <rdg wit="#atw"/>
         </app>Ces<app corresp="#orth">
           <lem wit="#brn #brl">cinq</lem>
-          <rdg wit="#atw" lev="1">cincq</rdg>
+          <rdg wit="#atw">cincq</rdg>
         </app>seigneurs pour venir<app corresp="#word-diff">
           <lem wit="#brl">devers</lem>
-          <rdg wit="#atw #brn" lev="2">vers</rdg>
+          <rdg wit="#atw #brn">vers</rdg>
         </app>le<persName ref="#cgfb">conte de<app corresp="#orth">
           <lem wit="#brl">Fois</lem>
-          <rdg wit="#atw #brn" lev="1">Foix</rdg>
+          <rdg wit="#atw #brn">Foix</rdg>
         </app>
         </persName>et<app corresp="#add-words">
           <lem wit="#brn #brl"/>
-          <rdg wit="#atw" lev="3">pour</rdg>
+          <rdg wit="#atw">pour</rdg>
         </app>requerir<app corresp="#word-diff">
           <lem wit="#brl">en</lem>
-          <rdg wit="#atw #brn" lev="2">ou</rdg>
+          <rdg wit="#atw #brn">ou</rdg>
         </app>nom<app corresp="#text-segmentation #add-words">
           <lem wit="#brn #brl">de mariage</lem>
-          <rdg wit="#atw" lev="12">
+          <rdg wit="#atw">
             <pb n="341 r"/>et</rdg>
         </app>pour le<persName ref="#djdb">duc de Berry</persName>ceste<app corresp="#orth">
           <lem wit="#brn #brl">jenne</lem>
-          <rdg wit="#atw" lev="1">jeune</rdg>
+          <rdg wit="#atw">jeune</rdg>
         </app>
         <persName ref="#fjda">dame</persName>
         <app corresp="#add-words">
           <lem wit="#brn #brl"/>
-          <rdg wit="#atw" lev="8">a mariage</rdg>
+          <rdg wit="#atw">a mariage</rdg>
         </app>
         <app corresp="#punct">
           <lem wit="#atw #brl">,</lem>
-          <rdg wit="#brn" lev="4"/>
+          <rdg wit="#brn"/>
         </app>se partirent de leurs lieux et se devoient trouver en<placeName ref="#avg">Avignon</placeName>
         <app corresp="#sentence-order #orth">
           <lem wit="#brl">deléz le pape comme ils firent. Ce<persName ref="#pclv">pape Clement</persName>, quy cousin estoit du<persName ref="#cjdb">pere</persName>a la<persName ref="#fjda">damoiselle</persName>, les retint la bien quinze jours</lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#atw" lev="22">ainsi comme ilz deléz le <persName ref="#pclv">pape Clement</persName>bien XV jours, qui cousin germain estoit a la<persName ref="#fjda">damoiselle</persName></rdg>
-            <rdg wit="#brn" lev="22">aussi comme ilz delez le <persName ref="#pclv">pape Clement</persName>bien XV jours, qui cousin germain estoit a la<persName ref="#fjda">damoiselle</persName>,</rdg>
+            <rdg wit="#atw">ainsi comme ilz deléz le <persName ref="#pclv">pape Clement</persName>bien XV jours, qui cousin germain estoit a la<persName ref="#fjda">damoiselle</persName></rdg>
+            <rdg wit="#brn">aussi comme ilz delez le <persName ref="#pclv">pape Clement</persName>bien XV jours, qui cousin germain estoit a la<persName ref="#fjda">damoiselle</persName>,</rdg>
           </rdgGrp>
         </app>
         <app corresp="#punct">
           <lem wit="#brl">. Et environ la</lem>
-          <rdg wit="#atw #brn" lev="2">, et environ la</rdg>
+          <rdg wit="#atw #brn">, et environ la</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl">Chandelleur</lem>
-          <rdg wit="#atw" lev="1">Chandeller</rdg>
-          <rdg wit="#brn" lev="1">Chandeleur</rdg>
+          <rdg wit="#atw">Chandeller</rdg>
+          <rdg wit="#brn">Chandeleur</rdg>
         </app>ilz se<app corresp="#word-diff">
           <lem wit="#brn #brl">departirent</lem>
-          <rdg wit="#atw" lev="2">partirent</rdg>
+          <rdg wit="#atw">partirent</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brl">tous</lem>
-          <rdg wit="#atw #brn" lev="3"/>
+          <rdg wit="#atw #brn"/>
         </app>d'<placeName ref="#avg">Avignon</placeName>et prindrent le chemin de<placeName ref="#nim">
           <app corresp="#orth">
             <lem wit="#brn #brl">Nismes</lem>
-            <rdg wit="#atw" lev="1">Nimes</rdg>
+            <rdg wit="#atw">Nimes</rdg>
           </app>
         </placeName>et de<placeName ref="#mtp">Montpellier</placeName>
         <app corresp="#punct #orth">
           <lem wit="#brl">. Si chevauchierent</lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#brn" lev="6">et chevaucerent</rdg>
-            <rdg wit="#atw" lev="6">et chevaulcherent</rdg>
+            <rdg wit="#brn">et chevaucerent</rdg>
+            <rdg wit="#atw">et chevaulcherent</rdg>
           </rdgGrp>
         </app>a petites journees et a grans<app corresp="#punct #word-diff">
           <lem wit="#brl">frais. Si</lem>
-          <rdg wit="#atw #brn" lev="4">fraiz et</rdg>
+          <rdg wit="#atw #brn">fraiz et</rdg>
         </app>passerent<placeName ref="#bsr">Besiers</placeName>et vindrent a<placeName ref="#crs">
           <app corresp="#text-segmentation">
             <lem wit="#atw #brl">Carcassonne</lem>
-            <rdg wit="#brn" lev="2">Carcasson<pb n="334 r"/>ne</rdg>
+            <rdg wit="#brn">Carcasson<pb n="334 r"/>ne</rdg>
           </app>
         </placeName>
         <app corresp="#punct #word-diff">
           <lem wit="#brl">. Et la</lem>
-          <rdg wit="#atw" lev="7">ou</rdg>
-          <rdg wit="#brn" lev="6">et</rdg>
+          <rdg wit="#atw">ou</rdg>
+          <rdg wit="#brn">et</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brn #brl"/>
-          <rdg wit="#atw" lev="4">ilz</rdg>
+          <rdg wit="#atw">ilz</rdg>
         </app>trouverent<app corresp="#add-words">
           <lem wit="#brl">ilz</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>messire<persName ref="#mldx">Loÿs de Xancerre</persName>, mareschal de France,<app corresp="#sentence-order #add-words #ornementation">
           <lem wit="#brl">quy moult grandement<witDetail wit="#brl">Enluminure ou miniature, signalée mais non consultable depuis Online Froissart</witDetail>les recueilly, ce fut raison.</lem>
-          <rdg wit="#atw #brn" lev="12">qui les recueillit grandement</rdg>
+          <rdg wit="#atw #brn">qui les recueillit grandement</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brl #brn">
             <app corresp="#punct">
               <lem wit="#brl">Et</lem>
-              <rdg wit="#brn" lev="3">, et</rdg>
+              <rdg wit="#brn">, et</rdg>
             </app>parla a<app corresp="#orth">
               <lem wit="#brl">eulz</lem>
-              <rdg wit="#brn" lev="1">eulx</rdg>
+              <rdg wit="#brn">eulx</rdg>
             </app>assez du<persName ref="#cgfb">conte de<app corresp="#orth #punct">
               <lem wit="#brl">Fois,</lem>
-              <rdg wit="#brn" lev="2">Foix</rdg>
+              <rdg wit="#brn">Foix</rdg>
             </app>
             </persName>de son estat et de son affaire. Car il y avoit esté<app corresp="#add-words">
               <lem wit="#brl">de<placeName ref="#crs">Carcassonne</placeName>
               </lem>
-              <rdg wit="#brn" lev="3"/>
+              <rdg wit="#brn"/>
             </app>n'avoit point passé deux<app corresp="#orth">
               <lem wit="#brl">mois</lem>
-              <rdg wit="#brn" lev="1">moix</rdg>
+              <rdg wit="#brn">moix</rdg>
             </app>
           </lem>
           <rdg wit="#atw"/>
         </app>.<app corresp="#add-words">
           <lem wit="#brl">Ilz<pb n="371 v"/></lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#atw" lev="0">Ilz</rdg>
+            <rdg wit="#atw">Ilz</rdg>
           </rdgGrp>
-          <rdg wit="#brn" lev="3">De<placeName ref="#crs">Carcassonne</placeName>, il</rdg>
+          <rdg wit="#brn">De<placeName ref="#crs">Carcassonne</placeName>, il</rdg>
         </app>se<app corresp="#word-diff">
           <lem wit="#brl">departirent</lem>
           <rdgGrp corresp="#orth">
-            <rdg wit="#brn" lev="3">partyrent</rdg>
-            <rdg wit="#atw" lev="2">partirent</rdg>
+            <rdg wit="#brn">partyrent</rdg>
+            <rdg wit="#atw">partirent</rdg>
           </rdgGrp>
         </app>
         <app corresp="#add-words">
           <lem wit="#brl #brn"/>
-          <rdg wit="#atw" lev="5">de la</rdg>
+          <rdg wit="#atw">de la</rdg>
         </app>et vindrent<app corresp="#add-words">
           <lem wit="#brl">en la cité de</lem>
-          <rdg wit="#atw #brn" lev="12">a</rdg>
+          <rdg wit="#atw #brn">a</rdg>
         </app>
         <placeName ref="#tls">Thoulouse</placeName>
         <app corresp="#punct">
           <lem wit="#brl">,</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>et la s'arresterent<app corresp="#punct #orth">
           <lem wit="#brl">. Et envoierent</lem>
-          <rdg wit="#atw #brn" lev="4">et envoyerent</rdg>
+          <rdg wit="#atw #brn">et envoyerent</rdg>
         </app>leurs<app corresp="#word-diff">
           <lem wit="#brl">messages</lem>
-          <rdg wit="#atw #brn" lev="2">messagiers</rdg>
+          <rdg wit="#atw #brn">messagiers</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brl #brn"/>
-          <rdg wit="#atw" lev="5">devant</rdg>
+          <rdg wit="#atw">devant</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#atw #brl">devers</lem>
-          <rdg wit="#brn" lev="1">deverz</rdg>
+          <rdg wit="#brn">deverz</rdg>
         </app>le<app corresp="#orth">
           <lem wit="#brl"><persName ref="#cgfb">conte de Fois</persName></lem>
-          <rdg wit="#atw #brn" lev="13">
+          <rdg wit="#atw #brn">
             <persName ref="#cgfb">conte de Foix</persName>
           </rdg>
         </app>
         <app corresp="#punct #orth">
           <lem wit="#brl">, quy</lem>
-          <rdg wit="#brn" lev="3">qui</rdg>
-          <rdg wit="#atw" lev="1">, qui</rdg>
+          <rdg wit="#brn">qui</rdg>
+          <rdg wit="#atw">, qui</rdg>
         </app>
         se tenoit a<placeName ref="#otz">Orthaiz en<app corresp="#orth">
           <lem wit="#brl">Berne</lem>
-          <rdg wit="#atw #brn" lev="1">Bierne</rdg>
+          <rdg wit="#atw #brn">Bierne</rdg>
         </app>
         </placeName>. Si<app corresp="#orth">
           <lem wit="#brn #brl">s'entamerent</lem>
-          <rdg wit="#atw" lev="1">s'entammerent</rdg>
+          <rdg wit="#atw">s'entammerent</rdg>
         </app>les traittiéz de ce mariage, mais ilz<app corresp="#add-words">
           <lem wit="#brl"/>
-          <rdg wit="#atw #brn" lev="4">y</rdg>
+          <rdg wit="#atw #brn">y</rdg>
         </app>furent moult<app corresp="#word-diff">
           <lem wit="#brl">loingtains</lem>
-          <rdg wit="#atw #brn" lev="6">longuement</rdg>
+          <rdg wit="#atw #brn">longuement</rdg>
         </app>
         <app corresp="#punct">
           <lem wit="#atw #brl">, car</lem>
-          <rdg wit="#brn" lev="2">. Car</rdg>
+          <rdg wit="#brn">. Car</rdg>
         </app>
         <app corresp="#word-diff">
           <lem wit="#brl">de</lem>
-          <rdg wit="#atw #brn" lev="1">du</rdg>
+          <rdg wit="#atw #brn">du</rdg>
         </app>commencement le<persName ref="#cgfb">conte de<app corresp="#orth">
           <lem wit="#brl">Fois</lem>
-          <rdg wit="#atw #brn" lev="1">Foix</rdg>
+          <rdg wit="#atw #brn">Foix</rdg>
         </app>
         </persName>fut<app corresp="#add-words">
           <lem wit="#brl"/>
-          <rdg wit="#atw #brn" lev="4">moult</rdg>
+          <rdg wit="#atw #brn">moult</rdg>
         </app>froit<app corresp="#add-words">
           <lem wit="#brl">et dur</lem>
-          <rdg wit="#atw #brn" lev="6"/>
+          <rdg wit="#atw #brn"/>
         </app>pour<app corresp="#word-diff">
           <lem wit="#atw #brl">ce</lem>
-          <rdg wit="#brn" lev="4">tant</rdg>
+          <rdg wit="#brn">tant</rdg>
         </app>que le<persName ref="#djdg">duc de Lancastre</persName>
         <app corresp="#punct">
           <lem wit="#atw #brl">,</lem>
-          <rdg wit="#brn" lev="4"/>
+          <rdg wit="#brn"/>
         </app>
         <app corresp="#orth">
           <lem wit="#brl">quy</lem>
-          <rdg wit="#atw #brn" lev="1">qui</rdg>
+          <rdg wit="#atw #brn">qui</rdg>
         </app>
         <app corresp="#sentence-order">
           <lem wit="#brl">pour ce temps se tenoit</lem>
-          <rdg wit="#atw #brn" lev="19">se tenoit pour le temps a</rdg>
+          <rdg wit="#atw #brn">se tenoit pour le temps a</rdg>
         </app>a<placeName ref="#bdx">
           <app corresp="#orth">
             <lem wit="#brl #brn">Bourdeaulx</lem>
-            <rdg wit="#atw" lev="1">Bourdeaulz</rdg>
+            <rdg wit="#atw">Bourdeaulz</rdg>
           </app>
         </placeName>ou a<app corresp="#orth #punct #add-words">
           <lem wit="#brl"><placeName ref="#nrb">Liebourne</placeName>, en</lem>
-          <rdg wit="#atw" lev="0"><placeName ref="#nrb">Lierbonne</placeName>,</rdg>
-          <rdg wit="#brn" lev="0"><placeName ref="#nrb">Narbonne</placeName></rdg>
+          <rdg wit="#atw"><placeName ref="#nrb">Lierbonne</placeName>,</rdg>
+          <rdg wit="#brn"><placeName ref="#nrb">Narbonne</placeName></rdg>
         </app>faisoit parler et<app corresp="#orth">
           <lem wit="#brl">pryer</lem>
-          <rdg wit="#atw #brn" lev="1">prier</rdg>
+          <rdg wit="#atw #brn">prier</rdg>
         </app>pour son filz<app corresp="#add-words">
           <lem wit="#brl">messire</lem>
-          <rdg wit="#atw #brn" lev="6"/>
+          <rdg wit="#atw #brn"/>
         </app>
         <persName ref="#hcde">Henry, conte<app corresp="#orth punct">
           <lem wit="#brn #brl">d'Erby.</lem>
-          <rdg wit="#atw" lev="2">d'Erbi,</rdg>
+          <rdg wit="#atw">d'Erbi,</rdg>
         </app>
         </persName>
         <app corresp="#punct">
           <lem wit="#brl">Si</lem>
-          <rdg wit="#atw" lev="1">si</rdg>
-          <rdg wit="#brn" lev="1">Sy</rdg>
+          <rdg wit="#atw">si</rdg>
+          <rdg wit="#brn">Sy</rdg>
         </app>fut<app corresp="#orth">
           <lem wit="#atw #brl">telle fois</lem>
-          <rdg wit="#brn" lev="2">tele foiz</rdg>
+          <rdg wit="#brn">tele foiz</rdg>
         </app>
         <app corresp="#word-diff">
           <lem wit="#atw #brl">pour</lem>
-          <rdg wit="#brn" lev="3">que</rdg>
+          <rdg wit="#brn">que</rdg>
         </app>le<app corresp="#orth">
           <lem wit="#brn #brl">loingtain</lem>
-          <rdg wit="#atw" lev="1">longtain</rdg>
+          <rdg wit="#atw">longtain</rdg>
         </app>sejour<app corresp="#word-diff">
           <lem wit="#brl">que l'</lem>
-          <rdg wit="#atw #brn" lev="3">qu'</rdg>
+          <rdg wit="#atw #brn">qu'</rdg>
         </app>on veoit<app corresp="#sentence-order">
           <lem wit="#brl">advenir, que on disoit que le mariage pour lequel ces seigneurs s'arresterent en la bonne cité de</lem>
-          <rdg wit="#atw #brn" lev="55">a ces seigneurs faire qu'on disoit que le mariage pour lequel ilz sejournoient a</rdg>
+          <rdg wit="#atw #brn">a ces seigneurs faire qu'on disoit que le mariage pour lequel ilz sejournoient a</rdg>
         </app>
         <placeName ref="#tls">Thoulouse</placeName>
         <app corresp="#punct">
           <lem wit="#brl">,</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>ne se feroit point<app corresp="#punct">
           <lem wit="#brl">, et</lem>
-          <rdg wit="#atw #brn" lev="2">. Et</rdg>
+          <rdg wit="#atw #brn">. Et</rdg>
         </app>tout leur estat et<app corresp="#add-words">
           <lem wit="#brl">toutes</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>les ordonnances,<app corresp="#orth">
           <lem wit="#brl">responses</lem>
-          <rdg wit="#atw #brn" lev="1">responces</rdg>
+          <rdg wit="#atw #brn">responces</rdg>
         </app>et<app corresp="#orth">
           <lem wit="#brl">traittiés</lem>
-          <rdg wit="#atw" lev="1">traittiéz</rdg>
-          <rdg wit="#brn" lev="2">traitiéz</rdg>
+          <rdg wit="#atw">traittiéz</rdg>
+          <rdg wit="#brn">traitiéz</rdg>
         </app>du<persName ref="#cgfb">conte de<app corresp="#orth #punct">
           <lem wit="#brl">Fois,</lem>
-          <rdg wit="#atw #brn" lev="2">Foix</rdg>
+          <rdg wit="#atw #brn">Foix</rdg>
         </app>
         </persName>de jour en jour<app corresp="#orth">
           <lem wit="#brl">et de septmaine en septmaine,</lem>
-          <rdg wit="#atw #brn" lev="5">, de sepmaine en sepmaine</rdg>
+          <rdg wit="#atw #brn">, de sepmaine en sepmaine</rdg>
         </app>ilz<app corresp="#orth">
           <lem wit="#brl">envoierent</lem>
-          <rdg wit="#atw" lev="2">envoioient</rdg>
-          <rdg wit="#brn" lev="3">envoyoient</rdg>
+          <rdg wit="#atw">envoioient</rdg>
+          <rdg wit="#brn">envoyoient</rdg>
         </app>soingneusement devers le<persName ref="#djdb">duc de Berry</persName>
         <app corresp="#punct">
           <lem wit="#atw #brl">,</lem>
-          <rdg wit="#brn" lev="4"/>
+          <rdg wit="#brn"/>
         </app>
         <app corresp="#orth">
           <lem wit="#brl">quy</lem>
-          <rdg wit="#atw #brn" lev="1">qui</rdg>
+          <rdg wit="#atw #brn">qui</rdg>
         </app>se tenoit a<placeName ref="#nnt">la Nonnette en Auvergne</placeName>. Et le<persName ref="#djdb">duc</persName>
         <app corresp="#punct #orth">
           <lem wit="#brl">, quy</lem>
-          <rdg wit="#atw #brn" lev="3">qui</rdg>
+          <rdg wit="#atw #brn">qui</rdg>
         </app>n'avoit autre desir fors que les choses approchassent,<app corresp="#add-words">
           <lem wit="#brl #brn"/>
-          <rdg wit="#atw" lev="5">souvent</rdg>
+          <rdg wit="#atw">souvent</rdg>
         </app>
         <app corresp="#add-words #word-diff">
           <lem wit="#brl">escripsoit</lem>
-          <rdg wit="#atw" lev="9"/>
-          <rdg wit="#brn" lev="2">rescripvoit</rdg>
+          <rdg wit="#atw"/>
+          <rdg wit="#brn">rescripvoit</rdg>
         </app>devers<app corresp="#orth">
           <lem wit="#atw #brl">eulz</lem>
-          <rdg wit="#brn" lev="1">eulx</rdg>
+          <rdg wit="#brn">eulx</rdg>
         </app>
         <app corresp="#punct">
           <lem wit="#brl">,</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>et<app corresp="#sentence-order">
           <lem wit="#brl #brn">les raffreschissoit souvent</lem>
-          <rdg wit="#atw" lev="14">souvent les raffreschissoit de</rdg>
+          <rdg wit="#atw">souvent les raffreschissoit de</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl">nouveaulz</lem>
-          <rdg wit="#atw #brn" lev="1">nouveaulx</rdg>
+          <rdg wit="#atw #brn">nouveaulx</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brn #brl">messages</lem>
-          <rdg wit="#atw" lev="1">messaiges</rdg>
+          <rdg wit="#atw">messaiges</rdg>
         </app>
         <app corresp="#punct">
           <lem wit="#brl">. En</lem>
-          <rdg wit="#atw #brn" lev="3">en</rdg>
+          <rdg wit="#atw #brn">en</rdg>
         </app>
         <app corresp="#word-diff">
           <lem wit="#brl">eulz</lem>
-          <rdg wit="#atw" lev="3">leur</rdg>
-          <rdg wit="#brn" lev="1">eulx</rdg>
+          <rdg wit="#atw">leur</rdg>
+          <rdg wit="#brn">eulx</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl #brn">signiffiant</lem>
-          <rdg wit="#atw" lev="1">seigniffiant</rdg>
+          <rdg wit="#atw">seigniffiant</rdg>
         </app>que<app corresp="#word-diff">
           <lem wit="#brl">par nul moyen</lem>
-          <rdg wit="#atw #brn" lev="9">nullement</rdg>
+          <rdg wit="#atw #brn">nullement</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brn #brl">ilz</lem>
-          <rdg wit="#atw" lev="4"/>
+          <rdg wit="#atw"/>
         </app>ne<app corresp="#add-words">
           <lem wit="#brn #brl">cessassent point</lem>
-          <rdg wit="#atw" lev="7">cessasent</rdg>
+          <rdg wit="#atw">cessasent</rdg>
         </app>que la<app corresp="#word-diff">
           <lem wit="#brl">besoingne</lem>
-          <rdg wit="#atw" lev="7">chose</rdg>
-          <rdg wit="#brn" lev="1">besongne</rdg>          
+          <rdg wit="#atw">chose</rdg>
+          <rdg wit="#brn">besongne</rdg>          
         </app>ne se<app corresp="#orth #text-segmentation">
           <lem wit="#brl">fesist.</lem>
-          <rdg wit="#atw" lev="1">feist.<milestone unit="tei:p"/>
+          <rdg wit="#atw">feist.<milestone unit="tei:p"/>
             <lb/>
           </rdg>
-          <rdg wit="#brn" lev="2">feïst.</rdg>
+          <rdg wit="#brn">feïst.</rdg>
         </app>Le<persName ref="#cgfb">conte de<app corresp="#orth">
           <lem wit="#brl">Foiz</lem>
-          <rdg wit="#atw #brn" lev="1">Foix</rdg>
+          <rdg wit="#atw #brn">Foix</rdg>
         </app>
         </persName>,<app corresp="#orth">
           <lem wit="#brl">quy</lem>
-          <rdg wit="#atw #brn" lev="1">qui</rdg>
+          <rdg wit="#atw #brn">qui</rdg>
         </app>estoit<app corresp="#orth">
           <lem wit="#brn #brl">sage</lem>
-          <rdg wit="#atw" lev="1">saige</rdg>
+          <rdg wit="#atw">saige</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brl"/>
-          <rdg wit="#atw #brn" lev="3">homme</rdg>
+          <rdg wit="#atw #brn">homme</rdg>
         </app>et<app corresp="#orth">
           <lem wit="#atw #brl">soubtil</lem>
-          <rdg wit="#brn" lev="1">subtil</rdg>
+          <rdg wit="#brn">subtil</rdg>
         </app>
         <app corresp="#punct #orth">
           <lem wit="#brl">, et quy</lem>
-          <rdg wit="#atw #brn" lev="3">et qui</rdg>
+          <rdg wit="#atw #brn">et qui</rdg>
         </app>veoit<app corresp="#orth">
           <lem wit="#brl">l'ardent</lem>
-          <rdg wit="#atw #brn" lev="1">l'ardant</rdg>
+          <rdg wit="#atw #brn">l'ardant</rdg>
         </app>desir du<persName ref="#djdb">duc de Berry</persName>
         <app corresp="#punct #orth">
           <lem wit="#brn #brl">, traittoit sagement</lem>
-          <rdg wit="#atw" lev="4">traitoit saigement</rdg>
+          <rdg wit="#atw">traitoit saigement</rdg>
         </app>et bellement et si froidement mena<app corresp="#word-diff">
           <lem wit="#brl">ses</lem>
-          <rdg wit="#atw" lev="2">le</rdg>
-          <rdg wit="#brn" lev="1">ces</rdg>
+          <rdg wit="#atw">le</rdg>
+          <rdg wit="#brn">ces</rdg>
         </app>procés que par<app corresp="#word-diff">
           <lem wit="#brl">l'accord</lem>
-          <rdg wit="#atw #brn" lev="2">accord</rdg>
+          <rdg wit="#atw #brn">accord</rdg>
         </app>de tous<app corresp="#punct">
           <lem wit="#brl">, et</lem>
-          <rdg wit="#atw #brn" lev="2">et</rdg>
+          <rdg wit="#atw #brn">et</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brn #brl">encoires</lem>
-          <rdg wit="#atw" lev="1">encores</rdg>
+          <rdg wit="#atw">encores</rdg>
         </app>a<app corresp="#orth">
           <lem wit="#brl">grans prieres</lem>
-          <rdg wit="#atw #brn" lev="2">grant priere</rdg>
+          <rdg wit="#atw #brn">grant priere</rdg>
         </app>
         <persName ref="#cgfb">il</persName>
         <app corresp="#orth">
           <lem wit="#brl">ot</lem>
-          <rdg wit="#atw" lev="2">eut</rdg>
-          <rdg wit="#brn" lev="3">eust</rdg>
+          <rdg wit="#atw">eut</rdg>
+          <rdg wit="#brn">eust</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl">trente mille</lem>
-          <rdg wit="#atw #brn" lev="12">XXXM</rdg>
+          <rdg wit="#atw #brn">XXXM</rdg>
         </app>frans pour les<app corresp="#add-words">
           <lem wit="#brl">dix</lem>
-          <rdg wit="#atw #brn" lev="4"/>
+          <rdg wit="#atw #brn"/>
         </app>ans<app corresp="#orth">
           <lem wit="#brl">que<persName ref="#cgfb">il</persName></lem>
-          <rdg wit="#atw #brn" lev="1">qu'<persName ref="#cgfb">il</persName></rdg>
+          <rdg wit="#atw #brn">qu'<persName ref="#cgfb">il</persName></rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brn #brl">avoit</lem>
-          <rdg wit="#atw" lev="2">l'avoit</rdg>
+          <rdg wit="#atw">l'avoit</rdg>
         </app>
         <app corresp="#orth">
           <lem wit="#brl">gardé</lem>
-          <rdg wit="#atw #brn" lev="2">gardee</rdg>
+          <rdg wit="#atw #brn">gardee</rdg>
         </app>la<persName ref="#fjda">damoiselle</persName>
         <app corresp="#punct">
           <lem wit="#brl"/>
-          <rdg wit="#atw #brn" lev="4">,</rdg>
+          <rdg wit="#atw #brn">,</rdg>
         </app>
         <app corresp="#orth #punct">
           <lem wit="#brn #brl">nourrie et tenu son estat.</lem>
-          <rdg wit="#atw" lev="3">nourie et tenue son estat</rdg>
+          <rdg wit="#atw">nourie et tenue son estat</rdg>
         </app>
         <app corresp="#add-words #sentence-order">
           <lem wit="#brn #brl">Encoires se plus<app corresp="#add-words">
             <lem wit="#brl">il</lem>
-            <rdg wit="#brn" lev="4"/>
+            <rdg wit="#brn"/>
           </app>en eust demandé<app corresp="#punct">
             <lem wit="#brl">,</lem>
-            <rdg wit="#brn" lev="4"/>
+            <rdg wit="#brn"/>
           </app>plus en eust eu</lem>
           <rdg wit="#atw">et eut plus eul s'il eut demandé</rdg>
         </app>
         <app corresp="#punct">
           <lem wit="#brl">. Mais</lem>
-          <rdg wit="#atw" lev="3">mais</rdg>
-          <rdg wit="#brn" lev="2">, mais</rdg>
+          <rdg wit="#atw">mais</rdg>
+          <rdg wit="#brn">, mais</rdg>
         </app>
         <app corresp="#orth #word-diff">
           <lem wit="#brl">moiennement il volt</lem>
-          <rdg wit="#atw #brn" lev="5">moyennement il en voult</rdg>
+          <rdg wit="#atw #brn">moyennement il en voult</rdg>
         </app>ouvrer<app corresp="#orth">
           <lem wit="#atw #brl">sur</lem>
-          <rdg wit="#brn" lev="1">sus</rdg>
+          <rdg wit="#brn">sus</rdg>
         </app>la conclusion de ceste matiere affin<app corresp="#orth">
           <lem wit="#brl">que on luy</lem>
-          <rdg wit="#atw #brn" lev="3">qu'on lui</rdg>
+          <rdg wit="#atw #brn">qu'on lui</rdg>
         </app>en sceust gré<app corresp="#punct">
           <lem wit="#brl">. Et</lem>
-          <rdg wit="#atw #brn" lev="3">et</rdg>
+          <rdg wit="#atw #brn">et</rdg>
         </app>
         <app corresp="#add-words">
           <lem wit="#brn #brl">aussi</lem>
-          <rdg wit="#atw" lev="5"/>
+          <rdg wit="#atw"/>
         </app>que le<persName ref="#djdb">duc de<app corresp="#orth">
           <lem wit="#brn #brl">Berry</lem>
-          <rdg wit="#atw" lev="1">Berri</rdg>
+          <rdg wit="#atw">Berri</rdg>
         </app>
         </persName>sentist que il<app corresp="#orth">
           <lem wit="#brl">faisoit</lem>
-          <rdg wit="#atw" lev="3">feist</rdg>
-          <rdg wit="#brn" lev="4">feïst</rdg>
+          <rdg wit="#atw">feist</rdg>
+          <rdg wit="#brn">feïst</rdg>
         </app>aucune chose pour<persName ref="#cgfb">
           <app corresp="#orth">
             <lem wit="#brn #brl">luy</lem>
-            <rdg wit="#atw" lev="1">lui</rdg>
+            <rdg wit="#atw">lui</rdg>
           </app>
         </persName>.</ab>
     </body>

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.12.6)  20 APR 2022 14:50
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2021.12.6)  22 APR 2022 01:32
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -723,38 +723,38 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 (./froissart_out.aux)
 \openout1 = `froissart_out.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
-0.
+4.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Info: Redefining \dots on input line 40.
-LaTeX Info: Redefining \up on input line 40.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Info: Redefining \dots on input line 44.
+LaTeX Info: Redefining \up on input line 44.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 40.
+LaTeX Info: Redefining \selectfont on input line 44.
 \AtBeginShipoutBox=\box56
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 44.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -767,95 +767,95 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count379
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
 
 (./froissart_out.out) (./froissart_out.out)
 \@outlinefile=\write10
 \openout10 = `froissart_out.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5
-0.
+4.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5
-0.
+4.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-50.
+54.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-50.
+54.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 50.
+(Font)              <17.28> on input line 54.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 50.
+(Font)              <12> on input line 54.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 50.
+(Font)              <10> on input line 54.
  [1
 
 ]
-Overfull \hbox (9.4829pt too wide) in paragraph at lines 63--63
+Overfull \hbox (9.4829pt too wide) in paragraph at lines 67--67
 []\TU/lmr/bx/n/14.4 Présentation de l’encodage XML-TEI et de sa source
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 70.
+(Font)              <8> on input line 74.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 70.
+(Font)              <6> on input line 74.
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
 [1]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 98.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 102.
 
-Overfull \hbox (4.02005pt too wide) in paragraph at lines 102--102
+Overfull \hbox (4.02005pt too wide) in paragraph at lines 106--106
 []\TU/lmtt/b/n/12 add-words \TU/lmr/m/n/12 : un témoin présente un ou plusieurs
  mots qui ne se trouvent
  []
 
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+[2] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--180
+Underfull \hbox (badness 10000) in paragraph at lines 215--218
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--180
+Underfull \hbox (badness 10000) in paragraph at lines 215--218
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
 
  []
 
-[4] [5] [6] [7] [8] [9] Section 1 (./froissart_out.1)
+[5] [6] [7] [8] [9] [10] Section 1 (./froissart_out.1)
 \openout3 = `froissart_out.1'.
 
 \openout4 = `froissart_out.Aend'.
@@ -868,1126 +868,1129 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--182
 
 \openout8 = `froissart_out.Eend'.
 
- (./froissart_out.eledsec1)
+
+(./froissart_out.eledsec1)
 \openout9 = `froissart_out.eledsec1'.
 
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 311.
+(Font)              <7> on input line 350.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 311.
+(Font)              <5> on input line 350.
 
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-[10]
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
-
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 311.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 [11]
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 350.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 [12]
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
-
-
-LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 [13]
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 313.
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
 
-[14] (./froissart_out.toc)
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 352.
+
+[14] (./froissart_out.Aend
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 12.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 23.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 35.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 47.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 63.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 63.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 75.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 87.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 103.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 103.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 114.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 126.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 138.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 150.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 162.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 174.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 185.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 196.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 210.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 222.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 234.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 246.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 257.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 273.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 286.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 298.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 310.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 322.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 334.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 345.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 357.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 368.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 379.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 391.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 402.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 415.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 427.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 438.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 450.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 462.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 473.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 484.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 505.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 505.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 516.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 527.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 539.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 552.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 563.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 574.
+
+[15]
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 586.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 598.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 609.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 621.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 632.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 648.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 648.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 660.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 671.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 682.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 694.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 706.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 718.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 729.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 747.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 763.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 763.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 774.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 785.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 804.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 815.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 826.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 840.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 851.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 863.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 874.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 886.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 897.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 910.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 922.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 934.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 946.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 957.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 974.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 974.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 986.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 997.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1013.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1013.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1026.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1037.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1051.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1063.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1079.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1079.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1091.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1103.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1114.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1126.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1137.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1148.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1159.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1171.
+
+[16]
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1183.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1194.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1205.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1217.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1233.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1233.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1245.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1258.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1269.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1283.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1297.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1308.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1320.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1332.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1344.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1355.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1366.
+
+
+LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
+(Font)              using `TU/lmr/m/scsl' instead on input line 1377.
+
+) [17] (./froissart_out.toc)
 \tf@toc=\write11
 \openout11 = `froissart_out.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 317.
- [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 317.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 360.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 360.
  (./froissart_out.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 317.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 317.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 360.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 360.
 Package rerunfilecheck Info: File `froissart_out.out' has not changed.
-(rerunfilecheck)             Checksum: 684D9FE453D85CD94403E24E93F2DA09;1322.
+(rerunfilecheck)             Checksum: 5446466C5FBA2ABC246014E4B7AA47B4;1670.
  ) 
 Here is how much of TeX's memory you used:
- 16577 strings out of 479819
- 307425 string characters out of 5895846
- 770992 words of memory out of 5000000
- 33466 multiletter control sequences out of 15000+600000
+ 16583 strings out of 479819
+ 307482 string characters out of 5895846
+ 730519 words of memory out of 5000000
+ 33470 multiletter control sequences out of 15000+600000
  561260 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 87i,5n,53p,19424b,552s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,5n,53p,19174b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on froissart_out.pdf (16 pages).
+Output written on froissart_out.pdf (19 pages).

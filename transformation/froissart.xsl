@@ -51,6 +51,10 @@
             \newcommandx{\subvariant}[2][1,usedefault]{\Cfootnote[#1]{#2}}
             % détails non textuels sur le témoin
             \newcommandx{\explan}[2][1,usedefault]{\Dfootnote[#1]{#2}}
+            % note de fin pour les variants ayant une distance de levenshtein de 1
+            \newcommandx{\lvstn}[2][1,usedefault]{\Aendnote[#1]{#2}}
+            % séparateur pour les notes de fin \lvstn
+            \Xendlemmaseparator{\rbracket}
             
             \Xarrangement[A]{paragraph}
             \Xparafootsep{$\parallel$~}
@@ -83,6 +87,9 @@
                 \subsection{Principes suivis pour l'encodage}
                 \subsubsection{Principes suivis pour l'édition en XML-TEI}
                 <xsl:call-template name="encodingdesc"/>
+                \subsubsection{Modifications apportées au fichier XML-TEI en vue de 
+                sa transformation vers \LaTeX}
+                <xsl:call-template name="transf"/>
                 \subsubsection{Principes suivis pour l'édition \LaTeX}
                 <xsl:call-template name="latex"/>
                 \subsection{Description des témoins}
@@ -102,6 +109,7 @@
             
             <!-- corps de texte -->
             \section{Édition critique}
+            \subsection{Corps de l'édition}
             \beginnumbering
             \linenumbers
             \pstart    
@@ -130,10 +138,17 @@
             <xsl:variable name="clean7">
                 <xsl:value-of select="replace($clean6, '([a-z])([A-Z])', '$1 $2')"/>
             </xsl:variable>
-            <xsl:value-of select="$clean7"/>
+            <xsl:variable name="clean8">
+                <xsl:value-of select="replace($clean7, '(\\edtext\{)\s+([a-zA-Z])', '$1$2')"/>
+            </xsl:variable>
+            <xsl:value-of select="$clean8"/>
             \pend
             \endnumbering
             
+            \pagebreak
+            \subsection{Variations ayant une distance de Levenshtein avec le témoin principal
+            inférieure à 2}
+            \doendnotes{A}
             \pagebreak
             \tableofcontents
             \end{document}
@@ -637,6 +652,35 @@
     </xsl:template>
     
     
+    <!-- transformation du fichier XML originel avant sa transformation -->
+    <xsl:template name="transf">
+        <xsl:text>
+            Avant sa transformation XSL, quelques modifications ont été appliquées
+            au fichier XML :
+            \begin{itemize}
+                \item{Les \texttt{&lt;app&gt;} qui ne contiennent que des 
+                \texttt{&lt;rdg&gt;} ont été transformés en \texttt{&lt;rdgGrp&gt;} :
+                cette structure n'est pas traduisible dans une édition critique "papier".}
+                \item{Des corrections mineures d'orthographe et de ponctuation ont été 
+                apportées en cours de route.}
+                \item{La distance de Levenshtein de chaque témoin secondaire 
+                (\texttt{&lt;rdg&gt;}) avec le témoin de Berlin (\texttt{&lt;lem&gt;}) a été
+                calculée à l'aide d'un script python. Ce script prend pour entrée l'édition
+                critique avec les légères transformations décrites ci-dessus et produit un 
+                fichier XML auquel a été rajouté, pour chaque \texttt{&lt;rdg&gt;} un attribut
+                \texttt{@lev} qui contient la distance de Levenshtein du témoin. C'est ce fichier
+                qui a été utilisé en entrée de la présente feuille XSL. Pour que le fichier
+                reste valide, l'ODD a également été mise à jour afin d'ajouter cet attribut 
+                \texttt{@lev}. Le script, le fichier d'entrée et de sortie se trouvent dans
+                le dossier \texttt{levenshtein/}. Le but de cette transformation est de pouvoir renvoyer
+                toutes les variations "sommaires" à la fin du document, afin d'alléger
+                un peu l'édition critique. Je remercie mon tuteur de stage Simon Gabay
+                de m'avoir mis sur cette piste.}
+            \end{itemize}
+        </xsl:text>
+    </xsl:template>
+    
+    
     <!-- normes d'encodage latex -->
     <xsl:template name="latex">
         <xsl:text>
@@ -648,50 +692,58 @@
             dans une édition critique "traditionnelle" (papier) ; les principes 
             suivants ont donc été suivis :
             \begin{itemize}
-            	\item{L'apparat critique est construit avec la leçon principale (témoin de 
-            		Berlin) en corps de texte ; en notes de bas de page, les variations et 
-            		autres détails sont signalés avec un système de notes à quatres étages :}
-            		\begin{itemize}
-            			\item{\textbf{\texttt{\textbackslash variant}} correspond à \texttt{\textbackslash Afootnote} et 
-            				permet d'encoder les variations "simples" entre les leçons.}
-            			\item{\textbf{\texttt{\textbackslash group}} correspond à \texttt{\textbackslash Bfootnote} et 
-            				permet d'encoder les groupes de temoins (\texttt{&lt;rdgGrp&gt;} 
-            				en TEI).}
-            			\item{\textbf{\texttt{\textbackslash subvariant}} correspond à \texttt{\textbackslash Cfootnote} 
-            			et permet d'encoder les sous-variations dans des apparats internes 
-            			(en termes TEI : les \texttt{&lt;rdg&gt;} qui sont dans des 
-            			\texttt{&lt;app&gt;} dans des \texttt{&lt;app&gt;}).}
-            			\item{\textbf{\texttt{\textbackslash explan}} correspond à \texttt{\textbackslash Dfootnote} et 
-            				permet d'encoder les éléments "non textuels" du témoin principal 
-            				(décorations et sauts de page encodés dans des \texttt{&lt;witDetail&gt;},
-            				changements de paragraphes).}
-            		\end{itemize}
-            	\item{Au sein d'un apparat critique (\texttt{&lt;app&gt;}) les groupes de 
-            		témoins qui ne contiennent pas la leçon principale (en langage TEI 
-            		les \texttt{&lt;rdgGrp&gt;} qui contiennent seulement des 
-            		\texttt{&lt;rdg&gt;}, mais pas de \texttt{&lt;lem&gt;}) se trouvent 
-            		dans une note de deuxième niveau (\texttt{\textbackslash group}, en \LaTeX). Si un 
-            		\texttt{&lt;rdgGrp&gt;} contient une partie du témoin principal, il n'est 
-            		pas retranscrit en \LaTeX.}
-            	\item{Les apparats internes (un \texttt{&lt;app&gt;} dans un 
-            		\texttt{&lt;app&gt;}) sont retranscrits en bas de page grâce à un 
-            		\texttt{\textbackslash subvariant} (note de 3e degré).}
-            	\item{Pour la leçon principale (le manuscrit de Berlin), la structure du 
-            		texte est retranscrite:}
-            		\begin{itemize}
-            			\item{Les sauts de paragraphe sont reportés en note de 
-            				bas de page dans un \texttt{\textbackslash explan} correspondant à une note de 4e niveau 
-            				et signifiés dans le corps du texte par un saut de paragraphe 
-            				(\texttt{\textbackslash pend \textbackslash pstart}, avec \texttt{reledmac}).} 
-            			\item{Les sauts de page sont également reportés en bas de page dans un 
-            				\texttt{\textbackslash explan} ; le numéro de page est également mentionné. Il n'y a 
-            				pas de saut de page dans le corps du texte pour éviter d'avoir un résultat 
-            				trop morcelé.}
-            			\item{Les détails sur la décoration du texte sont mentionnés en notes de 
-            				bas de page, dans un \texttt{\textbackslash explan}.}
-            			\item{Pour les autres leçons (témoins d'Anvers et de Berne), ces 
-            				détails ne sont pas mentionnés.}
-            	\end{itemize}
+            \item{L'apparat critique est construit avec la leçon principale (témoin de 
+            Berlin) en corps de texte ; en notes de bas de page, les variations et 
+            autres détails sont signalés avec un système de notes à quatres étages :}
+            \begin{itemize}
+                \item{\textbf{\texttt{\textbackslash variant}} correspond à 
+                \texttt{\textbackslash Afootnote} et permet d'encoder les variations 
+                "simples" entre les leçons.}
+                \item{\textbf{\texttt{\textbackslash group}} correspond à 
+                \texttt{\textbackslash Bfootnote} et permet d'encoder les groupes 
+                de temoins (\texttt{&lt;rdgGrp&gt;} en TEI).}
+                \item{\textbf{\texttt{\textbackslash subvariant}} correspond à 
+                \texttt{\textbackslash Cfootnote} et permet d'encoder les sous-variations 
+                dans des apparats internes (en termes TEI : les \texttt{&lt;rdg&gt;} 
+                qui sont dans des \texttt{&lt;app&gt;} dans des \texttt{&lt;app&gt;}).}
+                \item{\textbf{\texttt{\textbackslash explan}} correspond à 
+                \texttt{\textbackslash Dfootnote} et permet d'encoder les éléments 
+                "non textuels" du témoin principal (décorations et sauts de page 
+                encodés dans des \texttt{&lt;witDetail&gt;}, changements de paragraphes).}
+                \item{\textbf{\texttt{\textbackslash lvstn}} correspond à 
+                \texttt{\textbackslash Aendnote} et permet de renvoyer à la fin du document
+                les variations textuelles ayant une distance de Levenshtein avec le témoin
+                principal inférieure à 2}
+            \end{itemize}
+            \item{Les variations dans un témoin ayant une distance de Levenshtein inférieure
+            à 2 sont renvoyés en note de fin de document dans un 
+            \texttt{\textbackslash lvstn}}.
+            \item{Au sein d'un apparat critique (\texttt{&lt;app&gt;}) les groupes de 
+            témoins qui ne contiennent pas la leçon principale (en langage TEI 
+            les \texttt{&lt;rdgGrp&gt;} qui contiennent seulement des 
+            \texttt{&lt;rdg&gt;}, mais pas de \texttt{&lt;lem&gt;}) se trouvent 
+            dans une note de deuxième niveau (\texttt{\textbackslash group}, en \LaTeX). Si un 
+            \texttt{&lt;rdgGrp&gt;} contient une partie du témoin principal, il n'est 
+            pas retranscrit en \LaTeX.}
+            \item{Les apparats internes (un \texttt{&lt;app&gt;} dans un 
+            \texttt{&lt;app&gt;}) sont retranscrits en bas de page grâce à un 
+            \texttt{\textbackslash subvariant} (note de 3e degré).}
+            \item{Pour la leçon principale (le manuscrit de Berlin), la structure du 
+            texte est retranscrite:}
+            \begin{itemize}
+            \item{Les sauts de paragraphe sont reportés en note de 
+            bas de page dans un \texttt{\textbackslash explan} correspondant à une note de 4e niveau 
+            et signifiés dans le corps du texte par un saut de paragraphe 
+            (\texttt{\textbackslash pend \textbackslash pstart}, avec \texttt{reledmac}).} 
+            \item{Les sauts de page sont également reportés en bas de page dans un 
+            \texttt{\textbackslash explan} ; le numéro de page est également mentionné. Il n'y a 
+            pas de saut de page dans le corps du texte pour éviter d'avoir un résultat 
+            trop morcelé.}
+            \item{Les détails sur la décoration du texte sont mentionnés en notes de 
+            bas de page, dans un \texttt{\textbackslash explan}.}
+            \item{Pour les autres leçons (témoins d'Anvers et de Berne), ces 
+            détails ne sont pas mentionnés.}
+            \end{itemize}
             \end{itemize} 
             
             \indent Le fichier XSL produit a été visualisé et fonctionne sur TeXstudio 
@@ -725,7 +777,15 @@
             <xsl:when test="lem[not(./*)][not(ancestor::*/rdgGrp)][not(ancestor::app//app)]">
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:apply-templates select="lem"/>
-                <xsl:text>}{\variant{</xsl:text>
+                <xsl:text>}{</xsl:text>
+                <xsl:choose>
+                    <xsl:when test=".//rdg[@lev>2]">
+                        <xsl:text>\variant{</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>\lvstn{</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:call-template name="notinternal"/>
                 <xsl:text>}}</xsl:text>
             </xsl:when>
@@ -755,8 +815,15 @@
                 <xsl:copy select=".">
                     <xsl:apply-templates/>
                 </xsl:copy>
-                <xsl:text>}</xsl:text>
-                <xsl:text>{\variant{</xsl:text>
+                <xsl:text>}{</xsl:text>
+                <xsl:choose>
+                    <xsl:when test=".//rdg[@lev>2]">
+                        <xsl:text>\variant{</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>\lvstn{</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:call-template name="notinternal"/>
                 <xsl:text>}}</xsl:text>
             </xsl:when>
@@ -766,7 +833,15 @@
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:apply-templates select="lem"/>
                 <xsl:apply-templates select="placeName | persName"/>
-                <xsl:text>}{\variant{</xsl:text>
+                <xsl:text>}{</xsl:text>
+                <xsl:choose>
+                    <xsl:when test=".//rdg[@lev>2]">
+                        <xsl:text>\variant{</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>\lvstn{</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:call-template name="notinternal"/>
                 <xsl:text>}}</xsl:text>    
             </xsl:when>
@@ -776,7 +851,15 @@
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:text>\edtext{</xsl:text>
                 <xsl:apply-templates select="lem/text()"/>
-                <xsl:text>}{\variant{</xsl:text>
+                <xsl:text>}{</xsl:text>
+                <xsl:choose>
+                    <xsl:when test=".//rdg[@lev>2]">
+                        <xsl:text>\variant{</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text>\lvstn{</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:call-template name="notinternal"/>
                 <xsl:text>}}}{\explan{</xsl:text>
                 <xsl:value-of select="lem/witDetail"/>
@@ -814,10 +897,19 @@
     <xsl:template match="lem//app" name="leminternal">
         <xsl:text>\edtext{</xsl:text>
         <xsl:value-of select=".//lem"/>
-        <xsl:text>}{\subvariant{</xsl:text>
+        <xsl:text>}{</xsl:text>
+        <xsl:choose>
+            <xsl:when test=".//lem//rdg[@lev>2]">
+                <xsl:text>\subvariant{</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>\lvstn{</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
         <xsl:call-template name="internal"/>
         <xsl:text>}}</xsl:text>
     </xsl:template>
+    
     
     
     <!-- règle pour les rdg qui ne sont pas contenus dans des app internes ou des rdgGrp -->

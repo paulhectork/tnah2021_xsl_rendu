@@ -627,6 +627,12 @@
                            </valItem>
                         </valList>
                      </attDef>
+                     <attDef ident="lev" mode="add">
+                        <desc>Distance de Levenshtein (nombre entier) entre ce témoin et la leçon principale (témoin de Berlin)</desc>
+                        <datatype>
+                           <dataRef key="teidata.word"/>
+                        </datatype>
+                     </attDef>
                   </attList>
                </elementSpec>
                
